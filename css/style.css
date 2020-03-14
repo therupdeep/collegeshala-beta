@@ -1,0 +1,15 @@
+.navbar .nav-link{
+    padding-top: 20px !important;
+    padding-right: 50px !important;
+    color: purple !important;
+    font-weight: 500 !important;
+    font-size: 15px;
+}
+
+#home{
+    background-image: url(../assets/images/home-bg.jpg);
+    
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
