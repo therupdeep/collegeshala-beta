@@ -18,69 +18,179 @@
         integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 
     <title>College Shala</title>
-    <link rel="icon" href="./assets/logo/infinity.png">
+    <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg">
 </head>
 
 <body>
-
-
     <div id="home">
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand pl-5" href="#">
-                    <img src="./assets/logo/infinity.png" alt="" srcset="" width="95" height="82">
-                    <img src="./assets/logo/CollegeShala.png" alt="" width="180" height="48">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <div class="mr-auto"></div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Services <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">TalkShala</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                Call Us Now
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-user-circle" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/images/logo.png" id="logo" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <div class="mr-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Services <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TalkShala</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            Call Us Now
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h1 class="above-search-bar-text">
+                It's a <span id="student">Student</span><span id="comma">'</span><span id="student">s</span> Thing!
+            </h1>
+            <h5 class="text-center">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, sapiente rem!
+            </h5>
+            <p class="seach-box">
+                <input type="text" placeholder="search here ">
+            </p>
         </div>
     </div>
 
-
-
-
-    <div class="cantainer">
-        <p>
-            It's a student thing
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe itaque ad modi illum ipsum rerum alias
-            praesentium enim voluptas. Perferendis eius molestiae quae quam odit cum optio maxime tempore minima.
+    <div class="services">
+        <hr>
+        <h1 class="text-center m-5">
+            What does CollegeShala provide you with?
+        </h1>
+        <div class="card-deck m-5">
+            <div class="card">
+                <img class="card-img-top services-image" src="./assets/images/study-materials-png.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Study Materials</h5>
+                    <p class="card-text text-center">lorem ipsum</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top services-image" src="./assets/images/question-answers-png.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Question/Answers</h5>
+                    <p class="card-text text-center">lorem ipsum</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top services-image" src="./assets/images/sell-books-png.png" alt="Card image cap">
+                <div class="card-body ">
+                    <h5 class="card-title text-center">Sell/Buy Books</h5>
+                    <p class="card-text text-center">Lorem Ipsum</p>
+                </div>
+            </div>
+        </div>
+        <p class="text-center m-1">
+            <a class="btn btn-primary" href="#" role="button">Sign Up</a>
         </p>
     </div>
 
 
+    <div class="talkshala">
+        <div class="container mt-5">
+            <h1 class="text-center p-5">TalkShala - A Community</h1>
+            <div class="talkshala-description">
 
+            </div>
+            <div class="join-area">
+                <p class="text-center m-1">
+                    <a class="btn btn-primary" href="#" role="button">Join the community</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
+    <div class="newsletter">
+        <div class="container newsletter-text">
+            <h1 class="text-center">
+                Stay up to date <br>
+                Subscribe to our newsletter
+            </h1>
 
+            <br>
+            <p class="text-center">
+                <input type="text" placeholder="enter your email">
+            </p>
+        </div>
+    </div>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
+                        upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
+                        snippets as the code wants to be simple. We will help programmers build up concepts in different
+                        programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android,
+                        SQL and Algorithm.</p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                        <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                        <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                        <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                        <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                        <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                        <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                        <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                        <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a href="#">CollegeShala</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- Optional JavaScript -->

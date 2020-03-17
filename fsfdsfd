@@ -1,0 +1,14 @@
+#home .above-search-bar-text{
+        text-align: center;
+        padding: 100px 0 420px 0;
+        font-size: 60px;
+        font-weight: 500;
+    }
+
+
+
+
+
+
+
+
