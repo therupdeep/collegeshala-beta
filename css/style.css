@@ -12,9 +12,14 @@
 .navbar .nav-link {
     padding-top: 20px !important;
     padding-right: 50px !important;
-    color: purple !important;
+    color: #6534CC !important;
     font-weight: 500 !important;
     font-size: 20px;
+    padding-bottom: 5px;
+}
+
+#services{
+    text-decoration: underline #FF4133;
 }
 
 #home {
@@ -27,32 +32,28 @@
 
 #home .above-search-bar-text {
     text-align: center;
-    padding: 100px 0 20px 0;
+    padding: 145px 0 20px 0;
     font-size: 60px;
     font-weight: 500;
 }
 
-#home .above-search-bar-text #student {
-    color: purple;
+#custom-purple{
+    color: #6534CC;
 }
 
-#home .above-search-bar-text #comma {
-    color: red;
+#custom-red {
+    color: #FF4133;
 }
 
-.seach-box {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+.seach-box{
+    padding-top: 20px;
 }
 
 .seach-box input {
     height: 50px;
     width: 400px;
     border-width: 1.5px;
-    border-color: red;
+    border-color: #FF4133;
     border-radius: 25px;
 }
 
@@ -67,10 +68,26 @@
     height: 140px;
     margin: auto;
     padding: 15px 0px;
+    border: 1px;
+}
+
+.card:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
 }
 
 .services .btn {
     left: 50%;
+}
+
+.services #signup{
+    border-radius: 20px;
+    width: 150px;
+    background-color: #FF4133;
+    outline: none;
+    border: none;
+
 }
 
 .join-area {
@@ -79,6 +96,39 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+}
+
+.talkshala .talkshala-description{
+    padding-left: 50px;
+}
+
+.talkshala .talkshala-description #talkshala-heading{
+    color: #6534CC;
+    font-size: 20px;
+}
+
+.talkshala .talkshala-description #talkshala-text{
+    font-size: 15px;
+}
+
+.imagetext{
+    width: 90px;
+    height: 90px;
+    float: left;
+    padding-right: 10px;
+}
+
+
+
+.talkshala #join-btn{
+    border-radius: 45px;
+    width: 300px;
+    border-color: #FF4133;
+    outline: none;
+    color: #6534CC;
+    margin-top: 50px;
+    font-size: 22px;
+    border-width: 2px;
 }
 
 .newsletter {
@@ -103,8 +153,19 @@
     width: 400px;
     border-width: 1.5px;
     border-color: red;
-    border-radius: 25px;
+    border-radius: 16px 0 0 16px;
 }
+
+.newsletter-text input[type="button"] {
+    color: #6534CC;
+    background: #fff;
+    margin-left: -8px;
+
+
+    border-radius: 0 16px 16px 0;
+    padding: 2px 12px;
+    width: 100px;
+  }
 
 .newsletter-text input[type="text"] {
     padding: 20px;
@@ -114,23 +175,26 @@
 
 .site-footer {
     background-color: #fff;
-    padding: 45px 0 20px;
+    padding: 45px 0px 0px 0px;
     font-size: 15px;
     line-height: 24px;
     color: #737373;
 }
 
-.site-footer hr {
-    border-top-color: #bbb;
-    opacity: 0.5
+.site-footer .copyright-area{
+    background-color: #0F0623;
+    padding: 20px;
+    color: #fff;
+}
+.site-footer .copyright-area #footer-copyright-text{
+    padding: 20px;
+    padding-left: 325px;
+    padding-top: 30px;
 }
 
-.site-footer hr.small {
-    margin: 20px 0
-}
 
 .site-footer h6 {
-    color: purple;
+    color: #6534CC;
     font-size: 16px;
     text-transform: uppercase;
     margin-top: 5px;
@@ -174,14 +238,15 @@
     text-align: right
 }
 
-.site-footer .social-icons a {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+.site-footer #footer-social-icons{
+    width: 50px;
+    height: 45px;
+    padding-bottom: 2px;
+    /* line-height: 229px; */
     margin-left: 6px;
     margin-right: 0;
-    border-radius: 100%;
-    background-color: #33353d
+    /* border-radius: 100%;*/
+
 }
 
 .copyright-text {
@@ -205,40 +270,6 @@
     }
 }
 
-.social-icons {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none
-}
-
-.social-icons li {
-    display: inline-block;
-    margin-bottom: 4px
-}
-
-.social-icons li.title {
-    margin-right: 15px;
-    text-transform: uppercase;
-    color: #96a2b2;
-    font-weight: 700;
-    font-size: 13px
-}
-
-.social-icons a {
-    background-color: #eceeef;
-    color: #818a91;
-    font-size: 16px;
-    display: inline-block;
-    line-height: 44px;
-    width: 44px;
-    height: 44px;
-    text-align: center;
-    margin-right: 8px;
-    border-radius: 100%;
-    -webkit-transition: all .2s linear;
-    -o-transition: all .2s linear;
-    transition: all .2s linear
-}
 
 .social-icons a:active,
 .social-icons a:focus,
@@ -254,21 +285,6 @@
     font-size: 14px
 }
 
-.social-icons a.facebook:hover {
-    background-color: #3b5998
-}
-
-.social-icons a.twitter:hover {
-    background-color: #00aced
-}
-
-.social-icons a.linkedin:hover {
-    background-color: #007bb6
-}
-
-.social-icons a.dribbble:hover {
-    background-color: #ea4c89
-}
 
 @media (max-width:767px) {
     .social-icons li.title {
