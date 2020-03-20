@@ -33,8 +33,8 @@
 #home .above-search-bar-text {
     text-align: center;
     padding: 145px 0 20px 0;
-    font-size: 60px;
-    font-weight: 500;
+    font-size: 75px;
+    font-weight: 600;
 }
 
 #custom-purple{
@@ -296,7 +296,34 @@
 
 
 
+@media only screen and (max-width: 700px){
+    #home .above-search-bar-text {
+        text-align: center;
+        padding: 105px 0 20px 0;
+        font-size: 50px;
+        font-weight: 600;
+    }
 
+    #home .above-search-bar-text .tagline-text{
+        font-size: 20px;
+    }
+    .seach-box{
+        padding-top: 20px;
+    }
+    
+    .seach-box input {
+        height: 50px;
+        width: 400px;
+        border-width: 1.5px;
+        border-color: #FF4133;
+        border-radius: 25px;
+    }
+    
+    .seach-box input[type="text"] {
+        padding: 20px;
+    }
+    
+}
 
 @media only screen and (max-width: 600px) {
 
