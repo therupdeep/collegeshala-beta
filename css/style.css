@@ -99,12 +99,13 @@
 }
 
 .talkshala .talkshala-description{
-    padding-left: 135px;
+    padding-left: 95px;
 }
 
 .talkshala .talkshala-description #talkshala-heading{
     color: #6534CC;
     font-size: 20px;
+    font-weight: 700;
 }
 
 .talkshala .talkshala-description #talkshala-text{
@@ -112,8 +113,8 @@
 }
 
 .imagetext{
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 100px;
     float: left;
     padding-right: 10px;
 }
