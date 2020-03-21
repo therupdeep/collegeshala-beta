@@ -116,7 +116,7 @@
     font-size: 15px;
 }
 
-.imagetext{
+.talkshala-icons{
     width: 110px;
     height: 100px;
     float: left;
@@ -300,4 +300,90 @@
         font-weight: 600
     }
 }
+
+
+@media (max-width:767px) {
+    #logo {
+        width: 125px;
+        height: 35px;
+    }
+    .seach-box input {
+        height: 1px;
+        width: 290px;
+    }
+    #home {
+        background-image: url(../assets/mobile/images/first-section.png);
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #home .above-search-bar-text {
+        text-align: center;
+        padding: 95px 0 20px 0;
+        font-size: 28px;
+        font-weight: 600;
+    }
+    #home .tagline-text {
+        font-size: 13px;
+    }
+    .services .services-heading{
+        font-size: 19px;
+    }
+    .talkshala .talkshala-h1{
+        font-size: 20px;
+    }
+    .talkshala .talkshala-description {
+        padding-left: 20px;
+    }
+    .talkshala-icons {
+        width: 85px;
+        height: 82px;
+        float: left;
+        padding-right: 7px;
+    }
+    .talkshala .talkshala-description #talkshala-heading {
+        color: #6534CC;
+        font-size: 10px;
+        font-weight: 700;
+    }
+    .talkshala .talkshala-description #talkshala-heading {
+        color: #6534CC;
+        font-size: 10px;
+        font-weight: 700;
+    }
+    .site-footer .copyright-area #footer-copyright-text {
+         padding: 0px;
+         padding-left: 0px;
+         padding-top: 0px; 
+    }
+    .newsletter-text input {
+        height: 50px;
+        width: 175px;
+        border-width: 1.5px;
+        border-color: red;
+        border-radius: 16px 0 0 16px;
+    }
+    .newsletter .newsletter-text h1 {
+        font-size: 30px;
+    }
+    .join-area {
+        background-image: url();
+        height: 15vh;
+        background-size: cover;
+        
+        background-repeat: no-repeat;
+
+    }
+    .talkshala #join-btn {
+        border-radius: 45px;
+        width: 227px;
+        border-color: #FF4133;
+        outline: none;
+        color: #6534CC;
+        margin-top: 20px;
+        font-size: 18px;
+        border-width: 2px;
+    }
+}   
 
