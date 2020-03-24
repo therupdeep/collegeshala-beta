@@ -80,3 +80,6 @@ purple used : #6534CC
         position: absolute;
     }
 }
+
+
+background-size: 50% auto;
