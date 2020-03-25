@@ -4,6 +4,12 @@
   font-family: "Noto Serif", serif;
 }
 
+/*
+            ************
+        Landing Page Styles
+            ************
+*/
+
 #logo {
   width: 250px;
   height: 60px;
@@ -19,7 +25,7 @@
 }
 
 .navbar-nav li a:hover {
-  text-decoration: underline #FF4133;
+  text-decoration: underline #ff4133;
 }
 
 #services {
@@ -66,7 +72,6 @@
 }
 
 .seach-box input[type="text"] {
-
   /* background-color: white; */
   outline: none;
 }
@@ -88,7 +93,7 @@
   -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
   border-style: solid;
-  border-color: #FF4133;
+  border-color: #ff4133;
 }
 
 .services .btn {
@@ -368,7 +373,6 @@
     background-image: url();
     height: 15vh;
     background-size: cover;
-
     background-repeat: no-repeat;
   }
   .talkshala #join-btn {
@@ -415,3 +419,91 @@
     /* border-radius: 100%; */
   }
 }
+
+/*
+            ************
+        Landing Page Styles Ends 
+            ************
+*/
+
+/*
+            ************
+        Sngle Product Page Styles
+            ************
+*/
+
+.nav-seach-box {
+  padding-top: 27px;
+  outline: none;
+  margin-left: 16em;
+}
+.nav-seach-box {
+  padding-top: 23px;
+  outline: none;
+}
+
+.nav-seach-box input {
+  height: 45px;
+  width: 300px;
+  border-width: 1.5px;
+  border-color: #ff4133;
+  border-radius: 25px;
+  outline: none;
+}
+
+.nav-seach-box input[type="text"] {
+  padding: 20px;
+}
+
+.bg-custom-blur {
+  background-color: #FFFFFF !important;
+}
+.navbar-nav li .navbar-talkshala{
+  font-size: 25px;;
+}
+.results-found{
+  font-size: 20px;
+}
+
+.notes-info-tab{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 30px;
+  margin: 10px 0px 10px 0;
+}
+
+.custom-card-image {
+  width: 170px;
+  height: 200px;
+}
+
+.card-text-body{
+  float: right;
+  padding: 0rem;
+  margin-right: 100px;
+}
+
+.card-heading{
+  font-size: 55px;
+  padding-top: 30px;
+}
+
+.prof-name{
+  font-size: 30px;
+  float: left;
+}
+.university-name{
+  font-size: 30px;
+  float: right;
+}
+
+.load-more{
+  color: #6534CC;
+  border: 1px solid #FF4133;
+  border-radius: 35px;
+}
+
+/*
+            ************
+        Single Product Page Styles Ends
+            ************
+*/
