@@ -428,7 +428,7 @@
 
 /*
             ************
-        Sngle Product Page Styles
+        All product page Styles
             ************
 */
 
@@ -504,6 +504,29 @@
 
 /*
             ************
-        Single Product Page Styles Ends
+        All product page Styles Ends
+            ************
+*/
+
+/*
+            ************
+        Single Product Page
+            ************
+*/
+
+.navigation{
+  padding: 25px 0px;
+}
+
+.heading-title{
+  float: left;
+}
+
+.heading-title-menu{
+  float: right;
+}
+/*
+            ************
+        Single Product Page Ends
             ************
 */
