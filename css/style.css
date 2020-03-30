@@ -602,7 +602,7 @@
 .notes-image .add-to-cart-btn {
   position: absolute;
   bottom: 2%;
-  left: 57%;
+  left: 80%;
   transform: translate(-50%, -50%);
   background-color: white;
   outline: none;
@@ -628,12 +628,6 @@
   font-size: 45px;
 }
 
-
-.course-and-suggested-area .course-and-suggested-area {
-
-}
-  margin-top: 30px;
-}
 
 .suggested-products-heading {
   font-size: 20px;
