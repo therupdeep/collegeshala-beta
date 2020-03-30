@@ -432,6 +432,10 @@
             ************
 */
 
+nav {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+
 .nav-seach-box {
   padding-top: 27px;
   outline: none;
@@ -568,22 +572,17 @@
   padding: 0px 20px;
 }
 
-
-
-
-.course-and-suggested-area{
+.course-and-suggested-area {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .notes-image {
-  background-image: url("https://via.placeholder.com/500x350");
-  width: 500px;
-  height: 350px;
+  background-image: url(https://via.placeholder.com/600x500);
+  width: 600px;
+  height: 475px;
   background-size: cover;
 }
-
-
 
 .notes-image .buy-now-btn {
   position: absolute;
@@ -621,21 +620,17 @@
   color: white;
 }
 
-
-
-
-.course-and-suggested-area .suggested-products-heading{
+.course-and-suggested-area .suggested-products-heading {
   font-size: 45px;
 }
 
-
 .suggested-products-heading {
-  font-size: 20px;
+  font-size: 31px;
 }
 
 .suggested-product-image {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 110px;
   margin-left: 1rem;
 }
 
@@ -646,24 +641,24 @@
 }
 
 .suggested-card-heading {
-  font-size: 20px;
+  font-size: 31px;
   /*padding-top: 30px;*/
 }
 
 .suggested-card-prof-name {
-  font-size: 10px;
+  font-size: 17px;
   float: left;
 }
 
 .suggested-card-university-name {
-  font-size: 10px;
+  font-size: 17px;
   float: right;
 }
 
 .suggested-card-text-body {
   float: right;
   padding: 0rem;
-  margin-right: 13rem;
+  margin-right: 1rem;
 }
 
 .single-product-prof-details-area {
@@ -673,17 +668,17 @@
 
 .single-product-prof-vector {
   float: left;
-    width: 48px;
-    height: 46px;
-    margin-top: 2rem;
-    margin-right: 1rem;
+  width: 48px;
+  height: 46px;
+  margin-top: 2rem;
+  margin-right: 1rem;
 }
 
-.single-product-prof-details{
+.single-product-prof-details {
   float: right;
 }
 
-.single-product-user-comments-heading{
+.single-product-user-comments-heading {
   font-size: 25px;
 }
 
