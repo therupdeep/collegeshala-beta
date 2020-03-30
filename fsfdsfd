@@ -31,3 +31,156 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="container course-and-suggested-area">
+      <div class="row">
+        <div class="col-12 col-md-6 notes-image-area notes-image">
+          <input type="button" value="Buy Now" class="buy-now-btn" />
+          <input type="button" value="Add to Cart" class="add-to-cart-btn" />
+        </div>
+        <div class="col-6 col-md-4">
+          <div class="suggested-products-area">
+            <h1 class="suggested-products-heading">
+              <span id="custom-red">Suggested Products</span>
+            </h1>
+            <div class="suggested-products-cards">
+              <div class="suggested-product-info">
+                <img
+                  src="./assets/images/single-product/its a book.jpg"
+                  alt="its a book"
+                  class="suggested-product-image"
+                />
+                <div class="suggested-card-text-body">
+                  <h1 class="suggested-card-heading">
+                    <span id="custom-purple">Notes for Advanced Maths</span>
+                  </h1>
+                  <h3 class="suggested-card-prof-name">
+                    <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                    Prof. Amit Das
+                  </h3>
+                  <h3 class="suggested-card-university-name">
+                    <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i
+                    >Calcutta University
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          d
+        </div>
+      </div>
+    </div>
+
+    <div class="container course-and-suggested-area">
+      <div class="notes-image-area notes-image">
+        <img src="./assets/images/single-product-page/back.jpg" alt="" />
+        <input type="button" value="Buy Now" class="buy-now-btn" />
+        <input type="button" value="Add to Cart" class="add-to-cart-btn" />
+      </div>
+
+      <div class="suggested-products-area">
+        <h1 class="suggested-products-heading">
+          <span id="custom-red">Suggested Products</span>
+        </h1>
+        <div class="suggested-products-cards">
+          <div class="suggested-product-info">
+            <img
+              src="./assets/images/single-product/its a book.jpg"
+              alt="its a book"
+              class="suggested-product-image"
+            />
+            <div class="suggested-card-text-body">
+              <h1 class="suggested-card-heading">
+                <span id="custom-purple">Notes for Advanced Maths</span>
+              </h1>
+              <h3 class="suggested-card-prof-name">
+                <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                Prof. Amit Das
+              </h3>
+              <h3 class="suggested-card-university-name">
+                <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i
+                >Calcutta University
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="suggested-products-cards">
+          <div class="suggested-product-info">
+            <img
+              src="./assets/images/single-product/its a book.jpg"
+              alt="its a book"
+              class="suggested-product-image"
+            />
+            <div class="suggested-card-text-body">
+              <h1 class="suggested-card-heading">
+                <span id="custom-purple">Notes for Advanced Maths</span>
+              </h1>
+              <h3 class="suggested-card-prof-name">
+                <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                Prof. Amit Das
+              </h3>
+              <h3 class="suggested-card-university-name">
+                <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i
+                >Calcutta University
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="suggested-products-cards">
+          <div class="suggested-product-info">
+            <img
+              src="./assets/images/single-product/its a book.jpg"
+              alt="its a book"
+              class="suggested-product-image"
+            />
+            <div class="suggested-card-text-body">
+              <h1 class="suggested-card-heading">
+                <span id="custom-purple">Notes for Advanced Maths</span>
+              </h1>
+              <h3 class="suggested-card-prof-name">
+                <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                Prof. Amit Das
+              </h3>
+              <h3 class="suggested-card-university-name">
+                <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i
+                >Calcutta University
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="suggested-products-cards">
+          <div class="suggested-product-info">
+            <img
+              src="./assets/images/single-product/its a book.jpg"
+              alt="its a book"
+              class="suggested-product-image"
+            />
+            <div class="suggested-card-text-body">
+              <h1 class="suggested-card-heading">
+                <span id="custom-purple">Notes for Advanced Maths</span>
+              </h1>
+              <h3 class="suggested-card-prof-name">
+                <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                Prof. Amit Das
+              </h3>
+              <h3 class="suggested-card-university-name">
+                <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i
+                >Calcutta University
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
