@@ -1,85 +1,33 @@
-#home .above-search-bar-text{
-        text-align: center;
-        padding: 100px 0 420px 0;
-        font-size: 60px;
-        font-weight: 500;
-    }
+<div class="notes-image-area notes-image">
+        <img src="./assets/images/single-product-page/back.jpg" alt="">
+        <input type="button" value="Buy Now" class="buy-now-btn">
+        <input type="button" value="Add to Cart" class="add-to-cart-btn">
+      </div>
 
-
-
-
-red used : #FF4133
-
-purple used : #6534CC
-
-
-
-
-@media only screen and (max-width: 768px){
-    #home{
-        background-image: url(../assets/mobile/images/first-section.png);
-        width: 100%;
-        height: 130vh;
-    }
-}
-
-@media only screen and (max-width: 990px){
-    #home .above-search-bar-text {
-        text-align: center;
-        padding: 105px 0 20px 0;
-        font-size: 65px;
-        font-weight: 600;
-    }
-}
-
-
-
-@media only screen and (max-width: 770px){
-    #home .above-search-bar-text {
-        text-align: center;
-        padding: 105px 0 20px 0;
-        font-size: 50px;
-        font-weight: 600;
-    }
-}
-
-
-@media only screen and (max-width: 740px){
-    #home .above-search-bar-text {
-        text-align: center;
-        padding: 105px 0 20px 0;
-        font-size: 50px;
-        font-weight: 600;
-    }
-
-    #home .above-search-bar-text .tagline-text{
-        font-size: 20px;
-    }
-    .seach-box{
-        padding-top: 20px;
-    }
-    
-    .seach-box input {
-        height: 50px;
-        width: 400px;
-        border-width: 1.5px;
-        border-color: #FF4133;
-        border-radius: 25px;
-    }
-    
-    .seach-box input[type="text"] {
-        padding: 20px;
-    }
-    
-}
-
-@media only screen and (max-width: 600px) {
-
-    .search-box {
-        width: 55%;
-        position: absolute;
-    }
-}
-
-
-background-size: 50% auto;
+      <div class="suggested-products-area">
+        <h1 class="suggested-products-heading">
+          <span id="custom-red">Suggested Products</span>
+        </h1>
+        <div class="suggested-products-cards">
+          <div class="suggested-product-info">
+            <img
+              src="./assets/images/single-product/its a book.jpg"
+              alt="its a book"
+              class="suggested-product-image"
+            />
+            <div class="suggested-card-text-body">
+              <h1 class="suggested-card-heading">
+                <span id="custom-purple">Notes for Advanced Maths</span>
+              </h1>
+              <h3 class="suggested-card-prof-name">
+                <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                Prof. Amit Das
+              </h3>
+              <h3 class="suggested-card-university-name">
+                <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i
+                >Calcutta University
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>

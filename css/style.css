@@ -456,16 +456,16 @@
 }
 
 .bg-custom-blur {
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
 }
-.navbar-nav li .navbar-talkshala{
-  font-size: 25px;;
+.navbar-nav li .navbar-talkshala {
+  font-size: 25px;
 }
-.results-found{
+.results-found {
   font-size: 20px;
 }
 
-.notes-info-tab{
+.notes-info-tab {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 30px;
   margin: 10px 0px 10px 0;
@@ -476,29 +476,29 @@
   height: 200px;
 }
 
-.card-text-body{
+.card-text-body {
   float: right;
   padding: 0rem;
   margin-right: 100px;
 }
 
-.card-heading{
+.card-heading {
   font-size: 55px;
   padding-top: 30px;
 }
 
-.prof-name{
+.prof-name {
   font-size: 30px;
   float: left;
 }
-.university-name{
+.university-name {
   font-size: 30px;
   float: right;
 }
 
-.load-more{
-  color: #6534CC;
-  border: 1px solid #FF4133;
+.load-more {
+  color: #6534cc;
+  border: 1px solid #ff4133;
   border-radius: 35px;
 }
 
@@ -514,17 +514,173 @@
             ************
 */
 
-.navigation{
+.navigation {
   padding: 25px 0px;
 }
 
-.heading-title{
+.heading-title {
   float: left;
 }
 
-.heading-title-menu{
+.heading-title-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.heading-title-menu li {
   float: right;
 }
+
+.heading-title-menu li a {
+  font-size: 25px;
+  padding-right: 20px;
+}
+
+.single-product-page-rating {
+  padding-top: 10px;
+}
+
+.rating-stars {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rating-stars li {
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.rating-number {
+  margin-left: 100px;
+}
+
+#number-rating {
+  padding: 0px 10px;
+}
+#upload-area {
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+notes-image {
+  background-image: url("../assets/images/single-product-page/back.jpg");
+  width: 540px;
+  height: 300px;
+  background-size: cover;
+}
+
+.notes-image img {
+  width: 100%;
+  height: auto;
+}
+
+.notes-image .buy-now-btn {
+  position: absolute;
+  bottom: 2%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  outline: none;
+  color: #6534cc;
+  border: 1px solid #ff4133;
+  border-radius: 30px;
+  width: 131px;
+  height: 36px;
+}
+
+.notes-image .add-to-cart-btn {
+  position: absolute;
+  bottom: 2%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  outline: none;
+  color: #6534cc;
+  border: 1px solid #ff4133;
+  border-radius: 30px;
+  width: 131px;
+  height: 36px;
+}
+
+.notes-image .btn-2 {
+  position: absolute;
+  bottom: 2%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.notes-image-area {
+  float: left;
+  margin-right: 2em;
+}
+.suggested-products-area {
+  margin: auto;
+  margin-bottom: 7%;
+}
+
+.course-and-suggested-area {
+  margin-top: 30px;
+}
+
+.suggested-products-heading {
+  font-size: 20px;
+}
+
+.suggested-product-image {
+  width: 50px;
+  height: 50px;
+}
+
+.suggested-product-info {
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  /*padding: 30px;*/
+  margin: 25px 0px 35px 0;
+}
+
+.suggested-card-heading {
+  font-size: 20px;
+  /*padding-top: 30px;*/
+}
+
+.suggested-card-prof-name {
+  font-size: 10px;
+  float: left;
+}
+
+.suggested-card-university-name {
+  font-size: 10px;
+  float: right;
+}
+
+.suggested-card-text-body {
+  float: right;
+  padding: 0rem;
+  margin-right: 10px;
+}
+
+.single-product-prof-details-area {
+  float: left;
+}
+
+.single-product-prof-vector {
+  float: left;
+}
+
+.single-product-prof-details{
+  float: right;
+}
+
+.single-product-user-comments {
+  float: right;
+}
+
 /*
             ************
         Single Product Page Ends
