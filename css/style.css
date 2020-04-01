@@ -28,8 +28,7 @@
   text-decoration: underline #ff4133;
 }
 
-#services {
-}
+#services {}
 
 #home {
   background-image: url(../assets/images/home-bg.jpg);
@@ -46,8 +45,7 @@
   font-weight: 600;
 }
 
-#home .tagline-text {
-}
+#home .tagline-text {}
 
 #custom-purple {
   color: #6534cc;
@@ -200,6 +198,7 @@
   padding: 20px;
   color: #fff;
 }
+
 .site-footer .copyright-area #footer-copyright-text {
   padding: 20px;
   padding-left: 325px;
@@ -309,10 +308,12 @@
     width: 125px;
     height: 35px;
   }
+
   .seach-box input {
     height: 1px;
     width: 290px;
   }
+
   #home {
     background-image: url(../assets/mobile/images/first-section.png);
     height: 100vh;
@@ -320,45 +321,55 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
   #home .above-search-bar-text {
     text-align: center;
     padding: 95px 0 20px 0;
     font-size: 28px;
     font-weight: 600;
   }
+
   #home .tagline-text {
     font-size: 14px;
   }
+
   .services .services-heading {
     font-size: 19px;
   }
+
   .talkshala .talkshala-h1 {
     font-size: 20px;
   }
+
   .talkshala .talkshala-description {
     padding-left: 20px;
   }
+
   .talkshala-icons {
     width: 85px;
     height: 82px;
     float: left;
     padding-right: 7px;
   }
+
   .talkshala .talkshala-description #talkshala-heading {
     color: #6534cc;
     font-size: 10px;
     font-weight: 700;
   }
+
   .talkshala .talkshala-description #talkshala-heading {
     color: #6534cc;
     font-size: 10px;
     font-weight: 700;
   }
+
   .site-footer .copyright-area #footer-copyright-text {
     padding: 0px;
     padding-left: 0px;
     padding-top: 0px;
   }
+
   .newsletter-text input {
     height: 50px;
     width: 175px;
@@ -366,15 +377,18 @@
     border-color: red;
     border-radius: 16px 0 0 16px;
   }
+
   .newsletter .newsletter-text h1 {
     font-size: 30px;
   }
+
   .join-area {
     background-image: url();
     height: 15vh;
     background-size: cover;
     background-repeat: no-repeat;
   }
+
   .talkshala #join-btn {
     border-radius: 45px;
     width: 227px;
@@ -395,14 +409,17 @@
     background-size: cover;
     width: 100%;
   }
+
   .talkshala .talkshala-description {
     padding-left: 45px;
   }
+
   .talkshala .talkshala-description #talkshala-heading {
     color: rgb(101, 52, 204);
     font-size: 10px;
     font-weight: 700;
   }
+
   .talkshala .talkshala-description #talkshala-text {
     font-size: 9px;
   }
@@ -432,7 +449,7 @@
             ************
 */
 
-nav {
+.custom-nav {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0);
 }
 
@@ -441,6 +458,7 @@ nav {
   outline: none;
   margin-left: 16em;
 }
+
 .nav-seach-box {
   padding-top: 23px;
   outline: none;
@@ -462,9 +480,11 @@ nav {
 .bg-custom-blur {
   background-color: #ffffff !important;
 }
+
 .navbar-nav li .navbar-talkshala {
   font-size: 25px;
 }
+
 .results-found {
   font-size: 20px;
 }
@@ -495,6 +515,7 @@ nav {
   font-size: 30px;
   float: left;
 }
+
 .university-name {
   font-size: 30px;
   float: right;
@@ -517,6 +538,12 @@ nav {
         Single Product Page
             ************
 */
+
+
+.single-page-container {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
 
 .navigation {
   padding: 25px 0px;
@@ -567,6 +594,7 @@ nav {
 #number-rating {
   padding: 0px 10px;
 }
+
 #upload-area {
   justify-content: space-between;
   padding: 0px 20px;
@@ -621,7 +649,7 @@ nav {
 }
 
 .course-and-suggested-area .suggested-products-heading {
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .suggested-products-heading {
@@ -629,14 +657,19 @@ nav {
 }
 
 .suggested-product-image {
-  width: 100px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
   margin-left: 1rem;
+}
+
+.suggested-products-area {
+  margin-left: 3rem;
+  margin-right: 4rem;
 }
 
 .suggested-product-info {
   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-  /*padding: 30px;*/
+  padding-right: 2rem;
   margin: 25px 0px 35px 0;
 }
 
@@ -680,6 +713,15 @@ nav {
 
 .single-product-user-comments-heading {
   font-size: 25px;
+}
+
+.custom-links {
+  color: black;
+  text-decoration: none;
+}
+
+.custom-links:hover{
+  text-decoration: none;
 }
 
 /*
