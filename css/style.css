@@ -178,8 +178,19 @@
 }*/
 
 .newsletter .newsletter-top-img {
+  background-image: url(../assets/images/web-email/web-email-section-top.png);
   width: 100%;
   height: 35vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.newletter-below-img{
+  background-image: url(../assets/images/web-email/below.png);
+  width: 100%;
+  height: 42vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .newsletter .newsletter-text h1 {
