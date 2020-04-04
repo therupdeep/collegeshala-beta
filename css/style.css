@@ -518,7 +518,7 @@
 @media (max-width: 411px) {
   #home {
     background-image: url(../assets/mobile/images/first-section.png);
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
@@ -526,6 +526,13 @@
 }
 
 @media (max-width: 320px) {
+  #home {
+    background-image: url(../assets/mobile/images/first-section.png);
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   #home .above-search-bar-text {
     font-size: 1.5rem;
   }
@@ -539,15 +546,7 @@
   }
 }
 
-@media (max-width: 320px) {
-  #home {
-    background-image: url(../assets/mobile/images/first-section.png);
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
+
 /*
             ************
         Landing Page Styles Ends 
