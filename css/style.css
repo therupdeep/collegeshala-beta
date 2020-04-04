@@ -105,7 +105,7 @@
   padding: 5px 45px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /*display: inline-block;*/
   margin: 4px 2px;
   outline: none;
   border-radius: 16px;
@@ -185,7 +185,7 @@
   background-size: cover;
 }
 
-.newletter-below-img{
+.newletter-below-img {
   background-image: url(../assets/images/web-email/below.png);
   width: 100%;
   height: 42vh;
@@ -299,8 +299,30 @@
   margin: 0;
 }
 
+@media (max-width: 1486px) {
+  .navbar .nav-link {
+    padding-top: 20px !important;
+    padding-right: 3.1rem !important;
+    color: #0f0623 !important;
+    font-weight: 500 !important;
+    font-size: 22px;
+    padding-bottom: 5px;
+  }
+}
+
+@media (max-width: 1380px) {
+  .navbar .nav-link {
+    padding-top: 20px !important;
+    padding-right: 2.5rem !important;
+    color: #0f0623 !important;
+    font-weight: 500 !important;
+    font-size: 22px;
+    padding-bottom: 5px;
+  }
+}
+
 @media (max-width: 991px) {
-  .site-footer [class^="col-"] {
+  .site-footer [class="col-"] {
     margin-bottom: 30px;
   }
 }
