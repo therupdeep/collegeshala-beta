@@ -838,3 +838,38 @@
         Single Product Page Ends
             ************
 */
+
+
+/*
+            ************
+        Student Dashboard page Styles
+            ************
+*/
+
+.student-dash-nav{
+  font-size: 20px;
+  padding: 35px 0px;
+}
+
+
+.student-dash-nav a{
+  color: black;
+  font-size: 25px;
+}
+
+.student-dash-nav a:hover{
+  text-decoration: underline #ff4133;
+  font-size: 25px;
+}
+
+.student-dashboard-main-heading {
+  /* padding-left: 13rem; */
+  padding: 20px 0px 20px 150px;
+  font-size: 75px;
+}
+
+/*
+            ************
+        Student Dashboard page Styles
+            ************
+*/
