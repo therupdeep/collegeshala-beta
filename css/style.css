@@ -551,7 +551,6 @@
   }
 }
 
-
 /*
             ************
         Landing Page Styles Ends 
@@ -844,7 +843,6 @@
             ************
 */
 
-
 /*
             ************
         Student Dashboard page Styles
@@ -856,7 +854,6 @@
   padding: 35px 0px;
 }
 
-
 .student-dash-nav a {
   color: black;
   font-size: 25px;
@@ -866,7 +863,6 @@
   text-decoration: underline #ff4133;
   font-size: 25px;
 }
-
 
 .student-dashboard-main-heading {
   /* padding-left: 13rem; */
@@ -915,7 +911,10 @@
     padding-top: 27px;
     outline: none;
     margin-left: 0px;
-}
+  }
+  .student-dashboard-material .card{
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 320px) {
@@ -934,7 +933,6 @@
     margin: 30px 0px;
   }
 }
-
 
 /*
             ************
