@@ -15,6 +15,10 @@
   height: 60px;
 }
 
+.home-container{
+  scroll-behavior: smooth;
+}
+
 .navbar .nav-link {
   padding-top: 20px !important;
   padding-right: 3.5rem !important;
@@ -231,12 +235,12 @@
 
 .site-footer .copyright-area {
   background-color: #0f0623;
-  padding: 20px;
+  padding: 1px;
   color: #fff;
 }
 
 .site-footer .copyright-area #footer-copyright-text {
-  
+  padding-top: 13px;
 }
 
 .site-footer h6 {
@@ -294,9 +298,6 @@
   /* border-radius: 100%;*/
 }
 
-.copyright-text {
-  margin: 0;
-}
 
 @media (max-width: 1486px) {
   .navbar .nav-link {
@@ -331,10 +332,6 @@
     padding-bottom: 0;
   }
 
-  .site-footer .copyright-text,
-  .site-footer .social-icons {
-    text-align: center;
-  }
 }
 
 .social-icons a:active,
@@ -952,5 +949,24 @@
 /*
             ************
         Student Account page Styles ends
+            ************
+*/
+
+
+
+/*
+            ************
+        Coming soon page Styles
+            ************
+*/
+.coming-soon-heading{
+    margin-top: 15rem;
+    font-size: 7rem;
+}
+
+
+/*
+            ************
+        Coming soon page Styles
             ************
 */
