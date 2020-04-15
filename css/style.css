@@ -15,9 +15,6 @@
   height: 60px;
 }
 
-.home-container{
-  scroll-behavior: smooth;
-}
 
 .navbar .nav-link {
   padding-top: 20px !important;
@@ -38,7 +35,7 @@
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: center;
 }
 
 #home .above-search-bar-text {
