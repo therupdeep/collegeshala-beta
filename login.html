@@ -56,7 +56,17 @@
                     <div class="col-6 input-column">
                         <p id="password-reset">Lorem Ipsum for explaining the next steps
                             for recovering the password.</p>
-                        <input type="text" class="input-text" placeholder="Enter your email address" name="email">
+                        <input type="text" class="input-text" placeholder="Enter your email address" name="emailforgot">
+                    </div>
+                </div>
+                <div id="step-3" class="row details-container" style="display: none;">
+                    <div class="col-6 image-column">
+                        <img class="info-image" src="./assets/images/signin-card.png" alt="forgot-password"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <input type="text" class="input-text" placeholder="Enter Code Send to Phone" name="code">
+                        <input type="password" class="input-text" name="password1" placeholder="Enter new password">
+                        <input type="password" class="input-text" name="passwordconf" placeholder="Re-type password">
                     </div>
                 </div>
                 <div id="nextbtn" class="next" onmouseover="document.getElementById('nextbtn').style = 'cursor: pointer'" onclick="handleLogin()">
@@ -79,7 +89,12 @@
                 document.getElementById(`step-${step+1}`).style = "display: inline-flex":
                 document.getElementById(`step-${step+1}`).style = "display: initial";
             if(step === 1){
-                document.getElementById('nextbtn').innerHTML = 'Send Link<img id="nextimg" src="assets/logo/next.png">';
+                document.getElementById('nextbtn').innerHTML = 'Send Code<img id="nextimg" src="assets/logo/next.png">';
+                document.getElementById('nextbtn').setAttribute('onClick',"handleForgetPassword()");
+            }
+            else if(step === 2){
+                document.getElementById('nextbtn').innerHTML = 'Update Password<img id="nextimg" src="assets/logo/next.png">';
+                document.getElementById('nextbtn').setAttribute('onClick',"handleResetPassword()");
             }
             step=step+1;
         }
@@ -87,11 +102,12 @@
         function back() {
             if(step != 1) {
                 document.getElementById(`step-${step}`).style = "display: none";
+                step = (step === 2)?step - 1:step-2;
                 (window.innerWidth > 800)?
-                    document.getElementById(`step-${step-1}`).style = "display: inline-flex":
-                    document.getElementById(`step-${step-1}`).style = "display: initial";
+                    document.getElementById(`step-${step}`).style = "display: inline-flex":
+                    document.getElementById(`step-${step}`).style = "display: initial";
                 document.getElementById('nextbtn').innerHTML = 'Sign IN<img id="nextimg" src="assets/logo/next.png">';
-                step = step - 1;
+                document.getElementById('nextbtn').setAttribute('onclick', 'handleLogin()');
             }
             else {
                 document.getElementById('back').href = "/register.html";
@@ -112,6 +128,24 @@
                 alert(err);
             }
             logIn(userData,onSuccess,onFailure);
+        }
+        function handleForgetPassword() {
+            var email = $("input[name='emailforgot']").val();
+            forgotPassword(email);
+            console.log(email)
+        }
+        function handleResetPassword() {
+            var email = $("input[name='emailforgot']").val();
+            var code = $("input[name='code']").val();
+            var password =  $("input[name='password1']").val();
+            var password2 =  $("input[name='passwordconf']").val();
+            console.log('password2',password2,'sdsd',password);
+            if(password === password2) {
+                console.log(code,email,password);
+                resetPassword(code,email,password);
+            }
+            else
+                alert('Passwords dont match');
         }
 
     </script>

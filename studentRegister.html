@@ -64,9 +64,10 @@
                         <div class="info-about">Tell us <span style="color: #FF4133;">about</span> your college...</div>
                         <img class="info-image" src="./assets/images/college-details-student-card 1.png" alt="Register as student"/>
                     </div>
-                    <div class="col-6 input-column">
-                        <select onchange="changeCllg()" type="text" class="input-text" id="cname">
-                            <option value="select-degree">-Select College-</option>
+                    <div class="col-6 input-column" style="padding-top: 1vh;padding-bottom: 0;">
+                        <input type="text" class="input-text" placeholder="Enter your college's name" name="cname">
+                        <select onchange="changeCllg()" type="text" class="input-text" id="uname">
+                            <option value="select-degree">-Select University-</option>
                             <option value="Calcutta-University">Calcutta University</option>
                         </select>
                         <select class="input-text select-degree" id="select-degree">
@@ -121,7 +122,7 @@
     <script>
         var defaultcllg = "select-degree"
         var changeCllg = () => {
-            var opt = document.getElementById('cname');
+            var opt = document.getElementById('uname');
             console.log(opt.value);
             document.getElementById(defaultcllg).style = "display: none";
             document.getElementById(opt.value).style = "display: inline-block";
@@ -182,10 +183,13 @@
                 email: $("input[name='email']").val(),
                 password: $("input[name='password']").val(),
                 cllgname: $("input[name='cname']").val(),
-                degree: $("input[name='degree']").val(),
+                univname: $("select[id='uname']").val(),
+                degree: $("select[id='degree']").val(),
                 sem: $("input[name='sem']").val(),
-                phone: $("input[name='phno']").val(),
+                phone: '+91'+ $("input[name='phno']").val(),
+                isProfessor: 'false',
             }
+            console.log(userData);
             var onSuccess = function registerSuccess(result) {
                 var cognitoUser = result.user;
                 console.log('Check user here : ',cognitoUser);
@@ -193,27 +197,11 @@
             }
             var onFailure = function registerFailure(err) {
                 alert(err);
+                console.error(err);
             }
             register(userData,onSuccess,onFailure);
         }
-
-        function handleVerify() {
-            var email = $("input[name='email']").val();
-            var code = $("input[name='otp']").val();
-            verify(email, code,
-                function verifySuccess(result) {
-                    console.log('call result: ' + result);
-                    console.log('Successfully verified');
-                    verifych=true;
-                    next();
-                },
-                function verifyError(err) {
-                    console.log(err,err.stack)
-                    alert(err);
-                }
-            );
-        }
-
+        
     </script>
 
 
