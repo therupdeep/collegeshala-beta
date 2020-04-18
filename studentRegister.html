@@ -75,7 +75,7 @@
                         </select>
                         <select class="input-text select-degree" id="Calcutta-University" style="display: none;">
                             <option value="">-Select Degree-</option>
-                            <option value="English">English Honors</option>
+                            <option value="BCom">B-Com</option>
                         </select>
                         <input type="text" class="input-text" placeholder="You are in which semester?" name="sem">
                     </div>
@@ -178,13 +178,14 @@
         }
 
         function handleSubmit() {
+            var univ = $("select[id='uname']").val();
             var userData = {
                 name: $("input[name='fname']").val(),
                 email: $("input[name='email']").val(),
                 password: $("input[name='password']").val(),
                 cllgname: $("input[name='cname']").val(),
-                univname: $("select[id='uname']").val(),
-                degree: $("select[id='degree']").val(),
+                univname: univ,
+                degree: $(`select[id=${univ}]`).val(),
                 sem: $("input[name='sem']").val(),
                 phone: '+91'+ $("input[name='phno']").val(),
                 isProfessor: 'false',
