@@ -74,40 +74,8 @@
     <h1 class="student-dashboard-main-heading">My Study Materials</h1>
 
     <div class="container student-dashboard-material">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-121 col-md-4">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row notes">
+            <!-- notes card here -->
         </div>
         <nav aria-label="Page navigation example" class="text-center pt-4">
             <ul class="pagination justify-content-center">
@@ -231,10 +199,22 @@
         }
 
         function setData(args) {
-            for(let note of args) {
-                $(".card-title").html(`${note.name}`);
-                // console.log(t)
-            }
+            args.map(note => {
+                $('.notes').append(
+                    `<div class="col-121 col-md-4">
+                <div class="card" id="card">
+                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">${note.name}</h4>
+                        <h5 class="professor">By ${note.byProfessor}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>`
+                );
+            })
         }
     </script>
 </body>
