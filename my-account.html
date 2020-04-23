@@ -62,77 +62,86 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item"><a href="#">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">All Product</li>
+        <li class="breadcrumb-item active" aria-current="page">My  Account</li>
       </ol>
     </nav>
   </div>
 
-
-  <div class="container pt-1">
-    <p class="results-found">
-      <span id="custom-red">4</span> Result(s) found
-    </p>
-  </div>
-  <div class="container">
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
+  <div class="container student-dash-nav">
+    <div class="row">
+      <div class="col-sm text-center">
+        <a href="./my-account.html">My Account</a>
       </div>
-    </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
+      <div class="col-sm text-center">
+        <a href="">My Materials</a>
       </div>
-    </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
+      <div class="col-sm text-center">
+        <a href="">My Transactions</a>
       </div>
-    </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
-      </div>
-    </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
+      <div class="col-sm text-center">
+        <a href="./coming-soon.html">Q/A Forum</a>
       </div>
     </div>
   </div>
 
 
-    <!-- Site footer -->
+  <div class="container student-account">
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <form action="#" method="post">
+          <div class="form-row mb-1">
+            <div class="col">
+              <label for="exampleInputEmail1">First Name</label>
+              <input type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="col">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter email" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">College Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="College Name" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Degree Pursuing</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Degree Pursuing" />
+          </div>
+          <div class="form-group">
+            <label for="inputState">Semester</label>
+            <select id="inputState" class="form-control">
+              <option>first</option>
+              <option>Second</option>
+              <option>Third</option>
+              <option>Fourth</option>
+              <option>Fifth</option>
+              <option>Sixth</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Phone Number</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Phone Number" />
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+          <button type="submit" class="btn btn-secondary">Discard Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="row">
