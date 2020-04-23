@@ -33,7 +33,7 @@
   background-image: url(../assets/images/home-bg.jpg);
   height: 120vh;
   width: 100%;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 
 }
@@ -111,7 +111,7 @@
   /*display: inline-block;
   margin: 4px 2px;*/
   outline: none;
-  display: block;
+  display: inline-block;
   border-radius: 16px;
 }
 
