@@ -9,3 +9,11 @@ $(document).ready(function() {
         }, 1000);
     });
 })
+
+
+var remove_from_cart = document.getElementById('remove');
+
+
+remove_from_cart.addEventListener('click', function () {
+    console.log("clicked")
+});

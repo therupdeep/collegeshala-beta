@@ -517,6 +517,7 @@
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
+    -webkit-background-size: cover;
   }
 }
 
@@ -580,7 +581,7 @@
   outline: none;
 }
 
-.breadcrumb{
+.breadcrumb {
   background-color: #fff;
 }
 
@@ -643,6 +644,95 @@
         All product page Styles Ends
             ************
 */
+
+
+
+/*
+            ************
+        Cart page Styles Ends
+            ************
+*/
+
+
+
+.cart-notes-info-tab #remove {
+  float: right;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  font-size: 33px;
+}
+
+.cart-notes-info-tab {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 30px;
+  margin: 10px 0px 10px 0;
+}
+
+.cart .card-text-body {
+  float: right;
+  padding: 0rem;
+  margin-right: 100px;
+}
+
+.cart .university-name {
+  font-size: 30px;
+  float: right;
+  margin-right: 6rem;
+}
+
+.cart .card-heading {
+  font-size: 55px;
+  padding-top: 30px;
+}
+
+.cart .notes-details {
+  font-size: 30px;
+  float: left;
+}
+
+.cart .notes-details span {
+  margin-left: 1rem;
+}
+
+
+.cart .custom-card-image {
+  width: 170px;
+  height: 200px;
+}
+
+.total-cart #box {
+  margin: 3rem 25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+}
+
+.cart-total-amount {
+  margin-left: 6rem;
+}
+
+.total-cart .cart-total-heading {
+  padding-left: 1.5rem;
+  font-size: 22px;
+}
+
+.checkout-btn-cart {
+  margin-left: 5.5rem;
+  font-size: 20px;
+}
+
+
+
+/*
+            ************
+        Cart page Styles Ends
+            ************
+*/
+
+
+
+
+
+
 
 /*
             ************
@@ -909,7 +999,8 @@
     outline: none;
     margin-left: 0px;
   }
-  .student-dashboard-material .card{
+
+  .student-dashboard-material .card {
     margin-bottom: 2rem;
   }
 }
@@ -943,7 +1034,7 @@
             ************
 */
 
-.student-account{
+.student-account {
   margin-top: 2rem;
 }
 
@@ -961,9 +1052,9 @@
         Coming soon page Styles
             ************
 */
-.coming-soon-heading{
-    margin-top: 15rem;
-    font-size: 7rem;
+.coming-soon-heading {
+  margin-top: 15rem;
+  font-size: 7rem;
 }
 
 
