@@ -720,6 +720,8 @@
   font-size: 20px;
 }
 
+@media (max-width: 320px) {}
+
 
 
 /*
@@ -938,7 +940,7 @@
 
 .student-dash-nav {
   font-size: 20px;
-  padding: 35px 0px;
+  margin-top: 3rem;
 }
 
 .student-dash-nav a {
@@ -1039,6 +1041,92 @@
 }
 
 
+.student-dash-nav {
+  font-size: 20px;
+  margin-top: 3rem;
+}
+
+.student-dash-nav a {
+  color: black;
+  font-size: 25px;
+}
+
+.student-dash-nav a:hover {
+  text-decoration: underline #ff4133;
+  font-size: 25px;
+}
+
+.student-dashboard-main-heading {
+  /* padding-left: 13rem; */
+  padding: 30px 0px 30px 208px;
+  font-size: 50px;
+}
+
+.pagination {
+  margin-top: 10px;
+}
+
+@media (max-width: 1426px) {
+  .student-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 163px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1278px) {
+  .student-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 75px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1182px) {
+  .student-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 111px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1186px) {
+  .student-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 125px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-seach-box {
+    padding-top: 27px;
+    outline: none;
+    margin-left: 0px;
+  }
+
+  .student-dashboard-material .card {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .student-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    /* padding: 30px 0px 30px 208px; */
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 414px) {
+  .student-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 0px 0px 0px 85px;
+    font-size: 20px;
+    margin: 30px 0px;
+  }
+}
+
 /*
             ************
         Student Account page Styles ends
@@ -1061,5 +1149,147 @@
 /*
             ************
         Coming soon page Styles
+            ************
+*/
+
+
+
+
+/*
+            ************
+        Teacher Dashboard page Styles
+            ************
+*/
+
+.student-account {
+  margin-top: 2rem;
+}
+
+
+.student-dash-nav {
+  font-size: 20px;
+  margin-top: 3rem;
+}
+
+.student-dash-nav a {
+  color: black;
+  font-size: 25px;
+}
+
+.student-dash-nav a:hover {
+  text-decoration: underline #ff4133;
+  font-size: 25px;
+}
+
+.teacher-dashboard-main-heading {
+  /* padding-left: 13rem; */
+  padding: 0px;
+  font-size: 38px;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #6534cc;
+  background-color: #f9f9f9;
+  display: inline-block;
+  padding: 0.8rem;
+  margin-top: 0.2rem;
+  border-radius: 80px;
+  width: 140px;
+  border-width: 2px;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+  
+}
+
+.pagination {
+  margin-top: 10px;
+}
+
+@media (max-width: 1426px) {
+  .teacher-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 163px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1278px) {
+  .teacher-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 75px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1182px) {
+  .teacher-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 111px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1186px) {
+  .teacher-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 30px 0px 30px 125px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-seach-box {
+    padding-top: 27px;
+    outline: none;
+    margin-left: 0px;
+  }
+
+  .student-dashboard-material .card {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .teacher-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    /* padding: 30px 0px 30px 208px; */
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 414px) {
+  .teacher-dashboard-main-heading {
+    /* padding-left: 13rem; */
+    padding: 0px 0px 0px 85px;
+    font-size: 20px;
+    margin: 30px 0px;
+  }
+}
+
+
+
+.student-dash-nav a .active {
+  background-color: blue;
+}
+
+
+
+
+/*
+            ************
+        Teacher Dashboard page Styles Ends
             ************
 */
