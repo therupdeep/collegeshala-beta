@@ -183,12 +183,11 @@
                 $.ajax({
                     method: 'POST',
                     url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/getnotes",
+                    // url: "http://api.collegeshala.com/getnotes",
                     headers: {
                         authorization: token
                     },
-                    data: JSON.stringify({        //not needed here
-                        data: {},
-                    }),
+                    body: {},
                     contentType: 'application/json',
                     success: function complete(result) {
                         console.log(result);
