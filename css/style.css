@@ -1187,31 +1187,16 @@
   font-size: 38px;
 }
 
-.inputfile {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
 
-.inputfile+label {
-  font-size: 1.25em;
-  font-weight: 700;
-  color: #6534cc;
-  background-color: #f9f9f9;
-  display: inline-block;
-  padding: 0.8rem;
-  margin-top: 0.2rem;
-  border-radius: 80px;
-  width: 140px;
-  border-width: 2px;
-}
-
-.inputfile:focus+label,
-.inputfile+label:hover {
-  
+#teacher-upload-button {
+  border-radius: 45px;
+    width: 170px;
+    border-color: #ff4133;
+    outline: none;
+    color: #6534cc;
+    margin-top: 50px;
+    font-size: 16px;
+    border-width: 2px;
 }
 
 .pagination {
@@ -1221,7 +1206,7 @@
 @media (max-width: 1426px) {
   .teacher-dashboard-main-heading {
     /* padding-left: 13rem; */
-    padding: 30px 0px 30px 163px;
+    padding: 0px;
     font-size: 50px;
   }
 }
@@ -1229,7 +1214,7 @@
 @media (max-width: 1278px) {
   .teacher-dashboard-main-heading {
     /* padding-left: 13rem; */
-    padding: 30px 0px 30px 75px;
+    padding: 0px;
     font-size: 50px;
   }
 }
@@ -1237,7 +1222,7 @@
 @media (max-width: 1182px) {
   .teacher-dashboard-main-heading {
     /* padding-left: 13rem; */
-    padding: 30px 0px 30px 111px;
+    padding: 0px;
     font-size: 50px;
   }
 }
@@ -1245,7 +1230,7 @@
 @media (max-width: 1186px) {
   .teacher-dashboard-main-heading {
     /* padding-left: 13rem; */
-    padding: 30px 0px 30px 125px;
+    padding: 0px;
     font-size: 50px;
   }
 }
@@ -1273,7 +1258,7 @@
 @media (max-width: 414px) {
   .teacher-dashboard-main-heading {
     /* padding-left: 13rem; */
-    padding: 0px 0px 0px 85px;
+    padding: 0px;
     font-size: 20px;
     margin: 30px 0px;
   }
