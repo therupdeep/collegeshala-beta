@@ -20,7 +20,7 @@
     <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
 </head>
 
-<body>
+<body onload="fetchNotes()">
     <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
         <a class="navbar-brand" href="#">
             <img src="./assets/images/logo.png" id="logo" alt="" />
@@ -77,40 +77,8 @@
     <h1 class="student-dashboard-main-heading">My Study Materials</h1>
 
     <div class="container student-dashboard-material">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-121 col-md-4">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row notes">
+            <!-- notes card here -->
         </div>
         <nav aria-label="Page navigation example" class="text-center pt-4">
             <ul class="pagination justify-content-center">
@@ -198,15 +166,60 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script>
+        function fetchNotes() {
+            let token = window.localStorage.getItem("idToken");
+            if (!token) {
+                console.log("User not signed in!");
+            } else {
+                $.ajax({
+                    method: 'POST',
+                    url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/getnotes",
+                    headers: {
+                        authorization: token
+                    },
+                    data: JSON.stringify({        //not needed here
+                        data: {},
+                    }),
+                    contentType: 'application/json',
+                    success: function complete(result) {
+                        console.log(result);
+                        setData(result);
+                    },
+                    error: function error(err) {
+                        console.error(err);
+                    }
+                });
+            }
+        }
+
+        function setData(args) {
+            args.map(note => {
+                $('.notes').append(
+                    `<div class="col-121 col-md-4">
+                <div class="card" id="card">
+                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">${note.name}</h4>
+                        <h5 class="professor">By ${note.byProfessor}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>`
+                );
+            })
+        }
+    </script>
 </body>
 
 </html>
