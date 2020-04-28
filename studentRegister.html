@@ -93,7 +93,8 @@
                             <option value="collegeshala-collaborators">Collegeshala collaborators</option>
                             <option value="none">None</option>
                         </select>
-                        <input type="text" class="input-text" placeholder="Enter your Phone number" name="phno">
+                        <input type="text" class="input-text" placeholder="Enter your Phone number" name="phno"><br>
+                        <input type="checkbox" name="termsconditions">     I accept terms & conditions
                         <button id="verifybtn" class="input-text"><span class="verifyph" onclick="handleSubmit()">Verify</span></button>
                         <input type="number" class="otpinput" placeholder="Enter Your OTP" name="otp">
                     </div>
@@ -179,6 +180,10 @@
         }
 
         function handleSubmit() {
+            if(!$("input[name='termsconditions']")[0].checked){
+                alert('Please accept terms and conditions');
+                return;
+            }
             var univ = $("select[id='uname']").val();
             var userData = {
                 name: $("input[name='fname']").val(),
