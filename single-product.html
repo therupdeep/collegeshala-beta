@@ -297,7 +297,7 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
@@ -305,30 +305,32 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script>
-    function fetchNotes() {
-            let token = window.localStorage.getItem("idToken");
-            if (!token) {
-                console.log("User not signed in!");
-            } else {
-                $.ajax({
-                    method: 'POST',
-                    url: "http://api.collegeshala.com/addtocart",
-                    // url: "http://api.collegeshala.com/getnotes",
-                    headers: {
-                        authorization: token
-                    },
-                    body: {},
-                    contentType: 'application/json',
-                    success: function complete(result) {
-                        console.log(result);
-                        setData(result);
-                    },
-                    error: function error(err) {
-                        console.error(err);
-                    }
-                });
-            }
-        }
+    $(".add-to-cart-btn").click(function () {
+      let token = window.localStorage.getItem("idToken");
+      if (!token) {
+        console.log("User not signed in!");
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: "http://api.collegeshala.com/addtocart",
+          headers: {
+            authorization: token,
+            "Access-Control-Allow-Headers": "*",
+            'Access-Control-Allow-Origin': '*'
+          },
+          data: JSON.stringify({
+            "noteid": "n001", // enter noteid here
+          }),
+          contentType: 'application/json',
+          success: function complete(result) {
+            console.log(result);
+          },
+          error: function error(err) {
+            console.error(err);
+          }
+        });
+      }
+    })
   </script>
 </body>
 
