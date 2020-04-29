@@ -1498,3 +1498,43 @@
         Teacher Dashboard page Styles Ends
             ************
 */
+<<<<<<< HEAD
+=======
+
+/*
+            ************
+        About Us Page Styles Starts
+            ************
+*/
+
+.highlight-para {
+  font-size: 2.1rem;
+}
+
+#About-Us {
+  border-bottom: #ff4133 2px solid;
+}
+
+#About-Us h2 {
+  color: #6534cc;
+}
+
+#About-Us .about-font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.purple-color {
+  color: #6534cc;
+}
+
+#About-Team img {
+  width: 120px;
+  margin-top: -50px;
+}
+
+#Tech-team img {
+  width: 80px;
+  margin-top: -50px;
+}
+
+>>>>>>> 29eea39747ad1d791cb904a74d4677d0f0342889
