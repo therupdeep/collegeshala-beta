@@ -1552,6 +1552,14 @@
   font-size: 7rem;
 }
 
+
+@media (max-width: 449px) {
+  .coming-soon-heading {
+    margin-top: 15rem;
+    font-size: 3rem;
+  }
+  
+}
 /*
             ************
         Coming soon page Styles
