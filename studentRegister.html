@@ -160,6 +160,12 @@
         var verifych=false;
         var step = 1;
         var progval = document.getElementById('progval');
+        function validateEmail(email){
+                var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if (reg.test(email) == false) 
+                    return false;
+                return true;
+        }
         function next() {
             if(step === 3 && !verifych){
                 handleVerify();
@@ -168,6 +174,14 @@
                 window.location.href ="/index.html"
             }
             else {
+                if(step === 1){
+                    //perform validation
+                    let email = $("input[name='email']").val();
+                    if(!validateEmail(email)) {
+                        alert("Enter valid email address");
+                        return;
+                    }
+                }
                 progval.classList.add(`progress${step}`);
                 setTimeout(() => {
                     var imgchg = document.getElementById(`step-${step+1}-img`);
