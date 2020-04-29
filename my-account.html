@@ -225,19 +225,14 @@
           headers: {
             authorization: token
           },
-          body: {
+          data: {
             AccessToken: token,
             params: {
-              'password': {
-                oldPassword: '   ',
-                newPassword: '   '
-              },
-              'college': '   ',
-              'university': '   ',
-              'phoneNo': '   ',
-              'sem': '   ',
-              'degree': '   ',
-              'fullName': '   ',
+              // 'password': {
+              //   oldPassword: 'asdfgh',
+              //   newPassword: 'qwerty'
+              // },
+              'college': 'HIT-K',
             }
           },
           contentType: 'application/json',
