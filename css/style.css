@@ -15,7 +15,6 @@
   height: 60px;
 }
 
-
 .navbar .nav-link {
   padding-top: 20px !important;
   padding-right: 3.5rem !important;
@@ -35,7 +34,6 @@
   width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
-
 }
 
 #home .above-search-bar-text {
@@ -296,7 +294,6 @@
   /* border-radius: 100%;*/
 }
 
-
 @media (max-width: 1486px) {
   .navbar .nav-link {
     padding-top: 20px !important;
@@ -329,7 +326,6 @@
   .site-footer {
     padding-bottom: 0;
   }
-
 }
 
 .social-icons a:active,
@@ -639,21 +635,218 @@
   border-radius: 35px;
 }
 
+@media (max-width: 1198px) {
+  .card-heading {
+    font-size: 45px;
+    padding-top: 30px;
+  }
+
+  .prof-name {
+    font-size: 25px;
+    float: left;
+  }
+
+  .university-name {
+    font-size: 25px;
+    float: right;
+  }
+}
+
+@media (max-width: 984px) {
+  .card-text-body {
+    float: right;
+    padding: 0rem;
+    margin-right: 20px;
+  }
+
+  .card-heading {
+    font-size: 37px;
+    padding-top: 30px;
+  }
+
+  .prof-name {
+    font-size: 18px;
+    float: left;
+  }
+
+  .university-name {
+    font-size: 19px;
+    float: right;
+  }
+
+  .custom-card-image {
+    width: 140px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 904px) {
+  .custom-card-image {
+    width: 140px;
+    height: 150px;
+  }
+
+  .notes-info-tab {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    margin: 10px 0px 10px 0;
+  }
+
+  .card-text-body {
+    float: right;
+    padding: 0rem;
+    margin-right: 0px;
+  }
+
+  .card-heading {
+    font-size: 40px;
+    padding-top: 30px;
+  }
+
+  .prof-name {
+    font-size: 20px;
+    float: left;
+  }
+
+  .university-name {
+    font-size: 20px;
+    float: right;
+  }
+}
+
+@media (max-width: 742px) {
+  .card-heading {
+    font-size: 25px;
+    padding-top: 30px;
+  }
+
+  .prof-name {
+    font-size: 15px;
+    float: left;
+  }
+
+  .university-name {
+    font-size: 15px;
+    float: right;
+  }
+
+  .custom-card-image {
+    width: 110px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 470px) {
+  .card-heading {
+    font-size: 24px;
+    padding-top: 20px;
+  }
+  .notes-info-tab {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    margin: 10px 0px 10px 0;
+  }
+  .custom-card-image {
+    width: 76px;
+    height: 94px;
+  }
+  .card-heading {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .prof-name {
+    font-size: 10px;
+    float: left;
+  }
+  .university-name {
+    font-size: 10px;
+    float: right;
+  }
+  .notes-info-tab {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 22px;
+    margin: 10px 0px 10px 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .notes-info-tab {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 13px;
+    margin: 10px 0px 10px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .card-heading {
+    font-size: 18px;
+    padding-top: 29px;
+  }
+
+  .card-text-body {
+    float: right;
+    padding: 0rem;
+    margin-right: 12px;
+  }
+
+  .notes-info-tab {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5px;
+    margin: 10px 0px 10px 0;
+  }
+
+  .prof-name {
+    font-size: 11px;
+    float: left;
+  }
+
+  .university-name {
+    font-size: 10px;
+    float: right;
+  }
+  .custom-card-image {
+    width: 95px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 320px) {
+  .custom-card-image {
+    width: 55px;
+    height: 65px;
+  }
+  .card-heading {
+    font-size: 17px;
+    padding-top: 10px;
+  }
+
+  .prof-name {
+    font-size: 9px;
+    float: left;
+  }
+
+  .university-name {
+    font-size: 9px;
+    float: right;
+  }
+  .notes-info-tab {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 7px;
+    margin: 10px 0px 10px 0;
+  }
+}
+
 /*
             ************
         All product page Styles Ends
             ************
 */
 
-
-
 /*
             ************
         Cart page Styles Ends
             ************
 */
-
-
 
 .cart-notes-info-tab #remove {
   float: right;
@@ -694,7 +887,6 @@
   margin-left: 1rem;
 }
 
-
 .cart .custom-card-image {
   width: 170px;
   height: 200px;
@@ -720,21 +912,14 @@
   font-size: 20px;
 }
 
-@media (max-width: 320px) {}
-
-
+@media (max-width: 320px) {
+}
 
 /*
             ************
         Cart page Styles Ends
             ************
 */
-
-
-
-
-
-
 
 /*
             ************
@@ -1040,7 +1225,6 @@
   margin-top: 2rem;
 }
 
-
 .student-dash-nav {
   font-size: 20px;
   margin-top: 3rem;
@@ -1064,6 +1248,55 @@
 
 .pagination {
   margin-top: 10px;
+}
+
+.student-account #inputState {
+  /* height: 45px; */
+  /* width: 300px; */
+  /* border-width: 1.5px; */
+  border-color: #ff4133;
+  border-radius: 25px;
+  outline: none;
+}
+
+.student-account #update {
+  border-radius: 30px;
+  width: 160px;
+  height: 45px;
+  /*font-size: 21px;*/
+  background-color: #ff4133;
+  outline: none;
+  border: none;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.student-account #discard {
+  border-radius: 30px;
+  width: 160px;
+  height: 45px;
+  /* font-size: 21px; */
+  /* background-color: #ff4133; */
+  outline: none;
+  border: 1px solid #ff4133;
+  margin-top: 1rem;
+  color: #ff4133;
+  margin-left: 0.5rem;
+}
+
+.student-account input {
+  height: 40px;
+  /* width: 300px; */
+  /* border-width: 1.5px; */
+  border-color: #ff4133;
+  border-radius: 25px;
+  outline: none;
+}
+
+.student-account label {
+  margin-left: 1rem;
+  font-size: 25px;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 1426px) {
@@ -1133,8 +1366,6 @@
             ************
 */
 
-
-
 /*
             ************
         Coming soon page Styles
@@ -1145,15 +1376,11 @@
   font-size: 7rem;
 }
 
-
 /*
             ************
         Coming soon page Styles
             ************
 */
-
-
-
 
 /*
             ************
@@ -1164,7 +1391,6 @@
 .student-account {
   margin-top: 2rem;
 }
-
 
 .student-dash-nav {
   font-size: 20px;
@@ -1187,16 +1413,15 @@
   font-size: 38px;
 }
 
-
 #teacher-upload-button {
   border-radius: 45px;
-    width: 170px;
-    border-color: #ff4133;
-    outline: none;
-    color: #6534cc;
-    margin-top: 50px;
-    font-size: 16px;
-    border-width: 2px;
+  width: 170px;
+  border-color: #ff4133;
+  outline: none;
+  color: #6534cc;
+  margin-top: 50px;
+  font-size: 16px;
+  border-width: 2px;
 }
 
 .pagination {
@@ -1264,14 +1489,9 @@
   }
 }
 
-
-
 .student-dash-nav a .active {
   background-color: blue;
 }
-
-
-
 
 /*
             ************
