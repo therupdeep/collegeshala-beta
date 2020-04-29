@@ -112,6 +112,9 @@
             if(step === 3 && !verifych){
                 handleVerify();
             }
+            if(step === 4) {
+                window.location.href ="/studentdashboard.html"
+            }
             else {
                 progval.classList.add(`progress${step}`);
                 setTimeout(() => {
@@ -127,7 +130,7 @@
                     document.getElementById('nextbtn').innerHTML = 'Finish<img id="nextimg" src="assets/logo/next.png">';
                 }
                 if(verifych){
-                    document.getElementById('nextbtn').innerHTML = 'Go to Dashboard<img id="nextimg" src="assets/logo/next.png">';
+                    document.getElementById('nextbtn').innerHTML = 'Go to HomePage<img id="nextimg" src="assets/logo/next.png">';
                 }
             }
         }
