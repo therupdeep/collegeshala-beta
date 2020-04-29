@@ -921,7 +921,7 @@
   font-size: 20px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .cart .custom-card-image {
     width: 140px;
     height: 170px;
@@ -945,43 +945,21 @@
 
 }
 
-@media (max-width: 991px) {
+@media (max-width: 990px) {
   .cart .card-text-body {
     float: right;
     padding: 0rem;
     margin-right: 40px;
   }
 
-  .cart .custom-card-image {
-    width: 120px;
-    height: 145px;
+  .cart-notes-info-tab {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+    margin: 10px 0px 10px 0;
   }
 
   .cart .card-heading {
-    font-size: 34px;
-    padding-top: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cart .card-text-body {
-    float: right;
-    padding: 0rem;
-    margin-right: 0px;
-  }
-
-  .cart .custom-card-image {
-    width: 120px;
-    height: 140px;
-  }
-
-  .cart .notes-details {
-    font-size: 16px;
-    float: left;
-  }
-
-  .cart .card-heading {
-    font-size: 30px;
+    font-size: 33px;
     padding-top: 30px;
   }
 
@@ -990,16 +968,76 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px;
   }
-}
 
-@media (max-width: 425px) {
-  .cart .custom-card-image {
-    width: 90px;
-    height: 110px;
+  .cart .notes-details span {
+    margin-left: 0.5rem;
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 990px) {
+  .cart .custom-card-image {
+    width: 100px;
+    height: 120px;
+  }
+
+  .cart .card-heading {
+    font-size: 35px;
+    padding-top: 15px;
+  }
+
+  .cart .notes-details {
+    font-size: 20px;
+    float: left;
+  }
+
+  .total-cart #box {
+    margin: 3rem 6rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart .custom-card-image {
+    width: 80px;
+    height: 105px;
+  }
+
+  .cart .card-heading {
+    font-size: 25px;
+    padding-top: 10px;
+  }
+
+  .cart .notes-details {
+    font-size: 17px;
+    float: left;
+  }
+}
+
+@media (max-width: 523px) {
+  .cart .custom-card-image {
+    width: 66px;
+    height: 90px;
+  }
+
+  .cart .card-heading {
+    font-size: 23px;
+    padding-top: 10px;
+  }
+
+  .cart .notes-details {
+    font-size: 14px;
+    float: left;
+  }
+
+  .total-cart #box {
+    margin: 3rem 4rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 460px) {
   .cart-notes-info-tab {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 8px;
@@ -1007,51 +1045,42 @@
   }
 
   .cart .card-heading {
-    font-size: 15px;
-    padding-top: 30px;
-  }
-
-  .cart .notes-details {
-    font-size: 8px;
-    float: left;
-  }
-
-  .cart .notes-details span {
-    margin-left: 0.5rem;
+    font-size: 21px;
+    padding-top: 10px;
   }
 
   .cart .card-text-body {
     float: right;
     padding: 0rem;
-    margin-right: 30px;
+    margin-right: 40px;
   }
 
-  .total-cart #box {
-    margin: 3rem 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 20px;
+  .cart .notes-details {
+    font-size: 12px;
+    float: left;
   }
+
 }
 
-@media (max-width: 330px) {
-  .cart-notes-info-tab {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 10px;
-    margin: 10px 0px 10px 0;
+@media (max-width: 417px) {
+  .cart .custom-card-image {
+    width: 50px;
+    height: 60px;
   }
 
-  .cart .custom-card-image {
-    width: 60px;
-    height: 70px;
+  .cart .card-text-body {
+    float: right;
+    padding: 0rem;
+    margin-right: 23px;
   }
 
   .cart .card-heading {
     font-size: 15px;
-    padding-top: 15px;
+    padding-top: 10px;
   }
 
   .cart .notes-details {
-    font-size: 8px;
+    font-size: 9px;
     float: left;
   }
 
@@ -1060,31 +1089,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px;
   }
-
-  .cart .notes-details span {
-    margin-left: 0.5rem;
-  }
-
-  .total-cart .cart-total-heading {
-    padding-left: 1.5rem;
-    font-size: 20px;
-  }
-
-  .cart .card-heading {
-    font-size: 14px;
-    padding-top: 15px;
-  }
-
-  .cart .card-text-body {
-    float: right;
-    padding: 0rem;
-    margin-right: 10px;
-  }
-
 }
-
-
-
 
 /*
             ************
