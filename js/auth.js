@@ -64,16 +64,17 @@ function register(userData, onSuccess, onFailure) {
         Name: 'custom:isProfessor',
         Value: userData.isProfessor,
     }
+    var univname = {
+        Name: 'custom:univname',
+        Value: userData.univname,
+    }
+    var attributeuniv = new AmazonCognitoIdentity.CognitoUserAttribute(univname);
     var attributeMail = new AmazonCognitoIdentity.CognitoUserAttribute(dataMail);
     var attributeName = new AmazonCognitoIdentity.CognitoUserAttribute(name);
     var attributePhone = new AmazonCognitoIdentity.CognitoUserAttribute(phon);
     var attributecllg = new AmazonCognitoIdentity.CognitoUserAttribute(cllgname);
     var attributeisProf = new AmazonCognitoIdentity.CognitoUserAttribute(isProfessor);
     if(userData.isProfessor === 'false') {
-        var univname = {
-            Name: 'custom:univname',
-            Value: userData.univname,
-        }
         var degree = {
             Name: 'custom:degree',
             Value: userData.degree,
@@ -82,7 +83,6 @@ function register(userData, onSuccess, onFailure) {
             Name: 'custom:sem',
             Value: userData.sem,
         }
-        var attributeuniv = new AmazonCognitoIdentity.CognitoUserAttribute(univname);
         var attributedeg = new AmazonCognitoIdentity.CognitoUserAttribute(degree);
         var attributesem = new AmazonCognitoIdentity.CognitoUserAttribute(sem);
         userPool.signUp(userData.email, userData.password, [attributePhone,attributeName,attributecllg,attributeisProf,attributeMail,attributeuniv,attributedeg,attributesem], null,
