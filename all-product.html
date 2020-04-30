@@ -1,150 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Required meta tags -->
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      gtag("config", "UA-163674715-1");
+    </script>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- Required meta tags -->
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-  <link rel="stylesheet" href="./css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
 
-  <title>College Shala</title>
-  <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<body>
-  <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
-    <a class="navbar-brand" href="/">
-      <img src="./assets/images/logo.png" id="logo" alt="" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <p class="nav-seach-box">
-            <input type="text" placeholder="Search your subject here " />
-          </p>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link navbar-talkshala" href="/coming-soon.html">
-            TalkShala
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <title>College Shala</title>
+    <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
+  </head>
 
-  <div class="container pt-4">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">All Product</li>
-      </ol>
+  <body>
+    <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
+      <a class="navbar-brand" href="/">
+        <img src="./assets/images/logo.png" id="logo" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <p class="nav-seach-box">
+              <input type="text" placeholder="Search your subject here " />
+            </p>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link navbar-talkshala" href="/coming-soon.html">
+              TalkShala
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
-  </div>
 
+    <div class="container pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            All Product
+          </li>
+        </ol>
+      </nav>
+    </div>
 
-  <div class="container pt-1">
-    <p class="results-found">
-      <span id="custom-red">4</span> Result(s) found
-    </p>
-  </div>
-  <div class="container">
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
+    <div class="container pt-1">
+      <p class="results-found">
+        <span id="custom-red">4</span> Result(s) found
+      </p>
+    </div>
+    <div class="container">
+      <div class="notes-info-tab">
+        <img
+          src="./assets/images/single-product/its a book.jpg"
+          alt="its a book"
+          class="custom-card-image"
+        />
+        <div class="card-text-body">
+          <h1 class="card-heading">
+            <span id="custom-purple">Notes for Advanced Maths</span>
+          </h1>
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <h3 class="prof-name">
+            <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof.
+            Amit Das
+          </h3>
+          <h3 class="university-name">
+            <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta
+            University
+          </h3>
+        </div>
+      </div>
+      <div class="notes-info-tab">
+        <img
+          src="./assets/images/single-product/its a book.jpg"
+          alt="its a book"
+          class="custom-card-image"
+        />
+        <div class="card-text-body">
+          <h1 class="card-heading">
+            <span id="custom-purple">Notes for Advanced Maths</span>
+          </h1>
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <h3 class="prof-name">
+            <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof.
+            Amit Das
+          </h3>
+          <h3 class="university-name">
+            <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta
+            University
+          </h3>
+        </div>
+      </div>
+      <div class="notes-info-tab">
+        <img
+          src="./assets/images/single-product/its a book.jpg"
+          alt="its a book"
+          class="custom-card-image"
+        />
+        <div class="card-text-body">
+          <h1 class="card-heading">
+            <span id="custom-purple">Notes for Advanced Maths</span>
+          </h1>
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <h3 class="prof-name">
+            <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof.
+            Amit Das
+          </h3>
+          <h3 class="university-name">
+            <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta
+            University
+          </h3>
+        </div>
+      </div>
+      <div class="notes-info-tab">
+        <img
+          src="./assets/images/single-product/its a book.jpg"
+          alt="its a book"
+          class="custom-card-image"
+        />
+        <div class="card-text-body">
+          <h1 class="card-heading">
+            <span id="custom-purple">Notes for Advanced Maths</span>
+          </h1>
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <h3 class="prof-name">
+            <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof.
+            Amit Das
+          </h3>
+          <h3 class="university-name">
+            <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta
+            University
+          </h3>
+        </div>
+      </div>
+      <div class="notes-info-tab">
+        <img
+          src="./assets/images/single-product/its a book.jpg"
+          alt="its a book"
+          class="custom-card-image"
+        />
+        <div class="card-text-body">
+          <h1 class="card-heading">
+            <span id="custom-purple">Notes for Advanced Maths</span>
+          </h1>
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <h3 class="prof-name">
+            <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof.
+            Amit Das
+          </h3>
+          <h3 class="university-name">
+            <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta
+            University
+          </h3>
+        </div>
       </div>
     </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
-      </div>
-    </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
-      </div>
-    </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
-      </div>
-    </div>
-    <div class="notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-        </h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-        <h3 class="prof-name"><i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By Prof. Amit Das</h3>
-        <h3 class="university-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University</h3>
-      </div>
-    </div>
-  </div>
-
 
     <!-- Site footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <!--<h6>About the company</h6> -->
-          <a href="">
-            <h6 class="text-justify">
-              About Us
-            </h6>
-          </a>
-        </div>
-        <!--
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <!--<h6>About the company</h6> -->
+            <a href="">
+              <h6 class="text-justify">
+                About Us
+              </h6>
+            </a>
+          </div>
+          <!--
         <div class="col-xs-6 col-md-3">
           <h6>Important Links</h6>
           <ul class="footer-links">
@@ -163,46 +245,71 @@
           </ul>
         </div>
         -->
-        <div class="col-xs-6 col-md-3">
-          <h6>Connect With Us</h6>
-          <ul class="footer-links">
-            <li>
-              <a href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons" alt=""
-                  srcset="" /></a>
-              <a href=""><img src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt=""
-                  srcset="" /></a>
-              <a href=""><img src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt=""
-                  srcset="" /></a>
-            </li>
-            <li><a href="#">Office: 405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata, West Bengal 700039</a></li>
-            <li>
-              <a href="#">Call US: 9874563210</a>
-            </li>
-          </ul>
+          <div class="col-xs-6 col-md-3">
+            <h6>Connect With Us</h6>
+            <ul class="footer-links">
+              <li>
+                <a href=""
+                  ><img
+                    src="./assets/images/footer/twitter-icon.png"
+                    id="footer-social-icons"
+                    alt=""
+                    srcset=""
+                /></a>
+                <a href=""
+                  ><img
+                    src="./assets/images/footer/gmailicon.png"
+                    id="footer-social-icons"
+                    alt=""
+                    srcset=""
+                /></a>
+                <a href=""
+                  ><img
+                    src="./assets/images/footer/facebook-icon.png"
+                    id="footer-social-icons"
+                    alt=""
+                    srcset=""
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  >Office: 405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                  West Bengal 700039</a
+                >
+              </li>
+              <li>
+                <a href="#">Call US: 9874563210</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="copyright-area">
-      <p class="text-center" id="footer-copyright-text">
-        <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
-        Reserved
-      </p>
-    </div>
-  </footer>
+      <div class="copyright-area">
+        <p class="text-center" id="footer-copyright-text">
+          <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
+          Reserved
+        </p>
+      </div>
+    </footer>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  <script src="./js/scroll.js"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/scroll.js"></script>
+  </body>
 </html>
