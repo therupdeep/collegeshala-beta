@@ -86,7 +86,8 @@
                         <img class="info-image" src="./assets/images/teachersverify.png" alt="Register as student"/>
                     </div>
                     <div class="col-6 input-column">
-                        <input type="text" class="input-text" placeholder="Enter your Phone number" name="phone">
+                        <input type="text" class="input-text" placeholder="Enter your Phone number" name="phone"><br>
+                        <input type="checkbox" name="termsconditions">     I accept terms & conditions
                         <button id="verifybtn" class="input-text" onclick="handleSubmit()"><span class="verifyph">Verify</span></button>
                         <input type="text" class="otpinput" placeholder="Enter Your OTP" name="otp">
                     </div>
@@ -117,11 +118,28 @@
         var verifych=false;
         var step = 1;
         var progval = document.getElementById('progval');
+        function validateEmail(email){
+                var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if (reg.test(email) == false) 
+                    return false;
+                return true;
+        }
         function next() {
             if(step === 3 && !verifych){
                 handleVerify();
             }
+            if(step === 4) {
+                window.location.href ="/studentdashboard.html"
+            }
             else {
+                if(step === 1){
+                    //perform validation
+                    let email = $("input[name='email']").val();
+                    if(!validateEmail(email)) {
+                        alert("Enter valid email address");
+                        return;
+                    }
+                }
                 progval.classList.add(`progress${step}`);
                 setTimeout(() => {
                     var imgchg = document.getElementById(`step-${step+1}-img`);
@@ -136,7 +154,7 @@
                     document.getElementById('nextbtn').innerHTML = 'Finish<img id="nextimg" src="assets/logo/next.png">';
                 }
                 if(verifych){
-                    document.getElementById('nextbtn').innerHTML = 'Go to Dashboard<img id="nextimg" src="assets/logo/next.png">';
+                    document.getElementById('nextbtn').innerHTML = 'Go to HomePage<img id="nextimg" src="assets/logo/next.png">';
                 }
             }
         }
@@ -162,6 +180,10 @@
         }
 
         function handleSubmit() {
+            if(!$("input[name='termsconditions']")[0].checked){
+                alert('Please accept terms and conditions');
+                return;
+            }
             var userData = {
                 name: $("input[name='fname']").val(),
                 email: $("input[name='email']").val(),
