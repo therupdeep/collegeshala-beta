@@ -13,7 +13,8 @@
 </script>
 
   <!-- Required meta tags -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;   user-scalable=0;" name="viewport" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,15 +22,12 @@
 
   <link rel="stylesheet" href="./css/style.css" />
 
-  <script src="https://kit.fontawesome.com/a166c5af45.js" crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
     integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <title>Cart</title>
+  <title>College Shala</title>
   <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
-  <script src="./js/cart.js" async></script>
 </head>
 
 <body>
@@ -56,12 +54,12 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="./cart.html">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./my-account.html">
+          <a class="nav-link" href="./teacher-account.html">
             <i class="fa fa-user-circle" aria-hidden="true"></i>
           </a>
         </li>
@@ -73,58 +71,88 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        <li class="breadcrumb-item"><a href="#">User Name</a></li>
+        <li class="breadcrumb-item active" aria-current="page">My Account</li>
       </ol>
     </nav>
   </div>
 
-
-  <div class="container cart">
-    <div class="cart-notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body" style="float: center;">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-          <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
-        </h1>
-        <h3 class="notes-details">
-          <span id="indian-rupee">&#x20B9 <span class="cart-price">595</span></span>
-          <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
-          <span id="prof-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta University</span>
-        </h3>
+  <div class="container student-dash-nav">
+    <div class="row">
+      <div class="col-sm text-center">
+        <a href="./my-account.html">My Account</a>
       </div>
-    </div>
-
-    <div class="cart-notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
-      <div class="card-text-body" style="float: center;">
-        <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
-          <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
-        </h1>
-        <h3 class="notes-details">
-          <span id="indian-rupee">&#x20B9 <span class="cart-price">595</span></span>
-          <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
-          <span id="prof-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta University</span>
-        </h3>
+      <div class="col-sm text-center">
+        <a href="">My Materials</a>
       </div>
-
-    </div>
-
-
-
-
-  </div>
-
-  <div class="container total-cart">
-    <div id="box">
-      <h5 class="cart-total-heading">Total price of the Cart</h5>
-      <h1 class="cart-total-amount" id="custom-purple">1090</h1>
-      <a href="#" class="checkout-btn-cart" id="custom-red">Checkout</a>
+      <div class="col-sm text-center">
+        <a href="">My Transactions</a>
+      </div>
+      <div class="col-sm text-center">
+        <a href="./coming-soon.html">Q/A Forum</a>
+      </div>
     </div>
   </div>
 
+
+  <div class="container student-account">
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <div class="container m-5">
+          <a href="">Log Out</a>
+        </div>
+        <form action="#" method="post">
+          <div class="form-row mb-1">
+            <div class="col">
+              <label for="exampleInputEmail1">First Name</label>
+              <input type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="col">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter email" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">College Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="College Name" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Degree Pursuing</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Degree Pursuing" />
+          </div>
+          <div class="form-group">
+            <label for="inputState">Semester</label>
+            <select id="inputState" class="form-control">
+              <option>first</option>
+              <option>Second</option>
+              <option>Third</option>
+              <option>Fourth</option>
+              <option>Fifth</option>
+              <option>Sixth</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Phone Number</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Phone Number" />
+          </div>
+          <button type="submit" class="btn btn-primary update-btn">Update</button>
+          <button type="submit" class="btn btn-secondary">Discard Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Site footer -->
   <footer class="site-footer">
@@ -232,22 +260,34 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
   <script src="./js/scroll.js"></script>
   <script>
-    $(".checkout-btn-cart").click(function () {
+    $(".update-btn").click(function () {
+      event.preventDefault();
       let token = window.localStorage.getItem("idToken");
       if (!token) {
         console.log("User not signed in!");
       } else {
         $.ajax({
           method: 'POST',
-          url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/checkout",
-          // url: "http://api.collegeshala.com/getnotes",
+          // url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/updatestudentaccount",
+          url: "https://api.collegeshala.com/updatestudentaccount",
           headers: {
             authorization: token
           },
-          body: {},
+          data: {
+            AccessToken: token,
+            params: {
+              // 'password': {
+              //   oldPassword: 'asdfgh',
+              //   newPassword: 'qwerty'
+              // },
+              'college': 'HIT-K',
+            }
+          },
           contentType: 'application/json',
           success: function complete(result) {
             console.log(result);
