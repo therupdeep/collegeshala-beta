@@ -25,6 +25,24 @@ userAuth.signOut = function signOut() {
     userPool.getCurrentUser().signOut();
 };
 
+const parseJwt = (token) => {
+    try {
+        return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+        return null;
+    }
+};
+
+const sessionExpire = (token) => {
+    sessionExp = parseJwt(token).exp;
+    curr = new Date().getTime()
+    if(curr > sessionExp){
+        return true
+    }
+    return false;
+}
+
+
 userAuth.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
     var cognitoUser = userPool.getCurrentUser();
 
@@ -34,7 +52,12 @@ userAuth.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject)
                 reject(err);
             } else if (!session.isValid()) {
                 resolve(null);
-            } else {
+            }
+            if(sessionExpire(session.getIdToken().getJwtToken())) {
+                if(window.location.pathname != '/register.html' && window.location.pathname != '/login.html' && window.location.pathname != "/studentRegister.html" && window.location.pathname != "/teacherRegister.html" && window.location.pathname != "/" && window.location.pathname != "/index.html")
+                    window.location.href="/login.html";
+            }
+             else {
                 resolve(session.getIdToken().getJwtToken());
             }
         });
