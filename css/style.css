@@ -942,7 +942,6 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px;
   }
-
 }
 
 @media (max-width: 990px) {
@@ -1059,7 +1058,6 @@
     font-size: 12px;
     float: left;
   }
-
 }
 
 @media (max-width: 417px) {
@@ -1285,6 +1283,201 @@
 
 .custom-links:hover {
   text-decoration: none;
+}
+
+@media (max-width: 1400px) {
+  .suggested-product-image {
+    width: 70px;
+    height: 70px;
+    margin-left: 1rem;
+  }
+  .suggested-card-heading {
+    font-size: 25px;
+    /* padding-top: 30px; */
+  }
+  .suggested-products-area {
+    margin-left: 1rem;
+    margin-right: 4rem;
+  }
+  .suggested-product-info {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    padding-right: 0rem;
+    margin: 25px 0px 35px 0;
+  }
+  .suggested-card-prof-name {
+    font-size: 14px;
+    float: left;
+  }
+  .suggested-card-university-name {
+    font-size: 14px;
+    float: right;
+  }
+}
+
+@media (max-width: 1120px) {
+  .course-and-suggested-area .suggested-products-heading {
+    font-size: 30px;
+  }
+  .suggested-product-image {
+    width: 50px;
+    height: 50px;
+    margin-left: 0rem;
+  }
+  .suggested-products-area {
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+  .suggested-card-heading {
+    font-size: 22px;
+    /* padding-top: 30px; */
+  }
+  .suggested-card-prof-name {
+    font-size: 12px;
+    float: left;
+  }
+  .suggested-card-university-name {
+    font-size: 12px;
+    float: right;
+  }
+}
+
+@media (max-width: 920px) {
+  .suggested-card-heading {
+    font-size: 16px;
+    /* padding-top: 30px; */
+  }
+  .suggested-card-prof-name {
+    font-size: 9px;
+    float: left;
+  }
+  .suggested-card-university-name {
+    font-size: 9px;
+    float: right;
+  }
+}
+
+@media (max-width: 767px) {
+  .suggested-product-image {
+    width: 130px;
+    height: 130px;
+    margin-left: 0rem;
+  }
+  .course-and-suggested-area .suggested-products-heading {
+    font-size: 30px;
+    margin-top: 3rem;
+  }
+  .suggested-card-heading {
+    font-size: 35px;
+    padding-top: 20px;
+  }
+  .suggested-card-prof-name {
+    font-size: 16px;
+    float: left;
+  }
+  .suggested-card-university-name {
+    font-size: 16px;
+    float: right;
+  }
+}
+
+@media (max-width: 750px) {
+  .suggested-product-image {
+    width: 90px;
+    height: 105px;
+    margin-left: 0rem;
+  }
+  .suggested-products-area {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  .suggested-card-heading {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+
+  .suggested-card-prof-name {
+    font-size: 12px;
+    float: left;
+  }
+  .suggested-card-university-name {
+    font-size: 12px;
+    float: right;
+  }
+}
+
+@media (max-width: 450px) {
+  .notes-image .buy-now-btn {
+    position: absolute;
+    bottom: 2%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    outline: none;
+    color: #6534cc;
+    border: 1px solid #ff4133;
+    border-radius: 30px;
+    width: 100px;
+    height: 36px;
+  }
+  .notes-image .add-to-cart-btn {
+    position: absolute;
+    bottom: 2%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    outline: none;
+    color: #6534cc;
+    border: 1px solid #ff4133;
+    border-radius: 30px;
+    width: 104px;
+    height: 36px;
+  }
+  .suggested-product-image {
+    width: 70px;
+    height: 85px;
+    margin-left: 0rem;
+  }
+  .suggested-card-text-body {
+    float: right;
+    padding: 0rem;
+    margin-right: 0rem;
+  }
+  .suggested-card-heading {
+    font-size: 16px;
+    padding-top: 10px;
+  }
+  .suggested-card-prof-name {
+    font-size: 9px;
+    float: left;
+  }
+  .suggested-card-university-name {
+    font-size: 9px;
+    float: right;
+  }
+  .single-product-prof-vector {
+    float: left;
+    width: 26px;
+    height: 25px;
+    margin-top: 2rem;
+    margin-right: 1rem;
+  }
+  .single-product-prof-details-area .suggested-page-prof-details-heading {
+    font-size: 20px;
+  }
+  .single-product-user-comments-heading {
+    font-size: 20px;
+  }
+  .single-page-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .notes-image {
+    background-image: url(https://via.placeholder.com/200x200);
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+  }
 }
 
 /*
@@ -1552,13 +1745,11 @@
   font-size: 7rem;
 }
 
-
 @media (max-width: 449px) {
   .coming-soon-heading {
     margin-top: 15rem;
     font-size: 3rem;
   }
-  
 }
 /*
             ************
@@ -1682,7 +1873,7 @@
         Teacher Dashboard page Styles Ends
             ************
 */
-<<<<<<< HEAD=======
+
 /*
             ************
         About Us Page Styles Starts
@@ -1718,5 +1909,3 @@
   width: 80px;
   margin-top: -50px;
 }
-
->>>>>>>29eea39747ad1d791cb904a74d4677d0f0342889
