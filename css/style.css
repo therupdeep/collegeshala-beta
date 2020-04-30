@@ -1909,3 +1909,51 @@
   width: 80px;
   margin-top: -50px;
 }
+
+/*
+            ************
+        About Us Page Styles Ends
+            ************
+*/
+
+/*
+            ************
+        My Transaction Page Styles Starts
+            ************
+*/
+
+#my-transaction h2,p,b {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#my-transaction .text-black {
+  color: #000000;
+}
+
+#my-transaction img {
+  width: 80px;
+  border-radius: 5px;
+}
+
+.transaction-book-details {
+  margin-left: -80px;
+}
+
+.red-color {
+  color: #ff4133;
+}
+
+@media(max-width: 1200px)
+{
+  .transaction-book-details {
+    margin-left: 0px;
+  }
+
+}
+
+@media(max-width: 768px)
+{
+  #my-transaction img {
+    width: 150px;
+  }
+}
