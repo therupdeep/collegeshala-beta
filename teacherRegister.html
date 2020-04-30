@@ -75,6 +75,14 @@
                         <img class="info-image" src="./assets/images/teaching-details.png" alt="Register as student"/>
                     </div>
                     <div class="col-6 input-column">
+                        <select type="text" class="input-text" id="uname">
+                            <option value="select-degree">-Select University-</option>
+                            <option value="Calcutta-University">Calcutta University</option>
+                            <option value="Amity-University">Amity University</option>
+                            <option value="Jadavpur-University">Jadavpur University</option>
+                            <option value="Techno-India-University">Techno India University</option>
+                            <option value="Barasat-University">Barasat University</option>
+                        </select>
                         <input type="text" class="input-text" placeholder="Enter your college's name" name="cname">
                         <input type="text" class="input-text" placeholder="Enter your department" name="dept">
                         <input type="text" class="input-text" placeholder="You teach which subjects?" name="sub">
@@ -190,6 +198,7 @@
                 password: $("input[name='password']").val(),
                 cllgname: $("input[name='cname']").val(),
                 department: $("input[name='dept']").val(),
+                univname: $("select[id='uname']").val(),
                 subject: $("input[name='sub']").val(),
                 phone: '+91' + $("input[name='phone']").val(),
                 isProfessor: 'true',
