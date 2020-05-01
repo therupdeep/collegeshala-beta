@@ -370,6 +370,27 @@
                 if (token) {
                     authToken = token;
                     // console.log(token)
+
+                    if (!authToken) {
+                        console.log("User not signed in!");
+                    } else {
+                        $.ajax({
+                            method: 'POST',
+                            url: "https://api.collegeshala.com/professordetails",
+                            headers: {
+                                authorization: authToken
+                            },
+                            data: {},
+                            contentType: 'application/json',
+                            success: function complete(result) {
+                                console.log(result);
+                                setData(result);
+                            },
+                            error: function error(err) {
+                                console.error(err);
+                            }
+                        });
+                    }
                 } else {
                     window.location.href = '/login.html';
                 }
@@ -377,26 +398,7 @@
                 alert(error);
                 window.location.href = '/login.html';
             });
-            if (!authToken) {
-                console.log("User not signed in!");
-            } else {
-                $.ajax({
-                    method: 'POST',
-                    url: "https://api.collegeshala.com/professordetails",
-                    headers: {
-                        authorization: authToken
-                    },
-                    data: {},
-                    contentType: 'application/json',
-                    success: function complete(result) {
-                        console.log(result);
-                        setData(result);
-                    },
-                    error: function error(err) {
-                        console.error(err);
-                    }
-                });
-            }
+            
 
         function setData(result) {
             result.myUploads.map(note => {
