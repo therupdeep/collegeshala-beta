@@ -46,11 +46,12 @@
             pdf: null,
             currentPage: 1,
             zoom: 1,
-            noteurl: window.location.search.slice(5)
+            noteurl: "https://collegeshala-notes.s3.ap-south-1.amazonaws.com/" + localStorage.getItem("noteId") + ".pdf"
         }
 
         function onload() {
-            myState.noteurl = window.location.search.slice(5);
+            myState.noteurl = "https://collegeshala-notes.s3.ap-south-1.amazonaws.com/" + localStorage.getItem("noteId") + ".pdf";
+            render();
         }
         // https://collegeshala-notes.s3.ap-south-1.amazonaws.com/c59b7dbd-fd6b-400e-a173-156ace07a56f.pdf
         pdfjsLib.getDocument(myState.noteurl)

@@ -39,7 +39,7 @@
 
 <body>
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -66,7 +66,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./">
+          <a class="nav-link" href="./teacher-account.html">
             <i class="fa fa-user-circle" aria-hidden="true"></i>
           </a>
         </li>
@@ -78,7 +78,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">User Name</a></li>
+        <li class="breadcrumb-item"><a href="#">Teacher's Name</a></li>
         <li class="breadcrumb-item active" aria-current="page">
           Teacher's Dashboard
         </li>
@@ -89,16 +89,16 @@
   <div class="container student-dash-nav">
     <div class="row">
       <div class="col-sm text-center">
-        <a class="active" href="">My Account</a>
+        <a class="active" href="./teacher-account.html">My Account</a>
       </div>
       <div class="col-sm text-center">
-        <a href="">My Uploads</a>
+        <a href="./my-uploads.html">My Uploads</a>
       </div>
       <div class="col-sm text-center">
-        <a href="">My Earnings</a>
+        <a href="./my-earnings.html">My Earnings</a>
       </div>
       <div class="col-sm text-center">
-        <a href="">Q/A Forum</a>
+        <a href="./coming-soon.html">Q/A Forum</a>
       </div>
     </div>
   </div>
@@ -235,6 +235,7 @@
   <div class="container student-dashboard-material mt-3">
     <div id="myuploadsrow" class="row">
 
+      
     </div>
     <nav aria-label="Page navigation example" class="text-center pt-4">
       <ul class="pagination justify-content-center">
@@ -346,6 +347,8 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="./js/scroll.js"></script>
+
+  <script src="/js/auth.js"></script>
   <script src="/js/upload.js"></script>
   <script src="/js/aws/aws-sdk-2.663.0.min.js"></script>
   <script>
@@ -421,6 +424,49 @@
         );
       })
     }
+
+    function fetchDetails() {
+            let token = window.localStorage.getItem("idToken");
+            if (!token) {
+                console.log("User not signed in!");
+            } else {
+                $.ajax({
+                    method: 'POST',
+                    // url: "http://api.collegeshala.com/professordetails",
+                    headers: {
+                        authorization: token
+                    },
+                    body: {},
+                    contentType: 'application/json',
+                    success: function complete(result) {
+                        console.log(result);
+                        setData(result);
+                    },
+                    error: function error(err) {
+                        console.error(err);
+                    }
+                });
+            }
+        }
+
+        function setData(result) {
+            result.myUploads.map(note => {
+                $('#myuploadsrow').append(
+                `<div class="col-12 col-md-4">
+                  <div class="card">
+                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
+                    <div class="card-body">
+                      <h5 class="card-title">${note.subjectname}</h5>
+                      <p class="card-text">
+                        ${note.chaptername}
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>`
+                );
+            })
+        }
   </script>
 </body>
 

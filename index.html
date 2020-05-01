@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="/js/auth.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
   <script>
@@ -60,11 +61,13 @@
             </a>
           </li>-->
           <li class="nav-item">
-            <a class="nav-link index-nav-link" href="./register.html" data-target=".navbar-collapse.show"><span
-                id="nav-font">Sign Up</span></a>
+            <a class="nav-link index-nav-link" id="nav-sign-up" href="./register.html"
+              data-target=".navbar-collapse.show"><span id="nav-font">Sign Up</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link index-nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link index-nav-link" target="_blank" id="nav-user-icon"
+              onclick="javascript:location.href='/about.html'" href="" data-toggle="collapse"
+              data-target=".navbar-collapse.show">
               <span id="nav-font"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
             </a>
           </li>
@@ -303,12 +306,26 @@
       window.location.pathname = "/all-product.html";
       // console.log(window.location);
     });
+
     function myFunction() {
       var x = document.getElementById("myDIV");
       if (x.style.display === "none") {
         x.style.display = "block";
-      } else {
-        x.style.display = "none";
+        window.onload = function checklogin() {
+          let token = localStorage.getItem("idToken")
+          if (token) {
+            if (parseJwt(token)['custom:isProfessor'])
+              document.getElementById("nav-sign-up").style.display = "none";
+            if (parseJwt(token)['custom:isProfessor']) {
+              document.getElementById("nav-user-icon").href = "/teacher-account.html";
+            } else {
+              document.getElementById("nav-user-icon").href = "/student-dashboard.html";
+            }
+            document.getElementById("nav-sign-up").style.display = "none";
+          } else {
+            document.getElementById("nav-user-icon").style.display = "none";
+          }
+        }
       }
     }
   </script>
