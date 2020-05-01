@@ -1,4 +1,4 @@
-window._config = {
+window.config = {
     cognito: {
         userPoolId: 'ap-south-1_U4s2cmPdJ',
         userPoolClientId: 'v5519lmtnembdvh0r6tp15tts',
