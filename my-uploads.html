@@ -1,463 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "UA-163674715-1");
-    </script>
+<head>
+  <script src="/js/auth.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    <!-- Required meta tags -->
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-    <meta
-      content="width=device-width; initial-scale=1.0; maximum-scale=1.0;   user-scalable=0;"
-      name="viewport"
-    />
+    gtag("config", "UA-163674715-1");
+  </script>
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+  <!-- Required meta tags -->
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;   user-scalable=0;" name="viewport" />
 
-    <link rel="stylesheet" href="./css/style.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-      crossorigin="anonymous"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css" />
 
-    <title>College Shala</title>
-    <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <body>
-    <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/images/logo.png" id="logo" alt="" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarText"
-        aria-controls="navbarText"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <p class="nav-seach-box">
-              <input type="text" placeholder="Search your subject here " />
-            </p>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link navbar-talkshala" href="./coming-soon.html">
-              TalkShala
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./cart.html">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./">
-              <i class="fa fa-user-circle" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <title>College Shala</title>
+  <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
+</head>
+
+<body>
+  <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/images/logo.png" id="logo" alt="" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <p class="nav-seach-box">
+            <input type="text" placeholder="Search your subject here " />
+          </p>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link navbar-talkshala" href="./coming-soon.html">
+            TalkShala
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./cart.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container pt-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">User Name</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Teacher's Dashboard
+        </li>
+      </ol>
     </nav>
+  </div>
 
-    <div class="container pt-4">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">User Name</a></li>
-          <li class="breadcrumb-item active" aria-current="page">
-            Teacher's Dashboard
-          </li>
-        </ol>
-      </nav>
-    </div>
-
-    <div class="container student-dash-nav">
-      <div class="row">
-        <div class="col-sm text-center">
-          <a class="active" href="">My Account</a>
-        </div>
-        <div class="col-sm text-center">
-          <a href="">My Uploads</a>
-        </div>
-        <div class="col-sm text-center">
-          <a href="">My Earnings</a>
-        </div>
-        <div class="col-sm text-center">
-          <a href="">Q/A Forum</a>
-        </div>
+  <div class="container student-dash-nav">
+    <div class="row">
+      <div class="col-sm text-center">
+        <a class="active" href="">My Account</a>
+      </div>
+      <div class="col-sm text-center">
+        <a href="">My Uploads</a>
+      </div>
+      <div class="col-sm text-center">
+        <a href="">My Earnings</a>
+      </div>
+      <div class="col-sm text-center">
+        <a href="">Q/A Forum</a>
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <hr />
-    </div>
+  <div class="container">
+    <hr />
+  </div>
 
-    <!-- Teacher Upload Button Open div -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  data-toggle="tab"
-                  href="#teacher-upload-notes-tab"
-                  >Upload Notes</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  data-toggle="tab"
-                  href="#teacher-upload-sample-paper-tab"
-                  >Upload Sample Paper</a
-                >
-              </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <div
-                id="teacher-upload-notes-tab"
-                class="container tab-pane active"
-              >
-                <br />
-                <h3>Upload Notes</h3>
-                <form>
-                  <div class="form-group">
-                    <input
-                      type="file"
-                      name="file"
-                      id="file"
-                      class="inputfile"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="teacher-upload-subject-name"
-                      >Subject Name</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="teacher-upload-subject-name"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter subject name"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="teacher-upload-chapter-name"
-                      >Chapter Name</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="teacher-upload-chapter-name"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter chapter name"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="teacher-upload-semester-number"
-                      >For which semester?</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="teacher-upload-semester-number"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter semester"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="teacher-upload-university-name"
-                      >University Name</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="teacher-upload-university-name"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter University name"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    id="submi-notes-upload"
-                    class="btn btn-primary"
-                  >
-                    Submit
-                  </button>
-                </form>
-              </div>
-              <div
-                id="teacher-upload-sample-paper-tab"
-                class="container tab-pane fade"
-              >
-                <br />
-                <h3>Upload Sample Paper</h3>
-                <form>
-                  <div class="form-group">
-                    <input
-                      type="file"
-                      name="file"
-                      id="sample-paper-file"
-                      class="inputfile"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="teacher-upload-sample-paper-subject-name"
-                      >Subject Name</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="teacher-upload-sample-paper-subject-name"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter subject name"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="teacher-upload-sample-paper-semester-number"
-                      >For which semester?</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="teacher-upload-sample-paper-semester-number"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter semester"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="teacher-upload-sample-paper-university-name"
-                      >University Name</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="teacher-upload-sample-paper-university-name"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter University name"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    id="submi-sample-paper-upload"
-                    class="btn btn-primary"
-                  >
-                    Submit
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- display if notes uploaded successfully-->
-    <div
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-      class="toast"
-      data-autohide="false"
-    >
-      <div class="toast-header">
-        <img src="..." class="rounded mr-2" alt="..." />
-        <strong class="mr-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
-        <button
-          type="button"
-          class="ml-2 mb-1 close"
-          data-dismiss="toast"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="toast-body">
-        Hello, world! This is a toast message.
-      </div>
-    </div>
-
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-8">
-          <h1 class="teacher-dashboard-main-heading">
-            Want to Upload a new note?
-          </h1>
-        </div>
-        <div class="col-6 col-md-4">
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn mt-2"
-            id="teacher-upload-button"
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            Upload Now &#8594;
+  <!-- Teacher Upload Button Open div -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <div class="modal-body">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#teacher-upload-notes-tab">Upload Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#teacher-upload-sample-paper-tab">Upload Sample Paper</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="teacher-upload-notes-tab" class="container tab-pane active">
+              <br />
+              <h3>Upload Notes</h3>
+              <form>
+                <div class="form-group">
+                  <input type="file" name="file" id="file" class="inputfile" />
+                </div>
+                <div class="form-group">
+                  <label for="teacher-upload-subject-name">Subject Name</label>
+                  <input type="email" class="form-control" id="teacher-upload-subject-name" aria-describedby="emailHelp"
+                    placeholder="Enter subject name" />
+                </div>
+                <div class="form-group">
+                  <label for="teacher-upload-chapter-name">Chapter Name</label>
+                  <input type="email" class="form-control" id="teacher-upload-chapter-name" aria-describedby="emailHelp"
+                    placeholder="Enter chapter name" />
+                </div>
+                <div class="form-group">
+                  <label for="teacher-upload-semester-number">For which semester?</label>
+                  <input type="email" class="form-control" id="teacher-upload-semester-number"
+                    aria-describedby="emailHelp" placeholder="Enter semester" />
+                </div>
+                <div class="form-group">
+                  <label for="teacher-upload-university-name">University Name</label>
+                  <input type="email" class="form-control" id="teacher-upload-university-name"
+                    aria-describedby="emailHelp" placeholder="Enter University name" />
+                </div>
+                <button type="submit" id="submi-notes-upload" class="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+            <div id="teacher-upload-sample-paper-tab" class="container tab-pane fade">
+              <br />
+              <h3>Upload Sample Paper</h3>
+              <form>
+                <div class="form-group">
+                  <input type="file" name="file" id="sample-paper-file" class="inputfile" />
+                </div>
+                <div class="form-group">
+                  <label for="teacher-upload-sample-paper-subject-name">Subject Name</label>
+                  <input type="email" class="form-control" id="teacher-upload-sample-paper-subject-name"
+                    aria-describedby="emailHelp" placeholder="Enter subject name" />
+                </div>
+                <div class="form-group">
+                  <label for="teacher-upload-sample-paper-semester-number">For which semester?</label>
+                  <input type="email" class="form-control" id="teacher-upload-sample-paper-semester-number"
+                    aria-describedby="emailHelp" placeholder="Enter semester" />
+                </div>
+                <div class="form-group">
+                  <label for="teacher-upload-sample-paper-university-name">University Name</label>
+                  <input type="email" class="form-control" id="teacher-upload-sample-paper-university-name"
+                    aria-describedby="emailHelp" placeholder="Enter University name" />
+                </div>
+                <button type="submit" id="submi-sample-paper-upload" class="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <h3 class="container mt-5">
-      Previously Updated Notes
-    </h3>
+  <!-- display if notes uploaded successfully-->
+  <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="..." />
+      <strong class="mr-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
 
-    <div class="container student-dashboard-material mt-3">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="teacher-dashboard-main-heading">
+          Want to Upload a new note?
+        </h1>
+      </div>
+      <div class="col-6 col-md-4">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn mt-2" id="teacher-upload-button" data-toggle="modal"
+          data-target="#exampleModal">
+          Upload Now &#8594;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="container mt-5">
+    Previously Updated Notes
+  </h3>
+
+  <div class="container student-dashboard-material mt-3">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-121 col-md-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example" class="text-center pt-4">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
       <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <img
-              class="card-img-top img-fluid"
-              src="https://via.placeholder.com/260x180"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-12 col-md-6">
+          <!--<h6>About the company</h6> -->
+          <a href="">
+            <h6 class="text-justify">
+              About Us
+            </h6>
+          </a>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./copyright.html">Copyright</a><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
+              <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./return-policy.html">Return Policy</a><br />
+              <a target="_blank" href="./about.html">Meet the Team</a><br />
+              <a target="_blank" href="./terms-of-use.html">Terms of Use</a>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <img
-              class="card-img-top img-fluid"
-              src="https://via.placeholder.com/260x180"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-121 col-md-4">
-          <div class="card">
-            <img
-              class="card-img-top img-fluid"
-              src="https://via.placeholder.com/260x180"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav aria-label="Page navigation example" class="text-center pt-4">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Site footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <!--<h6>About the company</h6> -->
-            <a href="">
-              <h6 class="text-justify">
-                About Us
-              </h6>
-            </a>
-            <div class="row">
-              <div class="col-12 col-md-4">
-                <a target="_blank" href="./copyright.html">Copyright</a><br />
-                <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a
-                ><br />
-                <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
-              </div>
-              <div class="col-12 col-md-4">
-                <a target="_blank" href="./return-policy.html">Return Policy</a><br />
-                <a target="_blank" href="./about.html">Meet the Team</a><br />
-                <a target="_blank" href="./terms-of-use.html">Terms of Use</a>
-              </div>
-            </div>
-          </div>
-          <!--
+        <!--
         <div class="col-xs-6 col-md-3">
           <h6>Important Links</h6>
           <ul class="footer-links">
@@ -476,78 +334,70 @@
           </ul>
         </div>
         -->
-          <div class="col-xs-6 col-md-4">
-            <h6>Connect With Us</h6>
-            <ul class="footer-links">
-              <li>
-                <a target="_blank" href=""
-                  ><img
-                    src="./assets/images/footer/twitter-icon.png"
-                    id="footer-social-icons"
-                    alt=""
-                    srcset=""
-                /></a>
-                <a target="_blank" href="mailto:collegeshala2020@gmail.com"
-                  ><img
-                    src="./assets/images/footer/gmailicon.png"
-                    id="footer-social-icons"
-                    alt=""
-                    srcset=""
-                /></a>
-                <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"
-                  ><img
-                    src="./assets/images/footer/facebook-icon.png"
-                    id="footer-social-icons"
-                    alt=""
-                    rcset=""
-                /></a>
-                <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"
-                  ><img
-                    src="./assets/images/footer/linkedin-icon.png"
-                    id="footer-social-icons"
-                    alt=""
-                    rcset=""
-                /></a>
-              </li>
-              <li>
-                <a target="_blank" href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg"
-                  >Office: 405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
-                  West Bengal 700039</a
-                >
-              </li>
-              <li>
-                <a href="#">Call US: 9874563210</a>
-              </li>
-            </ul>
-          </div>
+        <div class="col-xs-6 col-md-4">
+          <h6>Connect With Us</h6>
+          <ul class="footer-links">
+            <li>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
+            </li>
+            <li>
+              <a href="#">Call US: 9874563210</a>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="copyright-area">
-        <p class="text-center" id="footer-copyright-text">
-          <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
-          Reserved
-        </p>
-      </div>
-    </footer>
+    <div class="copyright-area">
+      <p class="text-center" id="footer-copyright-text">
+        <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
+        Reserved
+      </p>
+    </div>
+  </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./js/scroll.js"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="/js/upload.js"></script>
+  <script src="/js/aws/aws-sdk-2.663.0.min.js"></script>
+  <script>
+    function handleUpload() {
+      AWS.config.update({
+        accessKeyId: "AKIAXSR73GURFN2EHTZG",
+        secretAccessKey: "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",
+        region: 'ap-south-1',
+      });
+      notes = document.getElementById('notes');
+      var file = notes.files[0];
+      var chaptername = ' '  // add chapter name here
+      var subjectname = ' ' // add subject name here
+      var universityname = ' '  // add universityname here
+      var sem = 3 // add sem here
+      uploadNotes(file, authToken, chaptername, subjectname, universityname, sem)
+    }
+  </script>
+</body>
+
 </html>

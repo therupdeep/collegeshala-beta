@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="/js/auth.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
 <script>
@@ -365,8 +366,6 @@
           url: "http://api.collegeshala.com/addtocart",
           headers: {
             authorization: token,
-            "Access-Control-Allow-Headers": "*",
-            'Access-Control-Allow-Origin': '*'
           },
           data: JSON.stringify({
             "noteid": "n001", // enter noteid here
