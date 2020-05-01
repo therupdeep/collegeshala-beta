@@ -31,9 +31,9 @@
   <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
 </head>
 
-<body onload="getProfDetails()">
+<body onload="onload()">
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -203,14 +203,25 @@
     crossorigin="anonymous"></script>
   <script>
     let token = window.localStorage.getItem("idToken");
+    let state = {
+      notes: [],
+      prof: {}
+    }
+
+    async function onload() {
+      let resp = await getProfDetails();
+      state.prof = resp;
+      state.notes = resp.Item.myUploads;
+      setData();
+    }
 
     function getProfDetails() {
       if (!token) {
         console.log("User not signed in!");
       } else {
-        $.ajax({
+        return new Promise(function (resolve, reject) {
+          $.ajax({
           method: 'POST',
-          // url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/getnotes",
           url: "https://api.collegeshala.com/professordetails",
           headers: {
             authorization: token,
@@ -218,58 +229,34 @@
           data: {},
           contentType: 'application/json',
           success: function complete(result) {
-            console.log(result);
+            resolve(result);
           },
           error: function error(err) {
-            console.error(err);
+            reject(err)
           }
         });
+        })
       }
     }
 
-        // function fetchNotes() {
-        //     if (!token) {
-        //         console.log("User not signed in!");
-        //     } else {
-        //         $.ajax({
-        //             method: 'POST',
-        //             // url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/getnotes",
-        //             url: "http://api.collegeshala.com/getnotes",
-        //             headers: {
-        //                 authorization: token
-        //             },
-        //             data: {},
-        //             contentType: 'application/json',
-        //             success: function complete(result) {
-        //                 console.log(result);
-        //                 setData(result);
-        //             },
-        //             error: function error(err) {
-        //                 console.error(err);
-        //             }
-        //         });
-        //     }
-        //     getProfDetails();
-        // }
-
-        // function setData(args) {
-        //     args.map(note => {
-        //         $('.notes').append(
-        //             `<div class="col-12 col-md-4">
-        //         <div class="card" id="card">
-        //             <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
-        //             <div class="card-body">
-        //                 <h4 class="card-title">${note.name}</h4>
-        //                 <h5 class="professor">By ${note.byProfessor}</h5>
-        //                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-        //                     the card's content.</p>
-        //                 <a href="#" class="btn btn-primary">Go somewhere</a>
-        //             </div>
-        //         </div>
-        //     </div>`
-        //         );
-        //     })
-        // }
+    function setData() {
+      state.notes.map(note => {
+        $('.notes').append(
+          `<div class="col-12 col-md-4">
+                <div class="card" id="card">
+                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">${note.subjectname}</h4>
+                        <h5 class="professor">${note.chaptername}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>`
+        );
+      })
+    }
   </script>
 </body>
 
