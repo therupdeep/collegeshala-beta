@@ -377,7 +377,7 @@
                 alert(error);
                 window.location.href = '/login.html';
             });
-            if (!token) {
+            if (!authToken) {
                 console.log("User not signed in!");
             } else {
                 $.ajax({
