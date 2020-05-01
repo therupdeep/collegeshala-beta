@@ -282,8 +282,8 @@
         </h1>
         <br />
         <p class="text-center">
-          <input type="text" placeholder="Enter your email" />
-          <input type="button" value="Subscribe" />
+          <input id="newsletteremail" type="text" placeholder="Enter your email" />
+          <input id="subscribenewsletter" onclick="subscribe()" type="button" value="Subscribe" />
         </p>
       </div>
       <div class="newletter-below-img"></div>
@@ -405,5 +405,28 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/scroll.js"></script>
+
+    <script>
+          function subscribe() {
+
+            console.log(document.getElementById('newsletteremail').value)
+            $.ajax({
+                    method: 'POST',
+                    url: "https://api.collegeshala.com/subscribenewsletter",
+                    data: JSON.stringify({
+                            email: document.getElementById('newsletteremail').value
+                    }),
+                    contentType: 'application/json',
+                    success: function complete(result) {
+                        console.log("here")
+                        console.log(result);
+                    },
+                    error: function error(err) {
+                        console.error(err);
+                    }
+                });
+
+          }
+    </script>
   </body>
 </html>
