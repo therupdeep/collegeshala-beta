@@ -407,6 +407,22 @@
     <script src="./js/scroll.js"></script>
 
     <script>
+ 
+        window.onload = function checklogin() { 
+            let token = localStorage.get("tokenId/idToken")
+            if (token) {
+    			if(parseJwt(token)['custom:isProfessor'])
+                	document.getElementById("nav-sign-up").style.display = "none";
+                	if(parseJwt(token)['custom:isProfessor']) {
+                    	document.getElementById("nav-user-icon").href = "/teacher-account.html";
+                    } else {
+                    	document.getElementById("nav-user-icon").href = "/student-dashboard.html";
+                    }
+                	document.getElementById("nav-sign-up").style.display = "none";
+			} else {
+    			document.getElementById("nav-user-icon").style.display = "none";
+			}
+        } 
 
           function validateEmail(email){
                 var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
