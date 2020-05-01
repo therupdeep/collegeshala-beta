@@ -355,12 +355,12 @@
         secretAccessKey: "tUSTdpAhXrFAg4htHuXIGF7oWWc1s5JrJ6/r124k",
         region: 'ap-south-1',
       });
-      notes = document.getElementById('notes');
+      notes = document.getElementById('file');
       var file = notes.files[0];
-      var chaptername = ' '  // add chapter name here
-      var subjectname = ' ' // add subject name here
-      var universityname = ' '  // add universityname here
-      var sem = 3 // add sem here
+      var chaptername = document.getElementById('teacher-upload-chapter-name');  // add chapter name here
+      var subjectname = document.getElementById('teacher-upload-subject-name'); // add subject name here
+      var universityname = document.getElementById('teacher-upload-university-name');  // add universityname here
+      var sem = document.getElementById('teacher-upload-semester-number'); // add sem here
       uploadNotes(file, authToken, chaptername, subjectname, universityname, sem)
     }
 
