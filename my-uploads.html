@@ -350,17 +350,20 @@
   <script src="/js/aws/aws-sdk-2.663.0.min.js"></script>
   <script>
     function handleUpload() {
+       event.preventDefault();
       AWS.config.update({
         accessKeyId: "AKIAXSR73GURFN2EHTZG",
         secretAccessKey: "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",
         region: 'ap-south-1',
       });
       notes = document.getElementById('file');
+      console.log(notes)
       var file = notes.files[0];
-      var chaptername = document.getElementById('teacher-upload-chapter-name');  // add chapter name here
-      var subjectname = document.getElementById('teacher-upload-subject-name'); // add subject name here
-      var universityname = document.getElementById('teacher-upload-university-name');  // add universityname here
-      var sem = document.getElementById('teacher-upload-semester-number'); // add sem here
+      console.log(file);
+      var chaptername = document.getElementById('teacher-upload-chapter-name').value;  // add chapter name here
+      var subjectname = document.getElementById('teacher-upload-subject-name').value; // add subject name here
+      var universityname = document.getElementById('teacher-upload-university-name').value;  // add universityname here
+      var sem = document.getElementById('teacher-upload-semester-number').value; // add sem here
       uploadNotes(file, authToken, chaptername, subjectname, universityname, sem)
     }
 
