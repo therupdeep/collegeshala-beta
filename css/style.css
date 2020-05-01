@@ -931,6 +931,11 @@
   font-size: 20px;
 }
 
+.cart #prof-name a{
+  text-decoration: none;
+  color: black;
+}
+
 @media (max-width: 1200px) {
   .cart .custom-card-image {
     width: 140px;
@@ -1209,6 +1214,20 @@
   border-radius: 30px;
   width: 131px;
   height: 36px;
+}
+
+.notes-image .preview-btn {
+  position: absolute;
+  bottom: 45%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  outline: none;
+  color: #6534cc;
+  border: 1px solid #ff4133;
+  border-radius: 30px;
+  width: 180px;
+  height: 60px;
 }
 
 .notes-image .btn-2 {
@@ -1968,6 +1987,11 @@
   }
 }
 
+#my-transaction #prof-name a{
+  text-decoration: none;
+  color: black;
+}
+
 /*
             ************
         My Transaction Page Styles Ends
@@ -2009,6 +2033,11 @@
 #earning-details-section .lead {
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+#earning-details-section #prof-name a{
+  text-decoration: none;
+  color: black;
 }
 
 @media(max-width: 768px)

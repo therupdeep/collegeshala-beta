@@ -4,14 +4,14 @@
 <head>
   <script src="/js/auth.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-163674715-1');
-</script>
+    gtag('config', 'UA-163674715-1');
+  </script>
 
   <!-- Required meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +35,7 @@
 
 <body>
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -57,7 +57,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/cart.html">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           </a>
         </li>
@@ -74,7 +74,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item"><a href="#">User Name</a></li>
         <li class="breadcrumb-item active" aria-current="page">Cart</li>
       </ol>
     </nav>
@@ -83,38 +83,40 @@
 
   <div class="container cart">
     <div class="cart-notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
+      <a href=""><img src="./assets/images/single-product/its a book.jpg" alt="its a book"
+          class="custom-card-image" /></a>
       <div class="card-text-body" style="float: center;">
         <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
+          <a href=""><span id="custom-purple">Notes for Advanced Maths</span></a>
           <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
         </h1>
         <h3 class="notes-details">
           <span id="indian-rupee">&#x20B9 <span class="cart-price">595</span></span>
           <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
-          <span id="prof-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta University</span>
+          <span id="prof-name"><a href=""><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta
+              University</a></span>
         </h3>
       </div>
     </div>
 
     <div class="cart-notes-info-tab">
-      <img src="./assets/images/single-product/its a book.jpg" alt="its a book" class="custom-card-image" />
+      <a href=""><img src="./assets/images/single-product/its a book.jpg" alt="its a book"
+          class="custom-card-image" /></a>
       <div class="card-text-body" style="float: center;">
         <h1 class="card-heading">
-          <span id="custom-purple">Notes for Advanced Maths</span>
+          <a href=""><span id="custom-purple">Notes for Advanced Maths</span></a>
           <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
         </h1>
         <h3 class="notes-details">
           <span id="indian-rupee">&#x20B9 <span class="cart-price">595</span></span>
           <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
-          <span id="prof-name"><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta University</span>
+          <span id="prof-name"><a href=""><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta
+              University</a></span>
         </h3>
       </div>
-
     </div>
 
-
-
+  </div>
 
   </div>
 
@@ -141,8 +143,7 @@
           <div class="row">
             <div class="col-12 col-md-4">
               <a target="_blank" href="./copyright.html">Copyright</a><br />
-              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a
-              ><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
               <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
             </div>
             <div class="col-12 col-md-4">
@@ -175,40 +176,20 @@
           <h6>Connect With Us</h6>
           <ul class="footer-links">
             <li>
-              <a target="_blank" href=""
-                ><img
-                  src="./assets/images/footer/twitter-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  srcset=""
-              /></a>
-              <a target="_blank" href="mailto:collegeshala2020@gmail.com"
-                ><img
-                  src="./assets/images/footer/gmailicon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  srcset=""
-              /></a>
-              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"
-                ><img
-                  src="./assets/images/footer/facebook-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  rcset=""
-              /></a>
-              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"
-                ><img
-                  src="./assets/images/footer/linkedin-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  rcset=""
-              /></a>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
             </li>
             <li>
-              <a target="_blank" href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg"
-                >Office: 405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
-                West Bengal 700039</a
-              >
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
             </li>
             <li>
               <a href="#">Call US: 9874563210</a>
