@@ -46,7 +46,7 @@
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <p class="nav-seach-box">
-            <input type="text" placeholder="Search your subject here " />
+            <input type="text" id="search-notes" placeholder="Search your subject here " />
           </p>
         </li>
       </ul>
@@ -84,11 +84,14 @@
 
   <div class="container pt-1">
     <p class="results-found">
-      <span id="custom-red"></span> Result(s) found
+      <span id="custom-red">0</span> Result(s) found
     </p>
   </div>
   <div class="container notes-container">
     <!-- notes go here -->
+    <h1 class="text-center mt-5 mb-5" id="custom-red no-notes">
+      <!-- no results found message -->
+    </h1>
   </div>
 
   <!-- Site footer -->
@@ -191,13 +194,39 @@
       notes: []
     }
 
-    async function getSearchResult() {
-      state.value = localStorage.getItem("value");
-      localStorage.removeItem("value");
+    $("#search-notes").change(async function () {
+      removeData();
+      state.value = event.target.value;
 
       for (let i = 0; i <= 3; i++) {
         if (i == 3) {
-          alert("no results!");
+          $("#no-notes").text("No Results Found");
+        } else {
+          let resp = await getNotes(state.keys[i])
+          if (!resp.message) {
+            state.notes = resp.map(note => {
+              let parsed_note = {};
+              for (x in note) {
+                parsed_note[x] = note[x].S || note[x].N || note[x].BOOL
+              }
+              return parsed_note;
+            });
+            setData();
+            break;
+          } else {
+            continue;
+          }
+        }
+      }
+    });
+
+    async function getSearchResult() {
+      state.value = localStorage.getItem("value");
+      // localStorage.removeItem("value");
+
+      for (let i = 0; i <= 3; i++) {
+        if (i == 3) {
+          $("#no-notes").text("No Results Found");
         } else {
           let resp = await getNotes(state.keys[i])
           if (!resp.message) {
@@ -216,6 +245,12 @@
         }
       }
     };
+
+    function removeData() {
+      state.notes = [];
+      $("#custom-red").text(state.notes.length);
+      $('.notes-container').html("");
+    }
 
     function getNotes(key) {
       return new Promise((resolve, reject) => {
@@ -238,6 +273,12 @@
       })
     }
 
+    $("#search-notes").click(function () {
+      event.preventDefault();
+      window.location.href = "/pdf.html"
+      console.log(event.target.value)
+    })
+
     function setData() {
       $("#custom-red").text(state.notes.length);
 
@@ -251,7 +292,9 @@
         />
         <div class="card-text-body">
           <h1 class="card-heading">
-            <span id="custom-purple">${note.subjectname}</span>
+            <a id="to-pdf" href="#">
+              <span id="custom-purple">${note.subjectname}</span>
+            </a>
           </h1>
           <i class="fa fa-user-circle-o" aria-hidden="true"></i>
           <h3 class="prof-name">
