@@ -365,7 +365,18 @@
     }
 
 
-            let token = window.localStorage.getItem("idToken");
+            let authToken;
+            userAuth.authToken.then(function setAuthToken(token) {
+                if (token) {
+                    authToken = token;
+                    // console.log(token)
+                } else {
+                    window.location.href = '/login.html';
+                }
+            }).catch(function handleTokenError(error) {
+                alert(error);
+                window.location.href = '/login.html';
+            });
             if (!token) {
                 console.log("User not signed in!");
             } else {
@@ -373,7 +384,7 @@
                     method: 'POST',
                     url: "https://api.collegeshala.com/professordetails",
                     headers: {
-                        authorization: token
+                        authorization: authToken
                     },
                     data: {},
                     contentType: 'application/json',
