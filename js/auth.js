@@ -3,22 +3,22 @@ var userAuth = window.userAuth || {};
 var signinUrl = 'login.html';
 
 var poolData = {
-    UserPoolId: _config.cognito.userPoolId,
-    ClientId: _config.cognito.userPoolClientId
+    UserPoolId: config.cognito.userPoolId,
+    ClientId: config.cognito.userPoolClientId
 };
 
 var userPool;
 
-if (!(_config.cognito.userPoolId &&
-        _config.cognito.userPoolClientId &&
-        _config.cognito.region)) {
+if (!(config.cognito.userPoolId &&
+        config.cognito.userPoolClientId &&
+        config.cognito.region)) {
     alert('Error loading data!');
 }
 
 userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 if (typeof AWSCognito !== 'undefined') {
-    AWSCognito.config.region = _config.cognito.region;
+    AWSCognito.config.region = config.cognito.region;
 }
 
 userAuth.signOut = function signOut() {
