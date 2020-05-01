@@ -365,8 +365,6 @@
     }
 
 
-
-    function fetchDetails() {
             let token = window.localStorage.getItem("idToken");
             if (!token) {
                 console.log("User not signed in!");
@@ -388,7 +386,6 @@
                     }
                 });
             }
-        }
 
         function setData(result) {
             result.myUploads.map(note => {
