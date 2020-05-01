@@ -409,7 +409,7 @@
     <script>
  
         window.onload = function checklogin() { 
-            let token = localStorage.get("tokenId/idToken")
+            let token = localStorage.getItem("idToken")
             if (token) {
     			if(parseJwt(token)['custom:isProfessor'])
                 	document.getElementById("nav-sign-up").style.display = "none";
