@@ -4,14 +4,14 @@
 <head>
   <script src="/js/auth.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-163674715-1');
-</script>
+    gtag('config', 'UA-163674715-1');
+  </script>
 
   <!-- Required meta tags -->
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
@@ -258,8 +258,7 @@
           <div class="row">
             <div class="col-12 col-md-4">
               <a target="_blank" href="./copyright.html">Copyright</a><br />
-              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a
-              ><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
               <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
             </div>
             <div class="col-12 col-md-4">
@@ -292,40 +291,20 @@
           <h6>Connect With Us</h6>
           <ul class="footer-links">
             <li>
-              <a target="_blank" href=""
-                ><img
-                  src="./assets/images/footer/twitter-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  srcset=""
-              /></a>
-              <a target="_blank" href="mailto:collegeshala2020@gmail.com"
-                ><img
-                  src="./assets/images/footer/gmailicon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  srcset=""
-              /></a>
-              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"
-                ><img
-                  src="./assets/images/footer/facebook-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  rcset=""
-              /></a>
-              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"
-                ><img
-                  src="./assets/images/footer/linkedin-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  rcset=""
-              /></a>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
             </li>
             <li>
-              <a target="_blank" href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg"
-                >Office: 405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
-                West Bengal 700039</a
-              >
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
             </li>
             <li>
               <a href="#">Call US: 9874563210</a>
@@ -382,6 +361,23 @@
     })
   </script>
   <script src="./js/main.js"></script>
+  <script>
+    window.onload = function checklogin() {
+      let token = localStorage.get("tokenId/idToken")
+      if (token) {
+        if (parseJwt(token)['custom:isProfessor'])
+          document.getElementById("nav-sign-up").style.display = "none";
+        if (parseJwt(token)['custom:isProfessor']) {
+          document.getElementById("nav-user-icon").href = "/teacher-account.html";
+        } else {
+          document.getElementById("nav-user-icon").href = "/student-dashboard.html";
+        }
+        document.getElementById("nav-sign-up").style.display = "none";
+      } else {
+        document.getElementById("nav-user-icon").style.display = "none";
+      }
+    } 
+  </script>
 </body>
 
 </html>
