@@ -407,9 +407,19 @@
     <script src="./js/scroll.js"></script>
 
     <script>
-          function subscribe() {
 
-            console.log(document.getElementById('newsletteremail').value)
+          function validateEmail(email){
+                var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if (reg.test(email) == false) 
+                    return false;
+                return true;
+        }
+          function subscribe() {
+            let email = document.getElementById('newsletteremail').value;
+                    if(!validateEmail(email)) {
+                        alert("Enter valid email address");
+                        return;
+           }
             $.ajax({
                     method: 'POST',
                     url: "https://api.collegeshala.com/subscribenewsletter",
