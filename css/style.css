@@ -617,11 +617,21 @@
 .card-heading {
   font-size: 55px;
   padding-top: 30px;
+  text-decoration: none;
 }
 
 .prof-name {
   font-size: 30px;
   float: left;
+  
+}
+
+.prof-name a{
+  color: black !important;
+}
+
+.university-name a{
+  color: black !important;
 }
 
 .university-name {
