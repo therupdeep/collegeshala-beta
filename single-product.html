@@ -340,6 +340,16 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script>
+
+    $(".preview-btn").click(function() {
+      let noteId = window.location.search.slice(8);
+      console.log(noteId);
+      localStorage.setItem("noteId", noteId);
+      console.log(window.location.origin + "/");
+      window.open(window.location.origin + "/pdf.html", "_blank");
+      // window.location.href = "/pdf.html"
+    })
+
     $(".add-to-cart-btn").click(function () {
       let token = window.localStorage.getItem("idToken");
       if (!token) {
