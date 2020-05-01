@@ -36,6 +36,8 @@ const parseJwt = (token) => {
 const sessionExpire = (token) => {
     sessionExp = parseJwt(token).exp;
     curr = new Date().getTime()
+    curr = curr/1000;
+    console.log(sessionExp,curr);
     if(curr > sessionExp){
         return true
     }
