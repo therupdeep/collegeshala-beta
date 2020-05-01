@@ -1957,3 +1957,53 @@
     width: 150px;
   }
 }
+
+/*
+            ************
+        My Transaction Page Styles Ends
+            ************
+*/
+
+/*
+            ************
+        My Earning Page Styles Starts
+            ************
+*/
+
+#earning-credits-section .custom-earning-button {
+  border: #ff4133 2px solid;
+  border-radius: 45px;
+  padding: 0.4rem 2.4rem;
+  color: #6534cc;
+  margin-top: -5px;
+}
+
+#earning-credits-section h2,p,b,span {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#earning-credits-section .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#earning-details-section h2,h4,p,b,span {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#earning-details-section img {
+  border-radius: 5px;
+  width: 85px;
+}
+
+#earning-details-section .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media(max-width: 768px)
+{
+  #earning-credits-section .custom-earning-button {
+    margin-top: 15px;
+  }
+}
