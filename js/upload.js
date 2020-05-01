@@ -1,6 +1,6 @@
 function uploadNotes(file,authToken,chaptername,subjectname,universityname,sem) {
-    notes = document.getElementById('notes');
-    var file = notes.files[0];
+    // notes = document.getElementById('notes');
+    // var file = notes.files[0];
     let noteId = uuidv4(); // Replace this function immediately
     let fs = new FileReader();
     fs.abort()
@@ -44,6 +44,7 @@ function uploadNotes(file,authToken,chaptername,subjectname,universityname,sem) 
                     success: function complete(result) {
                         console.log(result);
                         alert("Note Upload Successful");
+                        window.location.href="/my-uploads.html"
                     },
                     error: function error(err) {
                         console.error(err);
