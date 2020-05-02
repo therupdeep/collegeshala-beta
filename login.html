@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/studentRegister.css">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+    <title>Log In</title>
+    <link rel="icon" href="./assets/logo/infinity.png">
+</head>
+
+<body>
+
+
+    <div id="student-signup">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6534CC;">
+                <a id='back' class="navbar-brand" onclick="back()">
+                    <img src="./assets/logo/LeftArrow.png" alt="" srcset="" width="35" height="30">
+                </a>
+                <a id="backtext" onclick="back()"><p class="back-label">Back</p></a>
+            </nav>
+        </div>
+        <div class="content">
+            <div>
+                <div class="welcome-text">
+                    Welcome <span style="color: #FF4133;">Back</span>!
+                </div>
+                <div id="step-1" class="row details-container">
+                    <div class="col-6 image-column">
+                        <img class="info-image" src="./assets/images/signin-card.png" alt="Sign in"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <input type="text" class="input-text" placeholder="Enter your email address" name="email">
+                        <input type="text" class="input-text" placeholder="Enter your password" name="password">
+                        <br>
+                        <p id="forgot-password" onclick="next()">Forgot your Password?</p>
+                    </div>
+                </div>
+                <div id="step-2" class="row details-container" style="display: none;">
+                    <div class="col-6 image-column">
+                        <img class="info-image" src="./assets/images/signin-card.png" alt="forgot-password"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <p id="password-reset">Lorem Ipsum for explaining the next steps
+                            for recovering the password.</p>
+                        <input type="text" class="input-text" placeholder="Enter your email address" name="emailforgot">
+                    </div>
+                </div>
+                <div id="step-3" class="row details-container" style="display: none;">
+                    <div class="col-6 image-column">
+                        <img class="info-image" src="./assets/images/signin-card.png" alt="forgot-password"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <input type="text" class="input-text" placeholder="Enter Code Send to Phone" name="code">
+                        <input type="password" class="input-text" name="password1" placeholder="Enter new password">
+                        <input type="password" class="input-text" name="passwordconf" placeholder="Re-type password">
+                    </div>
+                </div>
+                <div id="nextbtn" class="next" onmouseover="document.getElementById('nextbtn').style = 'cursor: pointer'" onclick="handleLogin()">
+                    Sign IN
+                    <img id="nextimg" src="assets/logo/next.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/aws/aws-cognito-sdk.min.js"></script>
+    <script src="js/aws/amazon-cognito-identity.min.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/apiCall.js"></script>
+    <script>
+        var step = 1;
+        function next() {
+            console.log(step);
+            document.getElementById(`step-${step}`).style = "display: none";
+            (window.innerWidth > 800)?
+                document.getElementById(`step-${step+1}`).style = "display: inline-flex":
+                document.getElementById(`step-${step+1}`).style = "display: initial";
+            if(step === 1){
+                document.getElementById('nextbtn').innerHTML = 'Send Code<img id="nextimg" src="assets/logo/next.png">';
+                document.getElementById('nextbtn').setAttribute('onClick',"handleForgetPassword()");
+            }
+            else if(step === 2){
+                document.getElementById('nextbtn').innerHTML = 'Update Password<img id="nextimg" src="assets/logo/next.png">';
+                document.getElementById('nextbtn').setAttribute('onClick',"handleResetPassword()");
+            }
+            step=step+1;
+        }
+
+        function back() {
+            if(step != 1) {
+                document.getElementById(`step-${step}`).style = "display: none";
+                step = (step === 2)?step - 1:step-2;
+                (window.innerWidth > 800)?
+                    document.getElementById(`step-${step}`).style = "display: inline-flex":
+                    document.getElementById(`step-${step}`).style = "display: initial";
+                document.getElementById('nextbtn').innerHTML = 'Sign IN<img id="nextimg" src="assets/logo/next.png">';
+                document.getElementById('nextbtn').setAttribute('onclick', 'handleLogin()');
+            }
+            else {
+                document.getElementById('back').href = "/register.html";
+                document.getElementById('backtext').href = "/register.html";
+            }
+        }
+
+        async function handleLogin() {
+            var userData = {
+                email: $("input[name='email']").val(),
+                password: $("input[name='password']").val(),
+            }
+            var onSuccess = function loginSuccess(result) {
+                console.log('Check user here : ',result);
+                window.localStorage.setItem("idToken", result.idToken.jwtToken)
+                let isProf = parseJwt(result.idToken.jwtToken)['custom:isProfessor'];
+                if(isProf === 'true') {
+                    localStorage.setItem("acc_type", 'professor');
+                    window.location.href = "/teacher-dashboard.html";
+                } else {
+                    localStorage.setItem("acc_type", 'student');
+                    window.location.href = "/student-dashboard.html";
+                }
+            }
+            var onFailure = function loginFailure(err) {
+                alert(err);
+            }
+            logIn(userData,onSuccess,onFailure);
+        }
+        function handleForgetPassword() {
+            var email = $("input[name='emailforgot']").val();
+            forgotPassword(email);
+            console.log(email)
+        }
+        function handleResetPassword() {
+            var email = $("input[name='emailforgot']").val();
+            var code = $("input[name='code']").val();
+            var password =  $("input[name='password1']").val();
+            var password2 =  $("input[name='passwordconf']").val();
+            console.log('password2',password2,'sdsd',password);
+            if(password === password2) {
+                console.log(code,email,password);
+                resetPassword(code,email,password);
+            }
+            else
+                alert('Passwords dont match');
+        }
+
+    </script>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script> -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
