@@ -354,12 +354,12 @@
 
     $(".buy-now-btn").click(async function () {
       let status;
-      // addCredits();
+      // console.log(token);
       try {
         status = await buyNow();
         alert("Note purchased!")
       } catch (error) {
-        // addCredits();
+        console.error(error)
       }
     })
 
@@ -379,7 +379,7 @@
         },
         error: function error(err) {
           console.error(err);
-          checkout(1 * 100, 2, userAuth.authToken).then(addCredits());
+          checkout(1 * 100, 2, token).then(addCredits());
           reject();
         }
       });
