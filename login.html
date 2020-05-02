@@ -126,8 +126,10 @@
                 window.localStorage.setItem("idToken", result.idToken.jwtToken)
                 let isProf = parseJwt(result.idToken.jwtToken)['custom:isProfessor'];
                 if(isProf === 'true') {
+                    localStorage.setItem("acc_type", 'professor');
                     window.location.href = "/teacher-dashboard.html";
                 } else {
+                    localStorage.setItem("acc_type", 'student');
                     window.location.href = "/student-dashboard.html";
                 }
             }
