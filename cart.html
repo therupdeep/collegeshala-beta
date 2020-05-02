@@ -33,7 +33,7 @@
   <script src="./js/cart.js" async></script>
 </head>
 
-<body>
+<body onload="fetchData()">
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
     <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
@@ -82,40 +82,7 @@
 
 
   <div class="container cart">
-    <div class="cart-notes-info-tab">
-      <a href=""><img src="./assets/images/single-product/its a book.jpg" alt="its a book"
-          class="custom-card-image" /></a>
-      <div class="card-text-body" style="float: center;">
-        <h1 class="card-heading">
-          <a href=""><span id="custom-purple">Notes for Advanced Maths</span></a>
-          <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
-        </h1>
-        <h3 class="notes-details">
-          <span id="indian-rupee">&#x20B9 <span class="cart-price">595</span></span>
-          <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
-          <span id="prof-name"><a href=""><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta
-              University</a></span>
-        </h3>
-      </div>
-    </div>
-
-    <div class="cart-notes-info-tab">
-      <a href=""><img src="./assets/images/single-product/its a book.jpg" alt="its a book"
-          class="custom-card-image" /></a>
-      <div class="card-text-body" style="float: center;">
-        <h1 class="card-heading">
-          <a href=""><span id="custom-purple">Notes for Advanced Maths</span></a>
-          <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
-        </h1>
-        <h3 class="notes-details">
-          <span id="indian-rupee">&#x20B9 <span class="cart-price">595</span></span>
-          <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
-          <span id="prof-name"><a href=""><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta
-              University</a></span>
-        </h3>
-      </div>
-    </div>
-
+    <!-- notes go here -->
   </div>
 
   </div>
@@ -220,30 +187,105 @@
   <script src="/js/razorpay.js"></script>
   <script src="./js/auth.js"></script>
   <script>
-    $(".checkout-btn-cart").click(function () {
-      let token = window.localStorage.getItem("idToken");
-      checkout(100, 2, token);
 
-      // if (!token) {
-      //   console.log("User not signed in!");
-      // } else {
-      //   $.ajax({
-      //     method: 'POST',
-      //     url: "https://api.collegeshala.com/checkout",
-      //     headers: {
-      //       authorization: token
-      //     },
-      //     data: {},
-      //     contentType: 'application/json',
-      //     success: function complete(result) {
-      //       console.log(result);
-      //     },
-      //     error: function error(err) {
-      //       console.error(err);
-      //     }
-      //   });
-      // }
+    let token = window.localStorage.getItem("idToken");
+
+    let state = {
+      total: 0,
+      cart: []
+    }
+
+    $(".checkout-btn-cart").click(function buyNow() {
+
+      return new Promise(function (resolve, reject) {
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/checkout",
+          headers: {
+            authorization: token,
+          },
+          data: JSON.stringify({}),
+          contentType: 'application/json',
+          success: function complete(result) {
+            console.log(result);
+            resolve(result);
+          },
+          error: function error(err) {
+            console.error(err);
+            checkout(1 * 100, 2, token).then(addCredits());
+            reject();
+          }
+        });
+      });
     })
+
+    async function fetchData() {
+
+      function getCart() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/fetchcart",
+            headers: {
+              authorization: token,
+            },
+            data: JSON.stringify({}),
+            contentType: 'application/json',
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err)
+            }
+          });
+        })
+      }
+
+      let resp = await getCart();
+      // state.cart = resp.Responses.notes;
+      state.cart = resp.Responses.notes.map(note => {
+        let parsed_note = {};
+        for (x in note) {
+          parsed_note[x] = note[x].S || (note[x].N * 1) || note[x].BOOL;
+        }
+        return parsed_note;
+      });
+      // console.log(state.cart);
+
+      state.total = 0;
+      for (note of state.cart) {
+        state.total += note.requiredCredits;
+      }
+      // console.log(state.total)
+
+      setData();
+    }
+
+    function setData() {
+      state.cart.forEach(note => {
+        $(".cart").append(
+          `<div class="cart-notes-info-tab">
+            <a href=""><img src="./assets/images/single-product/its a book.jpg" alt="its a book"
+                class="custom-card-image" /></a>
+            <div class="card-text-body" style="float: center;">
+              <h1 class="card-heading">
+                <a href=""><span id="custom-purple">${note.chaptername}</span></a>
+                <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
+              </h1>
+              <h3 class="notes-details">
+                <span id="indian-rupee">&#x20B9 <span class="cart-price">${note.requiredCredits * 10}</span></span>
+                <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
+                <span id="prof-name"><a href=""><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta
+                    University</a></span>
+              </h3>
+            </div>
+          </div>`
+        )
+      });
+
+      $(".cart-total-amount").text(`${state.total}`);
+    }
+
   </script>
 </body>
 

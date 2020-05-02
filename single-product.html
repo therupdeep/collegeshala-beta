@@ -344,7 +344,8 @@
     let token = window.localStorage.getItem("idToken");
 
     let state = {
-      noteid: ""
+      noteid: "",
+      note: {}
     };
 
     // function onload() {
@@ -364,25 +365,55 @@
     })
 
     function buyNow() {
-      return new Promise (function(resolve, reject) {
+      return new Promise(function (resolve, reject) {
         $.ajax({
-        method: 'POST',
-        url: "https://api.collegeshala.com/checkout",
-        headers: {
-          authorization: token,
-        },
-        data: JSON.stringify({}),
-        contentType: 'application/json',
-        success: function complete(result) {
-          console.log(result);
-          resolve(result);
-        },
-        error: function error(err) {
-          console.error(err);
-          checkout(1 * 100, 2, token).then(addCredits());
-          reject();
-        }
-      });
+          method: 'POST',
+          url: "https://api.collegeshala.com/checkout",
+          headers: {
+            authorization: token,
+          },
+          data: JSON.stringify({}),
+          contentType: 'application/json',
+          success: function complete(result) {
+            console.log(result);
+            resolve(result);
+          },
+          error: function error(err) {
+            console.error(err);
+            checkout(1 * 100, 2, token).then(addCredits());
+            reject();
+          }
+        });
+      })
+    }
+
+    async function setData() {
+      let resp = await getNote();
+      state.note = resp.Item;
+      $(".heading-title").text(`${state.note.chaptername}`);
+      $(".price-of-book").text(`${state.note.requiredCredits * 10}`);
+      $(".suggested-page-prof-details-heading").text(`${state.note.professorname}`);
+    }
+
+    function getNote() {
+      return new Promise(function (resolve, reject) {
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/getnotebyid",
+          headers: {
+            authorization: token,
+          },
+          data: JSON.stringify({
+            "noteId": state.noteid
+          }),
+          contentType: 'application/json',
+          success: function complete(result) {
+            resolve(result);
+          },
+          error: function error(err) {
+            reject(err)
+          }
+        });
       })
     }
 
@@ -445,7 +476,7 @@
   <script>
     window.onload = function checklogin() {
       state.noteid = window.location.search.slice(8);
-      console.log(state.noteid)
+      setData();
       let token = localStorage.getItem("idToken")
       if (token) {
         if (parseJwt(token)['custom:isProfessor'] === 'true')
