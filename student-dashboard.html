@@ -230,8 +230,7 @@
             } else {
                 $.ajax({
                     method: 'POST',
-                    url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/getnotes",
-                    // url: "http://api.collegeshala.com/getnotes",
+                    url: "https://api.collegeshala.com/getnotes",
                     headers: {
                         authorization: token
                     },
@@ -255,11 +254,11 @@
                 <div class="card" id="card">
                     <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap">
                     <div class="card-body">
-                        <h4 class="card-title">${note.name}</h4>
-                        <h5 class="professor">By ${note.byProfessor}</h5>
+                        <h4 class="card-title">${note.chaptername}</h4>
+                        <h5 class="professor">By ${note.professorname}</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="/single-product.html?noteId=${note.noteId}" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>`
