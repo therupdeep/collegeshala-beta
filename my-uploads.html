@@ -235,7 +235,7 @@
   <div class="container student-dashboard-material mt-3">
     <div id="myuploadsrow" class="row">
 
-      
+
     </div>
     <nav aria-label="Page navigation example" class="text-center pt-4">
       <ul class="pagination justify-content-center">
@@ -353,13 +353,41 @@
   <script src="/js/aws/aws-sdk-2.663.0.min.js"></script>
   <script src="/js/aws/config.js"></script>
   <script>
-    function handleUpload() {
+
+    let token = localStorage.getItem("idToken");
+
+    async function handleUpload() {
       event.preventDefault();
+
+      function getCredentials() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/getkey",
+            headers: {
+              authorization: token,
+            },
+            data: JSON.stringify({}),
+            contentType: 'application/json',
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err);
+            }
+          });
+        })
+      }
+
+      let config  = await getCredentials();
+      console.log(config);
+
       AWS.config.update({
         accessKeyId: config.accessKeyId,
         secretAccessKey: config.secretAccessKey,
         region: 'ap-south-1',
       });
+      config = {};
       notes = document.getElementById('file');
       console.log(notes)
       var file = notes.files[0];
@@ -427,33 +455,33 @@
     }
 
     function fetchDetails() {
-            let token = window.localStorage.getItem("idToken");
-            if (!token) {
-                console.log("User not signed in!");
-            } else {
-                $.ajax({
-                    method: 'POST',
-                    // url: "http://api.collegeshala.com/professordetails",
-                    headers: {
-                        authorization: token
-                    },
-                    body: {},
-                    contentType: 'application/json',
-                    success: function complete(result) {
-                        console.log(result);
-                        setData(result);
-                    },
-                    error: function error(err) {
-                        console.error(err);
-                    }
-                });
-            }
-        }
+      let token = window.localStorage.getItem("idToken");
+      if (!token) {
+        console.log("User not signed in!");
+      } else {
+        $.ajax({
+          method: 'POST',
+          // url: "http://api.collegeshala.com/professordetails",
+          headers: {
+            authorization: token
+          },
+          body: {},
+          contentType: 'application/json',
+          success: function complete(result) {
+            console.log(result);
+            setData(result);
+          },
+          error: function error(err) {
+            console.error(err);
+          }
+        });
+      }
+    }
 
-        function setData(result) {
-            result.myUploads.map(note => {
-                $('#myuploadsrow').append(
-                `<div class="col-12 col-md-4">
+    function setData(result) {
+      result.myUploads.map(note => {
+        $('#myuploadsrow').append(
+          `<div class="col-12 col-md-4">
                   <div class="card">
                     <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
                     <div class="card-body">
@@ -465,9 +493,9 @@
                     </div>
                   </div>
                 </div>`
-                );
-            })
-        }
+        );
+      })
+    }
   </script>
 </body>
 
