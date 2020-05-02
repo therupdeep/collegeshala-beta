@@ -97,14 +97,10 @@
                         ._pdfInfo.numPages)
                     return;
 
-                if (myState.currentPage == 2) {
-                    alert("Preview ended!")
-                } else {
-                    myState.currentPage += 1;
-                    document.getElementById("current_page")
-                        .value = myState.currentPage;
-                    render();
-                }
+                myState.currentPage += 1;
+                document.getElementById("current_page")
+                    .value = myState.currentPage;
+                render();
             });
 
         document.getElementById('current_page')
@@ -123,14 +119,10 @@
                     if (desiredPage >= 1
                         && desiredPage <= myState.pdf
                             ._pdfInfo.numPages) {
-                        if (desiredPage > 2) {
-                            alert("Preview ended!");
-                        } else {
-                            myState.currentPage = desiredPage;
-                            document.getElementById("current_page")
-                                .value = desiredPage;
-                            render();
-                        }
+                        myState.currentPage = desiredPage;
+                        document.getElementById("current_page")
+                            .value = desiredPage;
+                        render();
                     }
                 }
             });
