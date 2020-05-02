@@ -123,7 +123,7 @@
                     if (desiredPage >= 1
                         && desiredPage <= myState.pdf
                             ._pdfInfo.numPages) {
-                        if (myState.currentPage > 2) {
+                        if (desiredPage > 2) {
                             alert("Preview ended!");
                         } else {
                             myState.currentPage = desiredPage;

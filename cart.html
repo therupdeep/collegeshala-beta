@@ -90,7 +90,7 @@
   <div class="container total-cart">
     <div id="box">
       <h5 class="cart-total-heading">Total price of the Cart</h5>
-      <h1 class="cart-total-amount" id="custom-purple">1090</h1>
+      <h1 class="cart-total-amount" id="custom-purple">0</h1>
       <button href="#" class="checkout-btn-cart" id="custom-red">Checkout</button>
     </div>
   </div>
@@ -195,28 +195,41 @@
       cart: []
     }
 
-    $(".checkout-btn-cart").click(function buyNow() {
+    $(".checkout-btn-cart").click(async function buyNow() {
 
-      return new Promise(function (resolve, reject) {
-        $.ajax({
-          method: 'POST',
-          url: "https://api.collegeshala.com/checkout",
-          headers: {
-            authorization: token,
-          },
-          data: JSON.stringify({}),
-          contentType: 'application/json',
-          success: function complete(result) {
-            console.log(result);
-            resolve(result);
-          },
-          error: function error(err) {
-            console.error(err);
-            checkout(1 * 100, 2, token).then(addCredits());
-            reject();
-          }
+      function checkoutRes() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/checkout",
+            headers: {
+              authorization: token,
+            },
+            data: JSON.stringify({}),
+            contentType: 'application/json',
+            success: function complete(result) {
+              // console.log(result);
+              resolve(result);
+            },
+            error: function error(err) {
+              console.error(err);
+              // checkout(1 * 100, 2, token).then(addCredits());
+              reject(err);
+            }
+          });
         });
-      });
+      }
+
+      let resp = await checkoutRes();
+      console.log(resp);
+      if(resp.msg && resp.msg == "Insufficient credits") {
+        let amt = (state.total -  resp.creditsAvailable) * 10 * 100;
+        checkout(amt, 2, token);
+        window.location.reload();
+      } else {
+        alert("Note purchased");
+        window.location.reload();
+      }
     })
 
     async function fetchData() {
