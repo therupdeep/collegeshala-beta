@@ -351,12 +351,13 @@
   <script src="/js/auth.js"></script>
   <script src="/js/upload.js"></script>
   <script src="/js/aws/aws-sdk-2.663.0.min.js"></script>
+  <script src="/js/aws/config.js"></script>
   <script>
     function handleUpload() {
       event.preventDefault();
       AWS.config.update({
-        accessKeyId: "AKIAXSR73GURFN2EHTZG",
-        secretAccessKey: "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",
+        accessKeyId: config.accessKeyId,
+        secretAccessKey: config.secretAccessKey,
         region: 'ap-south-1',
       });
       notes = document.getElementById('file');
