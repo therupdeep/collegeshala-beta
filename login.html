@@ -123,12 +123,18 @@
             }
             var onSuccess = function loginSuccess(result) {
                 console.log('Check user here : ',result);
-                window.localStorage.setItem("idToken", result.idToken.jwtToken)
-                window.location.href="/index.html";
+                window.localStorage.setItem("idToken", result.idToken.jwtToken);
+                let isProf = parseJwt(result.idToken.jwtToken)['custom:isProfessor'];
+                if(isProf === "true") {
+                    window.location.href = "/teacher-dashboard.html";
+                } else {
+                    window.location.href = "/student-dashboard.html";
+                }
             }
             var onFailure = function loginFailure(err) {
                 alert(err);
             }
+            localStorage.removeItem("idToken");
             logIn(userData,onSuccess,onFailure);
         }
         function handleForgetPassword() {
