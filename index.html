@@ -307,26 +307,19 @@
       window.location.pathname = "/all-product.html";
       // console.log(window.location);
     });
-
-    function myFunction() {
-      var x = document.getElementById("myDIV");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-        window.onload = function checklogin() {
-          let token = localStorage.getItem("idToken")
-          if (token) {
-            if (parseJwt(token)['custom:isProfessor'])
-              document.getElementById("nav-sign-up").style.display = "none";
-            if (parseJwt(token)['custom:isProfessor']) {
-              document.getElementById("nav-user-icon").href = "/teacher-account.html";
-            } else {
-              document.getElementById("nav-user-icon").href = "/student-dashboard.html";
-            }
-            document.getElementById("nav-sign-up").style.display = "none";
-          } else {
-            document.getElementById("nav-user-icon").style.display = "none";
-          }
+    window.onload = function checklogin() {
+      let token = localStorage.getItem("idToken")
+      if (token) {
+        if (parseJwt(token)['custom:isProfessor'])
+          document.getElementById("nav-sign-up").style.display = "none";
+        if (parseJwt(token)['custom:isProfessor']) {
+          document.getElementById("nav-user-icon").href = "/teacher-account.html";
+        } else {
+          document.getElementById("nav-user-icon").href = "/student-dashboard.html";
         }
+        document.getElementById("nav-sign-up").style.display = "none";
+      } else {
+        document.getElementById("nav-user-icon").style.display = "none";
       }
     }
   </script>
