@@ -29,7 +29,7 @@ function checkout(amount,credits,authToken) {
 function completePurchase(paymentid,amount,credits,authToken) {
 	$.ajax({
 		method: 'POST',
-		url: 'https://api.collegeshala.com/addcreditss',
+		url: 'https://api.collegeshala.com/addcredits',
 		headers: {
 			authorization: authToken
 		},

@@ -35,7 +35,7 @@
   <!--<script src="./js/cart.js" async></script>-->
 </head>
 
-<body onload="onload()">
+<body>
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
     <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
@@ -347,29 +347,65 @@
       noteid: ""
     };
 
-    function onload() {
-      state.noteid = window.location.search.slice(8);
-    }
+    // function onload() {
+    //   state.noteid = window.location.search.slice(8);
+    //   console.log(state.noteid)
+    // }
 
-    $(".buy-now-btn").click(function () {
-      $.ajax({
+    $(".buy-now-btn").click(async function () {
+      let status;
+      // addCredits();
+      try {
+        status = await buyNow();
+        alert("Note purchased!")
+      } catch (error) {
+        // addCredits();
+      }
+    })
+
+    function buyNow() {
+      return new Promise (function(resolve, reject) {
+        $.ajax({
         method: 'POST',
-        url: "http://api.collegeshala.com/checkout",
+        url: "https://api.collegeshala.com/checkout",
         headers: {
           authorization: token,
         },
-        // data: JSON.stringify({
-        //   email: "mujtaba.fleapo@gmail.com"
-        // }),
+        data: JSON.stringify({}),
         contentType: 'application/json',
         success: function complete(result) {
           console.log(result);
+          resolve(result);
+        },
+        error: function error(err) {
+          console.error(err);
+          checkout(1 * 100, 2, userAuth.authToken).then(addCredits());
+          reject();
+        }
+      });
+      })
+    }
+
+    function addCredits() {
+      $.ajax({
+        method: 'POST',
+        url: "https://api.collegeshala.com/addcredits",
+        headers: {
+          authorization: token,
+        },
+        data: JSON.stringify({
+          "credits": 2
+        }),
+        contentType: 'application/json',
+        success: function complete(result) {
+          console.log(result);
+          alert("2 credits added!")
         },
         error: function error(err) {
           console.error(err);
         }
       });
-    })
+    }
 
     $(".preview-btn").click(function () {
       localStorage.setItem("noteId", state.noteid);
@@ -404,22 +440,26 @@
   <script src="./js/main.js"></script>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="./js/auth.js"></script>
+  <script src="/js/razorpay.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
-    // window.onload = function checklogin() {
-    //   let token = localStorage.getItem("idToken")
-    //   if (token) {
-    //     if (parseJwt(token)['custom:isProfessor'])
-    //       document.getElementById("nav-sign-up").style.display = "none";
-    //     if (parseJwt(token)['custom:isProfessor']) {
-    //       document.getElementById("nav-user-icon").href = "/teacher-account.html";
-    //     } else {
-    //       document.getElementById("nav-user-icon").href = "/student-dashboard.html";
-    //     }
-    //     document.getElementById("nav-sign-up").style.display = "none";
-    //   } else {
-    //     document.getElementById("nav-user-icon").style.display = "none";
-    //   }
-    // } 
+    window.onload = function checklogin() {
+      state.noteid = window.location.search.slice(8);
+      console.log(state.noteid)
+      let token = localStorage.getItem("idToken")
+      if (token) {
+        if (parseJwt(token)['custom:isProfessor'] === 'true')
+          document.getElementById("nav-sign-up").style.display = "none";
+        if (parseJwt(token)['custom:isProfessor']) {
+          document.getElementById("nav-user-icon").href = "/teacher-account.html";
+        } else {
+          document.getElementById("nav-user-icon").href = "/student-dashboard.html";
+        }
+        document.getElementById("nav-sign-up").style.display = "none";
+      } else {
+        document.getElementById("nav-user-icon").style.display = "none";
+      }
+    } 
   </script>
 </body>
 

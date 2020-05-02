@@ -216,28 +216,33 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="./js/scroll.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="/js/razorpay.js"></script>
+  <script src="./js/auth.js"></script>
   <script>
     $(".checkout-btn-cart").click(function () {
       let token = window.localStorage.getItem("idToken");
-      if (!token) {
-        console.log("User not signed in!");
-      } else {
-        $.ajax({
-          method: 'POST',
-          url: "https://api.collegeshala.com/checkout",
-          headers: {
-            authorization: token
-          },
-          data: {},
-          contentType: 'application/json',
-          success: function complete(result) {
-            console.log(result);
-          },
-          error: function error(err) {
-            console.error(err);
-          }
-        });
-      }
+      checkout(100, 2, token);
+
+      // if (!token) {
+      //   console.log("User not signed in!");
+      // } else {
+      //   $.ajax({
+      //     method: 'POST',
+      //     url: "https://api.collegeshala.com/checkout",
+      //     headers: {
+      //       authorization: token
+      //     },
+      //     data: {},
+      //     contentType: 'application/json',
+      //     success: function complete(result) {
+      //       console.log(result);
+      //     },
+      //     error: function error(err) {
+      //       console.error(err);
+      //     }
+      //   });
+      // }
     })
   </script>
 </body>
