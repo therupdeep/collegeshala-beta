@@ -65,8 +65,7 @@
               data-target=".navbar-collapse.show"><span id="nav-font">Sign Up</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link index-nav-link" target="_blank" id="nav-user-icon"
-              onclick="javascript:location.href='/about.html'" href="" data-toggle="collapse"
+            <a class="nav-link index-nav-link" target="_blank" id="nav-user-icon" href="" data-toggle="collapse"
               data-target=".navbar-collapse.show">
               <span id="nav-font"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
             </a>
@@ -129,7 +128,7 @@
       </div>
     </div>
 
-    <p class="text-center m-1">
+    <p class="text-center m-1">-
       <a class="btn btn-primary" id="signup" href="/register.html" role="button">Sign Up</a>
     </p>
   </div>
@@ -154,7 +153,7 @@
                   <br />
                   <span id="talkshala-heading">CONNECT WITH SENIORS</span>
                   <br />
-                  <span id="talkshala-text">Connect With Seniors text</span>
+                  <span id="talkshala-text">Connect With Seniors</span>
                 </p>
               </div>
             </div>
@@ -163,7 +162,7 @@
                 <img src="./assets/images/talkshala/connect-with-peers.png" class="talkshala-icons" alt="" />
                 <br />
                 <span id="talkshala-heading">CONNECT WITH PEERS</span><br />
-                <span id="talkshala-text">Connect with peers text</span>
+                <span id="talkshala-text">Connect with peers</span>
               </p>
             </div>
           </div>
@@ -173,7 +172,7 @@
                 <img src="./assets/images/talkshala/perks-of-community.png" class="talkshala-icons" alt="" />
                 <br />
                 <span id="talkshala-heading">PERKS OF COMMUNITY</span><br />
-                <span id="talkshala-text">Perks of Community text</span>
+                <span id="talkshala-text">Perks of Community</span>
               </p>
             </div>
             <div class="col-12 col-md-6">
@@ -181,7 +180,7 @@
                 <img src="./assets/images/talkshala/share-resources.png" class="talkshala-icons" alt="" />
                 <br />
                 <span id="talkshala-heading">SHARE RESOURCES</span><br />
-                <span id="talkshala-text">Share Resources text</span>
+                <span id="talkshala-text">Share Resources</span>
               </p>
             </div>
           </div>
@@ -189,7 +188,7 @@
       </div>
       <div class="join-area">
         <p class="text-center m-2">
-          <a class="btn" id="join-btn" href="coming-soon.html" role="button">Join the community</a>
+          <a class="btn" id="join-btn" href="/coming-soon.html" role="button">Join the community</a>
         </p>
       </div>
     </div>
@@ -307,22 +306,9 @@
       window.location.pathname = "/all-product.html";
       // console.log(window.location);
     });
-    window.onload = function checklogin() {
-      let token = localStorage.getItem("idToken")
-      if (token) {
-        if (parseJwt(token)['custom:isProfessor'])
-          document.getElementById("nav-sign-up").style.display = "none";
-        if (parseJwt(token)['custom:isProfessor']) {
-          document.getElementById("nav-user-icon").href = "/teacher-account.html";
-        } else {
-          document.getElementById("nav-user-icon").href = "/student-dashboard.html";
-        }
-        document.getElementById("nav-sign-up").style.display = "none";
-      } else {
-        document.getElementById("nav-user-icon").style.display = "none";
-      }
-    }
+    
   </script>
+  <script src="./js/checkuser.js"></script>
 </body>
 
 </html>
