@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
+  <script src="js/aws/aws-cognito-sdk.min.js"></script>
+  <script src="js/aws/amazon-cognito-identity.min.js"></script>
+  <script src="/js/config.js"></script>
   <script src="/js/auth.js"></script>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
   <script>
@@ -136,25 +140,25 @@
                 </div>
                 <div class="form-group">
                   <label for="teacher-upload-subject-name">Subject Name</label>
-                  <input type="email" class="form-control" id="teacher-upload-subject-name" aria-describedby="emailHelp"
+                  <input type="text" class="form-control" id="teacher-upload-subject-name" aria-describedby="emailHelp"
                     placeholder="Enter subject name" />
                 </div>
                 <div class="form-group">
                   <label for="teacher-upload-chapter-name">Chapter Name</label>
-                  <input type="email" class="form-control" id="teacher-upload-chapter-name" aria-describedby="emailHelp"
+                  <input type="text" class="form-control" id="teacher-upload-chapter-name" aria-describedby="emailHelp"
                     placeholder="Enter chapter name" />
                 </div>
                 <div class="form-group">
                   <label for="teacher-upload-semester-number">For which semester?</label>
-                  <input type="email" class="form-control" id="teacher-upload-semester-number"
+                  <input type="text" class="form-control" id="teacher-upload-semester-number"
                     aria-describedby="emailHelp" placeholder="Enter semester" />
                 </div>
                 <div class="form-group">
                   <label for="teacher-upload-university-name">University Name</label>
-                  <input type="email" class="form-control" id="teacher-upload-university-name"
+                  <input type="text" class="form-control" id="teacher-upload-university-name"
                     aria-describedby="emailHelp" placeholder="Enter University name" />
                 </div>
-                <button type="submit" id="submi-notes-upload" class="btn btn-primary">
+                <button onclick="handleUpload()" id="submi-notes-upload" class="btn btn-primary">
                   Submit
                 </button>
               </form>
@@ -230,6 +234,7 @@
 
   <div class="container student-dashboard-material mt-3">
     <div id="myuploadsrow" class="row">
+
       
     </div>
     <nav aria-label="Page navigation example" class="text-center pt-4">
@@ -348,21 +353,77 @@
   <script src="/js/aws/aws-sdk-2.663.0.min.js"></script>
   <script>
     function handleUpload() {
+      event.preventDefault();
       AWS.config.update({
         accessKeyId: "AKIAXSR73GURFN2EHTZG",
         secretAccessKey: "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",
         region: 'ap-south-1',
       });
-      notes = document.getElementById('notes');
+      notes = document.getElementById('file');
+      console.log(notes)
       var file = notes.files[0];
-      var chaptername = ' '  // add chapter name here
-      var subjectname = ' ' // add subject name here
-      var universityname = ' '  // add universityname here
-      var sem = 3 // add sem here
+      console.log(file);
+      var chaptername = document.getElementById('teacher-upload-chapter-name').value;  // add chapter name here
+      var subjectname = document.getElementById('teacher-upload-subject-name').value; // add subject name here
+      var universityname = document.getElementById('teacher-upload-university-name').value;  // add universityname here
+      var sem = document.getElementById('teacher-upload-semester-number').value; // add sem here
       uploadNotes(file, authToken, chaptername, subjectname, universityname, sem)
     }
 
 
+    let authToken;
+    userAuth.authToken.then(function setAuthToken(token) {
+      if (token) {
+        authToken = token;
+        // console.log(token)
+
+        if (!authToken) {
+          console.log("User not signed in!");
+        } else {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/professordetails",
+            headers: {
+              authorization: authToken
+            },
+            data: {},
+            contentType: 'application/json',
+            success: function complete(result) {
+              console.log(result);
+              setData(result);
+            },
+            error: function error(err) {
+              console.error(err);
+            }
+          });
+        }
+      } else {
+        window.location.href = '/login.html';
+      }
+    }).catch(function handleTokenError(error) {
+      alert(error);
+      window.location.href = '/login.html';
+    });
+
+
+    function setData(result) {
+      result.Item.myUploads.map(note => {
+        $('#myuploadsrow').append(
+          `<div class="col-12 col-md-4">
+            <div class="card">
+              <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">${note.subjectname}</h5>
+                <p class="card-text">
+                  ${note.chaptername}
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>`
+        );
+      })
+    }
 
     function fetchDetails() {
             let token = window.localStorage.getItem("idToken");

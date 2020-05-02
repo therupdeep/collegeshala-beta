@@ -124,7 +124,7 @@
     <div id="box">
       <h5 class="cart-total-heading">Total price of the Cart</h5>
       <h1 class="cart-total-amount" id="custom-purple">1090</h1>
-      <a href="#" class="checkout-btn-cart" id="custom-red">Checkout</a>
+      <button href="#" class="checkout-btn-cart" id="custom-red">Checkout</button>
     </div>
   </div>
 
@@ -224,12 +224,11 @@
       } else {
         $.ajax({
           method: 'POST',
-          url: "https://pfbhdk5lh6.execute-api.ap-south-1.amazonaws.com/production/checkout",
-          // url: "http://api.collegeshala.com/getnotes",
+          url: "https://api.collegeshala.com/checkout",
           headers: {
             authorization: token
           },
-          body: {},
+          data: {},
           contentType: 'application/json',
           success: function complete(result) {
             console.log(result);

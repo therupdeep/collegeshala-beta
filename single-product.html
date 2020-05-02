@@ -35,9 +35,9 @@
   <!--<script src="./js/cart.js" async></script>-->
 </head>
 
-<body>
+<body onload="onload()">
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -54,17 +54,17 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link navbar-talkshala" href="#">
+          <a class="nav-link navbar-talkshala" href="./coming-soon.html">
             TalkShala
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="./cart.html">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="./my-account.html">
             <i class="fa fa-user-circle" aria-hidden="true"></i>
           </a>
         </li>
@@ -73,14 +73,14 @@
   </nav>
   <div class="single-page-container">
     <div class="navigation">
-      Home / Data Structures and Algorithms /
-      <span id="custom-red">Learn C Programming</span>
+      Home / Course Name /
+      <span id="custom-red">Note Name</span>
     </div>
   </div>
 
   <div class="single-page-container">
     <div class="title-area">
-      <h1 class="heading-title" id="custom-purple">Learn C Programming</h1>
+      <h1 class="heading-title" id="custom-purple">Note Name</h1>
       <ul class="heading-title-menu">
         <li>
           <a class="like-button" href="#"><i class="far fa-heart"></i></a>
@@ -101,8 +101,8 @@
         </ul>
         <span id="number-rating"><span id="custom-purple">3.0</span><span id="total-stars">(15)</span></span>
         <span id="upload-area"><i class="fas fa-file-upload"></i> Uploaded on
-          <span id="course-upload-date">20/03/2020</span></span>
-        <span id="book-pages"><i class="fas fa-book-open"></i> <span class="nos-of-pages">175</span> Pages</span>
+          <span id="course-upload-date">02/05/2020</span></span>
+        <span id="book-pages"><i class="fas fa-book-open"></i> <span class="nos-of-pages">2</span> Pages</span>
         <span id="upload-area">&#x20B9 <span class="price-of-book">45</span></span>
       </div>
     </div>
@@ -120,6 +120,7 @@
             <h1 class="suggested-products-heading">
               <span id="custom-red">Suggested Products</span>
             </h1>
+            <!--
             <div class="suggested-products-cards">
               <div class="suggested-product-info">
                 <a href=".">
@@ -200,7 +201,7 @@
                 </div>
               </div>
             </div>
-
+          -->
           </div>
         </div>
       </div>
@@ -217,15 +218,18 @@
           <div class="single-product-prof-details">
             <a href="#" class="custom-links">
               <h2 class="suggested-page-prof-details-heading" id="custom-red">
-                By Prof. Amit Das
+                <!--Insert professor name here-->
+                By Prof. ...
               </h2>
             </a>
             <a href="#" class="custom-links">
               <h4 class="suggested-page-university-name" id="custom-purple">
-                Calcutta University
+                <!--Insert University Name here-->
+                University Name
               </h4>
             </a>
-            <p>Department of CS</p>
+            <!--Insert Department Name here-->
+            <p>Department of ..</p>
           </div>
         </div>
       </div>
@@ -336,19 +340,55 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script>
+
+    let token = window.localStorage.getItem("idToken");
+
+    let state = {
+      noteid: ""
+    };
+
+    function onload() {
+      state.noteid = window.location.search.slice(8);
+    }
+
+    $(".buy-now-btn").click(function () {
+      $.ajax({
+        method: 'POST',
+        url: "http://api.collegeshala.com/checkout",
+        headers: {
+          authorization: token,
+        },
+        // data: JSON.stringify({
+        //   email: "mujtaba.fleapo@gmail.com"
+        // }),
+        contentType: 'application/json',
+        success: function complete(result) {
+          console.log(result);
+        },
+        error: function error(err) {
+          console.error(err);
+        }
+      });
+    })
+
+    $(".preview-btn").click(function () {
+      localStorage.setItem("noteId", state.noteid);
+      console.log(window.location.origin + "/");
+      window.open(window.location.origin + "/pdf.html", "_blank");
+    })
+
     $(".add-to-cart-btn").click(function () {
-      let token = window.localStorage.getItem("idToken");
       if (!token) {
         console.log("User not signed in!");
       } else {
         $.ajax({
           method: 'POST',
-          url: "http://api.collegeshala.com/addtocart",
+          url: "https://api.collegeshala.com/addtocart",
           headers: {
             authorization: token,
           },
           data: JSON.stringify({
-            "noteid": "n001", // enter noteid here
+            "noteid": state.noteid
           }),
           contentType: 'application/json',
           success: function complete(result) {
@@ -362,22 +402,24 @@
     })
   </script>
   <script src="./js/main.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="./js/auth.js"></script>
   <script>
-    window.onload = function checklogin() {
-      let token = localStorage.get("tokenId/idToken")
-      if (token) {
-        if (parseJwt(token)['custom:isProfessor'])
-          document.getElementById("nav-sign-up").style.display = "none";
-        if (parseJwt(token)['custom:isProfessor']) {
-          document.getElementById("nav-user-icon").href = "/teacher-account.html";
-        } else {
-          document.getElementById("nav-user-icon").href = "/student-dashboard.html";
-        }
-        document.getElementById("nav-sign-up").style.display = "none";
-      } else {
-        document.getElementById("nav-user-icon").style.display = "none";
-      }
-    } 
+    // window.onload = function checklogin() {
+    //   let token = localStorage.getItem("idToken")
+    //   if (token) {
+    //     if (parseJwt(token)['custom:isProfessor'])
+    //       document.getElementById("nav-sign-up").style.display = "none";
+    //     if (parseJwt(token)['custom:isProfessor']) {
+    //       document.getElementById("nav-user-icon").href = "/teacher-account.html";
+    //     } else {
+    //       document.getElementById("nav-user-icon").href = "/student-dashboard.html";
+    //     }
+    //     document.getElementById("nav-sign-up").style.display = "none";
+    //   } else {
+    //     document.getElementById("nav-user-icon").style.display = "none";
+    //   }
+    // } 
   </script>
 </body>
 
