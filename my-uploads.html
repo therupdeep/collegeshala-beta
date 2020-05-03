@@ -380,7 +380,7 @@
       }
 
       let config = await getCredentials();
-      console.log(config);
+      // console.log(config);
 
       AWS.config.update({
         accessKeyId: config.accessKeyId,
@@ -389,22 +389,22 @@
       });
       config = {};
       notes = document.getElementById('file');
-      console.log(notes)
+      // console.log(notes, "here3")
       var file = notes.files[0];
-      console.log(file);
+      // console.log(file, "here2");
+      console.log(authToken);
       var chaptername = document.getElementById('teacher-upload-chapter-name').value;  // add chapter name here
       var subjectname = document.getElementById('teacher-upload-subject-name').value; // add subject name here
       var universityname = document.getElementById('teacher-upload-university-name').value;  // add universityname here
       var sem = document.getElementById('teacher-upload-semester-number').value; // add sem here
-      uploadNotes(file, authToken, chaptername, subjectname, universityname, sem)
+      uploadNotes(file, token, chaptername, subjectname, universityname, sem)
     }
-
 
     let authToken;
     userAuth.authToken.then(function setAuthToken(token) {
       if (token) {
         authToken = token;
-        // console.log(token)
+        console.log(authToken, "here")
 
         if (!authToken) {
           console.log("User not signed in!");

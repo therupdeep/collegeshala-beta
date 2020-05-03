@@ -1,6 +1,6 @@
 let re = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/;
 
-$("#newsletter-btn").click(function () {
+$("#newsletter-btn").click(async function () {
     const email = $("#sub-email").val();
     // console.log(email.match(re)[0]);
     if (!email.match(re)) {
