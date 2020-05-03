@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163674715-1');
+</script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/studentRegister.css">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+    <title>Student Register</title>
+    <link rel="icon" href="./assets/logo/infinity.png">
+</head>
+
+<body>
+
+
+    <div id="student-signup">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6534CC;">
+                <a id='back' class="navbar-brand" onclick="back()">
+                    <img src="./assets/logo/LeftArrow.png" alt="" srcset="" width="35" height="30">
+                </a>
+                <a id="backtext" onclick="back()"><p class="back-label">Back</p></a>
+            </nav>
+        </div>
+        <div class="content">
+            <div>
+                <div class="progressbar-container">
+                    <!-- <progress max="100" value="5"></progress> -->
+                    <div class="progressbar">
+                        <div id="progval" class="progress-value"></div>
+                        <div class="progress-steps">
+                            <img id="step-1-img" src="./assets/logo/step1.png" alt="step1">
+                            <img id="step-2-img" src="./assets/logo/step2incomplete.png" alt="step2">
+                            <img id="step-3-img" src="./assets/logo/step3incomplete.png" alt="step3">
+                            <img id="step-4-img" src="./assets/logo/step4incomplete.png" alt="step4">
+                            <span class="stretch"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="step-1" class="row details-container">
+                    <div class="col-6 image-column">
+                        <div class="info-about">Tell us <span style="color: #FF4133;">about</span> you...</div>
+                        <img class="info-image" src="./assets/images/teacher-details-svg.png" alt="Register as student"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <input type="text" class="input-text" placeholder="Enter your full name" name="fname">
+                        <input type="text" class="input-text" placeholder="Enter your email address" name="email">
+                        <input type="password" class="input-text" placeholder="Enter your password" name="password">
+                    </div>
+                </div>
+                <div id="step-2" class="row details-container" style="display: none;">
+                    <div class="col-6 image-column">
+                        <div class="info-about">Tell us <span style="color: #FF4133;">about</span> your college...</div>
+                        <img class="info-image" src="./assets/images/teaching-details.png" alt="Register as student"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <input type="text" class="input-text" placeholder="Enter your college's name" name="cname">
+                        <input type="text" class="input-text" placeholder="Enter your department" name="dept">
+                        <input type="text" class="input-text" placeholder="You teach which subjects?" name="sub">
+                    </div>
+                </div>
+                <div id="step-3" class="row details-container" style="display: none;">
+                    <div class="col-6 image-column">
+                        <div class="info-about">One <span style="color: #FF4133;">last</span> entry...</div>
+                        <img class="info-image" src="./assets/images/teachersverify.png" alt="Register as student"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <input type="text" class="input-text" placeholder="Enter your Phone number" name="phone"><br>
+                        <input type="checkbox" name="termsconditions">     I accept terms & conditions
+                        <button id="verifybtn" class="input-text" onclick="handleSubmit()"><span class="verifyph">Verify</span></button>
+                        <input type="text" class="otpinput" placeholder="Enter Your OTP" name="otp">
+                    </div>
+                </div>
+                <div id="step-4" class="row details-container" style="display:none;">
+                    <div class="col-6 image-column">
+                        <img class="info-image" src="./assets/images/rocket-human-icon 1.png" alt="Register as student"/>
+                    </div>
+                    <div class="col-6 input-column">
+                        <div class="hurray">HURRAY<span style="color: #6534CC;">!</span></div>
+                        <p class="success-message">You are registered on our platform.
+                            Head over to you dashboard.
+                        </p>
+                    </div>
+                </div>
+                <div id="nextbtn" class="next" onmouseover="document.getElementById('nextbtn').style = 'cursor: pointer'" onclick="next()">
+                    Next
+                    <img id="nextimg" src="assets/logo/next.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/aws/aws-cognito-sdk.min.js"></script>
+    <script src="js/aws/amazon-cognito-identity.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        var verifych=false;
+        var step = 1;
+        var progval = document.getElementById('progval');
+        function validateEmail(email){
+                var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if (reg.test(email) == false) 
+                    return false;
+                return true;
+        }
+        function next() {
+            if(step === 3 && !verifych){
+                handleVerify();
+            }
+            if(step === 4) {
+                localStorage.setItem("acc_type", 'professor');
+                window.location.href ="/login.html"
+            }
+            else {
+                if(step === 1){
+                    //perform validation
+                    let email = $("input[name='email']").val();
+                    if(!validateEmail(email)) {
+                        alert("Enter valid email address");
+                        return;
+                    }
+                }
+                progval.classList.add(`progress${step}`);
+                setTimeout(() => {
+                    var imgchg = document.getElementById(`step-${step+1}-img`);
+                    imgchg.src = `./assets/logo/step${step+1}complete.png`;
+                    step = step+1;
+                }, 500);
+                document.getElementById(`step-${step}`).style = "display: none";
+                (window.innerWidth > 800)?
+                    document.getElementById(`step-${step+1}`).style = "display: inline-flex":
+                    document.getElementById(`step-${step+1}`).style = "display: initial";
+                if(step === 2){
+                    document.getElementById('nextbtn').innerHTML = 'Finish<img id="nextimg" src="assets/logo/next.png">';
+                }
+                if(verifych){
+                    document.getElementById('nextbtn').innerHTML = 'Go to HomePage<img id="nextimg" src="assets/logo/next.png">';
+                }
+            }
+        }
+
+        function back() {
+            if(step != 1) {
+                document.getElementById(`step-${step}`).style = "display: none";
+                (window.innerWidth > 800)?
+                    document.getElementById(`step-${step-1}`).style = "display: inline-flex":
+                    document.getElementById(`step-${step-1}`).style = "display: initial";
+                if(step === 3) {
+                    document.getElementById('nextbtn').innerHTML = 'Next<img id="nextimg" src="assets/logo/next.png">';
+                }
+                else if(step === 4) {
+                    document.getElementById('nextbtn').innerHTML = 'Finish<img id="nextimg" src="assets/logo/next.png">';
+                }
+                step = step - 1;
+            }
+            else {
+                document.getElementById('back').href = "/register.html";
+                document.getElementById('backtext').href = "/register.html";
+            }
+        }
+
+        function handleSubmit() {
+            if(!$("input[name='termsconditions']")[0].checked){
+                alert('Please accept terms and conditions');
+                return;
+            }
+            var userData = {
+                name: $("input[name='fname']").val(),
+                email: $("input[name='email']").val(),
+                password: $("input[name='password']").val(),
+                cllgname: $("input[name='cname']").val(),
+                department: $("input[name='dept']").val(),
+                subject: $("input[name='sub']").val(),
+                phone: '+91' + $("input[name='phone']").val(),
+                isProfessor: 'true',
+            }
+            var onSuccess = function registerSuccess(result) {
+                var cognitoUser = result.user;
+                console.log('Check user here : ',cognitoUser);
+                alert("New User created. Please check your phone for the verification code");
+            }
+            var onFailure = function registerFailure(err) {
+                console.error(err);
+                alert(err);
+            }
+            register(userData,onSuccess,onFailure);
+        }
+        // function next() {
+        //     console.log(step);
+        //     progval.classList.add(`progress${step}`);
+        //     setTimeout(() => {
+        //         var imgchg = document.getElementById(`step-${step+1}-img`);
+        //         imgchg.src = `./assets/logo/step${step+1}complete.png`;
+        //         step = step+1;
+        //     }, 500);
+        //     document.getElementById(`step-${step}`).style = "display: none";
+        //     (window.innerWidth > 800)?
+        //         document.getElementById(`step-${step+1}`).style = "display: inline-flex":
+        //         document.getElementById(`step-${step+1}`).style = "display: initial";
+        //     if(step === 2){
+        //         document.getElementById('nextbtn').innerHTML = 'Finish<img id="nextimg" src="assets/logo/next.png">';
+        //     }
+        //     else if(step === 3){
+        //         document.getElementById('nextbtn').innerHTML = 'Go to Dashboard<img id="nextimg" src="assets/logo/next.png">';
+        //     }
+        // }
+
+        // function back() {
+        //     if(step != 1) {
+        //         document.getElementById(`step-${step}`).style = "display: none";
+        //         (window.innerWidth > 800)?
+        //             document.getElementById(`step-${step-1}`).style = "display: inline-flex":
+        //             document.getElementById(`step-${step-1}`).style = "display: initial";
+        //         if(step === 3) {
+        //             document.getElementById('nextbtn').innerHTML = 'Next<img id="nextimg" src="assets/logo/next.png">';
+        //         }
+        //         else if(step === 4) {
+        //             document.getElementById('nextbtn').innerHTML = 'Finish<img id="nextimg" src="assets/logo/next.png">';
+        //         }
+        //         step = step - 1;
+        //     }
+        //     else {
+        //         document.getElementById('back').href = "/register.html";
+        //         document.getElementById('backtext').href = "/register.html";
+        //     }
+        // }
+
+    </script>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

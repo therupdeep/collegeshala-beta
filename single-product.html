@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="/js/auth.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163674715-1');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;   user-scalable=0;" name="viewport" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <script src="https://kit.fontawesome.com/a166c5af45.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>College Shala</title>
+  <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
+
+  <!--<script src="./js/cart.js" async></script>-->
+</head>
+
+<body>
+  <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
+    <a class="navbar-brand" href="/">
+      <img src="./assets/images/logo.png" id="logo" alt="" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <p class="nav-seach-box">
+            <input type="text" id="search-input" placeholder="Search your subject here " />
+          </p>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link navbar-talkshala" href="./coming-soon.html">
+            TalkShala
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./cart.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./my-account.html">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="single-page-container">
+    <div class="navigation">
+      Home / Course Name /
+      <span id="custom-red">Note Name</span>
+    </div>
+  </div>
+
+  <div class="single-page-container">
+    <div class="title-area">
+      <h1 class="heading-title" id="custom-purple">Note Name</h1>
+      <ul class="heading-title-menu">
+        <li>
+          <a class="like-button" href="#"><i class="far fa-heart"></i></a>
+        </li>
+        <li>
+          <a class="share-button" href="#"><i class="fas fa-share-alt"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="below-title-area">
+      <div class="single-product-page-rating">
+        <ul class="rating-stars">
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+          <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+        </ul>
+        <span id="number-rating"><span id="custom-purple">3.0</span><span id="total-stars">(15)</span></span>
+        <span id="upload-area"><i class="fas fa-file-upload"></i> Uploaded on
+          <span id="course-upload-date">02/05/2020</span></span>
+        <span id="book-pages"><i class="fas fa-book-open"></i> <span class="nos-of-pages">2</span> Pages</span>
+        <span id="upload-area">&#x20B9 <span class="price-of-book">45</span></span>
+      </div>
+    </div>
+
+
+    <div class=" course-and-suggested-area">
+      <div class="row">
+        <div class="col-12 col-md-6 notes-image-area notes-image">
+          <button type="button" class="btn preview-btn">Preview</button>
+          <input type="button" value="Buy Now" class="buy-now-btn" />
+          <input type="button" value="Add to Cart" class="add-to-cart-btn" />
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="suggested-products-area">
+            <h1 class="suggested-products-heading">
+              <span id="custom-red">Suggested Products</span>
+            </h1>
+            <!--
+            <div class="suggested-products-cards">
+              <div class="suggested-product-info">
+                <a href=".">
+                  <img src="./assets/images/single-product/its a book.jpg" alt="its a book"
+                    class="suggested-product-image" />
+                </a>
+                <div class="suggested-card-text-body">
+                  <a href="" class="custom-links">
+                    <h1 class="suggested-card-heading">
+                      <span id="custom-purple">Notes for Advanced Maths</span>
+                    </h1>
+                  </a>
+                  <a href="" class="custom-links">
+                    <h3 class="suggested-card-prof-name">
+                      <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                      Prof. Amit Das
+                    </h3>
+                  </a>
+                  <a href="#" class="custom-links">
+                    <h3 class="suggested-card-university-name">
+                      <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University
+                    </h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="suggested-products-cards">
+              <div class="suggested-product-info">
+                <a href=".">
+                  <img src="./assets/images/single-product/its a book.jpg" alt="its a book"
+                    class="suggested-product-image" />
+                </a>
+                <div class="suggested-card-text-body">
+                  <a href="" class="custom-links">
+                    <h1 class="suggested-card-heading">
+                      <span id="custom-purple">Notes for Advanced Maths</span>
+                    </h1>
+                  </a>
+                  <a href="" class="custom-links">
+                    <h3 class="suggested-card-prof-name">
+                      <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                      Prof. Amit Das
+                    </h3>
+                  </a>
+                  <a href="#" class="custom-links">
+                    <h3 class="suggested-card-university-name">
+                      <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University
+                    </h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="suggested-products-cards">
+              <div class="suggested-product-info">
+                <a href=".">
+                  <img src="./assets/images/single-product/its a book.jpg" alt="its a book"
+                    class="suggested-product-image" />
+                </a>
+                <div class="suggested-card-text-body">
+                  <a href="" class="custom-links">
+                    <h1 class="suggested-card-heading">
+                      <span id="custom-purple">Notes for Advanced Maths</span>
+                    </h1>
+                  </a>
+                  <a href="" class="custom-links">
+                    <h3 class="suggested-card-prof-name">
+                      <i class="fa fa-user-circle pr-1" aria-hidden="true"></i>By
+                      Prof. Amit Das
+                    </h3>
+                  </a>
+                  <a href="#" class="custom-links">
+                    <h3 class="suggested-card-university-name">
+                      <i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i>Calcutta University
+                    </h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+          -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <div class="single-page-container">-->
+
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="single-product-prof-details-area">
+          <img src="./assets/images/single-product-page/prof-vector.png" class="single-product-prof-vector" alt="" />
+          <div class="single-product-prof-details">
+            <a href="#" class="custom-links">
+              <h2 class="suggested-page-prof-details-heading" id="custom-red">
+                <!--Insert professor name here-->
+                By Prof. ...
+              </h2>
+            </a>
+            <a href="#" class="custom-links">
+              <h4 class="suggested-page-university-name" id="custom-purple">
+                <!--Insert University Name here-->
+                University Name
+              </h4>
+            </a>
+            <!--Insert Department Name here-->
+            <p>Department of ..</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="single-product-user-comments-area">
+          <p class="single-product-user-comments-heading"><i class="fas fa-user-circle"></i> <span id="custom-red">User
+              name/Anonymous</span></p>
+          <form action="">
+            <div class="form-group">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                placeholder="Enter your comments here"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <!--<h6>About the company</h6> -->
+          <a href="">
+            <h6 class="text-justify">
+              About Us
+            </h6>
+          </a>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./copyright.html">Copyright</a><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
+              <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./return-policy.html">Return Policy</a><br />
+              <a target="_blank" href="./about.html">Meet the Team</a><br />
+              <a target="_blank" href="./terms-of-use.html">Terms of Use</a>
+            </div>
+          </div>
+        </div>
+        <!--
+      <div class="col-xs-6 col-md-3">
+        <h6>Important Links</h6>
+        <ul class="footer-links">
+          <li>
+            <a href="">lorem Ipsum</a>
+          </li>
+          <li>
+            <a href="">lorem Ipsum</a>
+          </li>
+          <li>
+            <a href="">lorem Ipsum</a>
+          </li>
+          <li>
+            <a href="http://scanfcode.com/category/java-programming-language/">Lorem Ispum</a>
+          </li>
+        </ul>
+      </div>
+      -->
+        <div class="col-xs-6 col-md-4">
+          <h6>Connect With Us</h6>
+          <ul class="footer-links">
+            <li>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
+            </li>
+            <li>
+              <a href="#">Call US: 9874563210</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright-area">
+      <p class="text-center" id="footer-copyright-text">
+        <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
+        Reserved
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script>
+
+    let token = window.localStorage.getItem("idToken");
+
+    let state = {
+      noteid: "",
+      note: {}
+    };
+
+    // function onload() {
+    //   state.noteid = window.location.search.slice(8);
+    //   console.log(state.noteid)
+    // }
+
+    $(".buy-now-btn").click(async function () {
+      window.location.href = "/coming-soon.html";
+    })
+
+    function buyNow() {
+      return new Promise(function (resolve, reject) {
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/checkout",
+          headers: {
+            authorization: token,
+          },
+          data: JSON.stringify({}),
+          contentType: 'application/json',
+          success: function complete(result) {
+            console.log(result);
+            resolve(result);
+          },
+          error: function error(err) {
+            console.error(err);
+            checkout(1 * 100, 2, token).then(addCredits());
+            reject();
+          }
+        });
+      })
+    }
+
+    async function setData() {
+      let resp = await getNote();
+      state.note = resp.Item;
+      $(".heading-title").text(`${state.note.chaptername}`);
+      $(".price-of-book").text(`${state.note.requiredCredits * 10}`);
+      $(".suggested-page-prof-details-heading").text(`${state.note.professorname}`);
+    }
+
+    function getNote() {
+      return new Promise(function (resolve, reject) {
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/getnotebyid",
+          headers: {
+            authorization: token,
+          },
+          data: JSON.stringify({
+            "noteId": state.noteid
+          }),
+          contentType: 'application/json',
+          success: function complete(result) {
+            resolve(result);
+          },
+          error: function error(err) {
+            reject(err)
+          }
+        });
+      })
+    }
+
+    function addCredits() {
+      $.ajax({
+        method: 'POST',
+        url: "https://api.collegeshala.com/addcredits",
+        headers: {
+          authorization: token,
+        },
+        data: JSON.stringify({
+          "credits": 2
+        }),
+        contentType: 'application/json',
+        success: function complete(result) {
+          console.log(result);
+          alert("2 credits added!")
+        },
+        error: function error(err) {
+          console.error(err);
+        }
+      });
+    }
+
+    $(".preview-btn").click(function () {
+      localStorage.setItem("noteId", state.noteid);
+      console.log(window.location.origin + "/");
+      window.open(window.location.origin + "/pdf.html", "_blank");
+    })
+
+    $(".add-to-cart-btn").click(function () {
+      if (!token) {
+        console.log("User not signed in!");
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/addtocart",
+          headers: {
+            authorization: token,
+          },
+          data: JSON.stringify({
+            "noteid": state.noteid
+          }),
+          contentType: 'application/json',
+          success: function complete(result) {
+            console.log(result);
+          },
+          error: function error(err) {
+            console.error(err);
+          }
+        });
+      }
+    })
+  </script>
+  <script src="./js/main.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="/js/razorpay.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    window.onload = function checklogin() {
+      state.noteid = window.location.search.slice(8);
+      setData();
+      let token = localStorage.getItem("idToken")
+      if (token) {
+        if (parseJwt(token)['custom:isProfessor'] === 'true')
+          document.getElementById("nav-sign-up").style.display = "none";
+        if (parseJwt(token)['custom:isProfessor']) {
+          document.getElementById("nav-user-icon").href = "/teacher-account.html";
+        } else {
+          document.getElementById("nav-user-icon").href = "/student-dashboard.html";
+        }
+        document.getElementById("nav-sign-up").style.display = "none";
+      } else {
+        document.getElementById("nav-user-icon").style.display = "none";
+      }
+    } 
+  </script>
+  <script>
+    $("#search-input").change(function () {
+      localStorage.setItem("value", event.target.value);
+      window.location.pathname = "/all-product.html";
+    });
+  </script>
+</body>
+
+</html>
