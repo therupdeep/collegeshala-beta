@@ -2,6 +2,7 @@
 var url = '/about.html'
 
 window.onload = function checklogin() {
+    userAuth.authToken.then(token => console.log(token)).catch(err => console.error(err))
     document.getElementById("nav-user-icon").style.display = "none";
     let token = localStorage.getItem("idToken")
     if(token){
