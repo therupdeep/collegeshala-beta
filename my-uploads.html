@@ -379,7 +379,7 @@
         })
       }
 
-      let config  = await getCredentials();
+      let config = await getCredentials();
       console.log(config);
 
       AWS.config.update({
@@ -482,17 +482,17 @@
       result.myUploads.map(note => {
         $('#myuploadsrow').append(
           `<div class="col-12 col-md-4">
-                  <div class="card">
-                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
-                    <div class="card-body">
-                      <h5 class="card-title">${note.subjectname}</h5>
-                      <p class="card-text">
-                        ${note.chaptername}
-                      </p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>`
+              <div class="card">
+                <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-title">${note.subjectname}</h5>
+                  <p class="card-text">
+                    ${note.chaptername}
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>`
         );
       })
     }

@@ -354,14 +354,7 @@
     // }
 
     $(".buy-now-btn").click(async function () {
-      let status;
-      // console.log(token);
-      try {
-        status = await buyNow();
-        alert("Note purchased!")
-      } catch (error) {
-        console.error(error)
-      }
+      window.location.href = "/coming-soon.html";
     })
 
     function buyNow() {

@@ -48,7 +48,7 @@ const sessionExpire = (token) => {
     return false;
 };
 
-userAuth.authToken = new Promise(function fetchCurrentAuthToken(
+useAuth.authToken = new Promise(function fetchCurrentAuthToken(
     resolve,
     reject
 ) {
