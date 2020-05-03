@@ -1,5 +1,5 @@
 
-var url = '/about.html'
+var url = ''
 
 window.onload = function checklogin() {
     document.getElementById("nav-user-icon").style.display = "none";
