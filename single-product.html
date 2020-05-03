@@ -48,7 +48,7 @@
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <p class="nav-seach-box">
-            <input type="text" placeholder="Search your subject here " />
+            <input type="text" id="search-input" placeholder="Search your subject here " />
           </p>
         </li>
       </ul>
@@ -354,14 +354,7 @@
     // }
 
     $(".buy-now-btn").click(async function () {
-      let status;
-      // console.log(token);
-      try {
-        status = await buyNow();
-        alert("Note purchased!")
-      } catch (error) {
-        console.error(error)
-      }
+      window.location.href = "/coming-soon.html";
     })
 
     function buyNow() {
@@ -491,6 +484,12 @@
         document.getElementById("nav-user-icon").style.display = "none";
       }
     } 
+  </script>
+  <script>
+    $("#search-input").change(function () {
+      localStorage.setItem("value", event.target.value);
+      window.location.pathname = "/all-product.html";
+    });
   </script>
 </body>
 

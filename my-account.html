@@ -44,7 +44,7 @@
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <p class="nav-seach-box">
-            <input type="text" placeholder="Search your subject here " />
+            <input type="text" id="search-input" placeholder="Search your subject here " />
           </p>
         </li>
       </ul>
@@ -302,6 +302,12 @@
         });
       }
     })
+  </script>
+  <script>
+    $("#search-input").change(function () {
+      localStorage.setItem("value", event.target.value);
+      window.location.pathname = "/all-product.html";
+    });
   </script>
   <script src="./js/logout.js"></script>
 </body>

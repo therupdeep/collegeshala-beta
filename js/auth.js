@@ -48,7 +48,11 @@ const sessionExpire = (token) => {
     return false;
 };
 
+<<<<<<< HEAD
 userAuth.authToken = new Promise(function fetchCurrentAuthToken(
+=======
+useAuth.authToken = new Promise(function fetchCurrentAuthToken(
+>>>>>>> e0d6f5283204187291dbc5071e7a54a5477f177c
     resolve,
     reject
 ) {
