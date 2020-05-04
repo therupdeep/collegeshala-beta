@@ -3,6 +3,13 @@ var url = '/about.html'
 
 window.onload = async function checklogin() {
 
+    if(window.location.href.endsWith("all-product.html")) {
+        console.log("true");
+        getSearchResult();
+    } else {
+        console.log("not");
+    }
+
     document.getElementById("nav-user-icon").style.display = "none";
     let token = localStorage.getItem("idToken")
     if(token){
@@ -22,5 +29,4 @@ window.onload = async function checklogin() {
 
 function goToURL() {
     location.href = url;
-
 }
