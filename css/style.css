@@ -1992,6 +1992,14 @@
   color: black;
 }
 
+#students-buy-credits .custom-buy-credits-button {
+  border: #ff4133 2px solid;
+  border-radius: 45px;
+  padding: 0.4rem 2.4rem;
+  color: #6534cc;
+  margin-top: -5px;
+}
+
 /*
             ************
         My Transaction Page Styles Ends
