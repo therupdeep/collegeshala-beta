@@ -75,16 +75,61 @@
         <a href="./my-account.html">My Account</a>
       </div>
       <div class="col-sm text-center">
-        <a href="">My Materials</a>
+        <a href="./student-dashboard.html">My Materials</a>
       </div>
       <div class="col-sm text-center">
-        <a href="">My Transactions</a>
+        <a href="./my-transaction">My Transactions</a>
       </div>
       <div class="col-sm text-center">
         <a href="./coming-soon.html">Q/A Forum</a>
       </div>
     </div>
   </div>
+
+  <section id="students-buy-credits" class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-md-4 p-2 ml-3 mb-3">
+        Balance Credits - XXXX
+      </div>
+      <div class="col-12 col-md-4">
+        <a href="#" data-toggle="modal" data-target="#buy-credits-btn" class="btn custom-buy-credits-button"><span>Buy
+            Credits
+            <i class="fas fa-arrow-right"></i></span></a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Redeem Now Modal -->
+  <div class="modal fade" id="buy-credits-btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Buy Credits</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="buyCredits">Enter Credits Amount</label>
+              <input type="text" class="form-control" id="buyCredits" aria-describedby="emailHelp"
+                placeholder="Enter Credits Amount">
+              <small id="buyCredits" class="form-text text-muted">Note: 1 credit equals 10 Rupees</small>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+          <button type="button" class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section class="my-5" id="my-transaction">
     <div class="container">
       <div class="row">
@@ -173,7 +218,7 @@
                   <div class="row">
                     <div class="col-md-6">
                       <p class="bold"><i class="fas fa-user-circle"></i> <b><span id="prof-name">
-                        <a href="/">By Prof. Amit Das</a></span></b></p>
+                            <a href="/">By Prof. Amit Das</a></span></b></p>
                     </div>
                     <div class="col-md-6">
                       <p><i class="fas fa-book-open"></i> 175 pages</p>
@@ -304,6 +349,19 @@
       </p>
     </div>
   </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
   <script>
     $("#search-input").change(function () {
       localStorage.setItem("value", event.target.value);
