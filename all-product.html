@@ -62,8 +62,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" id="nav-user-icon" href="javascript:void(0)" onclick="goToURL(); return false;">
             <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-sign-up" href="#">
+            Sign Up
           </a>
         </li>
       </ul>
@@ -280,7 +285,7 @@
         $('.notes-container').append(
           `<div class="notes-info-tab">
         <img
-          src="./assets/images/single-product/its a book.jpg"
+          src="./assets/images/pdf_logo.svg"
           alt="its a book"
           class="custom-card-image"
         />
@@ -305,6 +310,7 @@
       })
     }
   </script>
+  <script src="/js/checkuser.js"></script>
 </body>
 
 </html>

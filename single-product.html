@@ -64,8 +64,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./my-account.html">
+          <a class="nav-link" id="nav-user-icon" href="javascript:void(0)" onclick="goToURL(); return false;">
             <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-sign-up" href="#">
+            Sign Up
           </a>
         </li>
       </ul>
@@ -491,6 +496,7 @@
       window.location.pathname = "/all-product.html";
     });
   </script>
+  <script src="/js/checkuser.js"></script>
 </body>
 
 </html>
