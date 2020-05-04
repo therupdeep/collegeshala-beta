@@ -6,14 +6,13 @@ function uploadNotes(
     universityname,
     sem
 ) {
-    console.log(authToken, "tok");
     // notes = document.getElementById('notes');
     // var file = notes.files[0];
     let noteId = uuidv4(); // Replace this function immediately
     let fs = new FileReader();
     fs.abort();
     fs.onload = function (file) {
-        console.log(file, "here1");
+        console.log(file);
         var s3 = new AWS.S3({
             apiVersion: "2006-03-01",
             params: { Bucket: "collegeshala-notes" },
@@ -31,16 +30,8 @@ function uploadNotes(
                 console.log(err, err.stack);
                 alert(err);
             } else {
-                // console.log(data.Location);
+                console.log(data);
                 const noteurl = data.Location;
-                // console.log({
-                //     noteId,
-                //     noteurl,
-                //     chaptername,
-                //     subjectname,
-                //     universityname,
-                //     sem,
-                // });
                 $.ajax({
                     method: "POST",
                     url: "https://api.collegeshala.com/addnewnote",
