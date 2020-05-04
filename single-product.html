@@ -475,19 +475,6 @@
     window.onload = function checklogin() {
       state.noteid = window.location.search.slice(8);
       setData();
-      let token = localStorage.getItem("idToken")
-      if (token) {
-        if (parseJwt(token)['custom:isProfessor'] === 'true')
-          document.getElementById("nav-sign-up").style.display = "none";
-        if (parseJwt(token)['custom:isProfessor']) {
-          document.getElementById("nav-user-icon").href = "/teacher-account.html";
-        } else {
-          document.getElementById("nav-user-icon").href = "/student-dashboard.html";
-        }
-        document.getElementById("nav-sign-up").style.display = "none";
-      } else {
-        document.getElementById("nav-user-icon").style.display = "none";
-      }
     } 
   </script>
   <script>

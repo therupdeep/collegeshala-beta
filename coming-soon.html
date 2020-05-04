@@ -3,14 +3,14 @@
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-163674715-1');
-</script>
+    gtag('config', 'UA-163674715-1');
+  </script>
 
   <!-- Required meta tags -->
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
@@ -55,7 +55,17 @@
               <span class="index-nav-link"><span id="nav-font">Call Us Now</span></span>
             </a>
           </li>-->
-          
+          <li class="nav-item">
+            <a class="nav-link" id="nav-user-icon" href="javascript:void(0)" onclick="goToURL(); return false;">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-sign-up" href="#">
+              Sign Up
+            </a>
+          </li>
+
         </ul>
       </div>
     </nav>
@@ -66,32 +76,31 @@
       </h1>
     </div>
   </div>
-<!-- Site footer -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <!--<h6>About the company</h6> -->
-        <a href="">
-          <h6 class="text-justify">
-            About Us
-          </h6>
-        </a>
-        <div class="row">
-          <div class="col-12 col-md-4">
-            <a target="_blank" href="./copyright.html">Copyright</a><br />
-            <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a
-            ><br />
-            <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
-          </div>
-          <div class="col-12 col-md-4">
-            <a target="_blank" href="./return-policy.html">Return Policy</a><br />
-            <a target="_blank" href="./about.html">Meet the Team</a><br />
-            <a target="_blank" href="./terms-of-use.html">Terms of Use</a>
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <!--<h6>About the company</h6> -->
+          <a href="">
+            <h6 class="text-justify">
+              About Us
+            </h6>
+          </a>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./copyright.html">Copyright</a><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
+              <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./return-policy.html">Return Policy</a><br />
+              <a target="_blank" href="./about.html">Meet the Team</a><br />
+              <a target="_blank" href="./terms-of-use.html">Terms of Use</a>
+            </div>
           </div>
         </div>
-      </div>
-      <!--
+        <!--
     <div class="col-xs-6 col-md-3">
       <h6>Important Links</h6>
       <ul class="footer-links">
@@ -110,60 +119,40 @@
       </ul>
     </div>
     -->
-      <div class="col-xs-6 col-md-4">
-        <h6>Connect With Us</h6>
-        <ul class="footer-links">
-          <li>
-            <a target="_blank" href=""
-              ><img
-                src="./assets/images/footer/twitter-icon.png"
-                id="footer-social-icons"
-                alt=""
-                srcset=""
-            /></a>
-            <a target="_blank" href="mailto:collegeshala2020@gmail.com"
-              ><img
-                src="./assets/images/footer/gmailicon.png"
-                id="footer-social-icons"
-                alt=""
-                srcset=""
-            /></a>
-            <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"
-              ><img
-                src="./assets/images/footer/facebook-icon.png"
-                id="footer-social-icons"
-                alt=""
-                rcset=""
-            /></a>
-            <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"
-              ><img
-                src="./assets/images/footer/linkedin-icon.png"
-                id="footer-social-icons"
-                alt=""
-                rcset=""
-            /></a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg"
-              >Office: 405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
-              West Bengal 700039</a
-            >
-          </li>
-          <li>
-            <a href="#">Call US: 9874563210</a>
-          </li>
-        </ul>
+        <div class="col-xs-6 col-md-4">
+          <h6>Connect With Us</h6>
+          <ul class="footer-links">
+            <li>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
+            </li>
+            <li>
+              <a href="#">Call US: 9874563210</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="copyright-area">
-    <p class="text-center" id="footer-copyright-text">
-      <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
-      Reserved
-    </p>
-  </div>
-</footer>
+    <div class="copyright-area">
+      <p class="text-center" id="footer-copyright-text">
+        <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
+        Reserved
+      </p>
+    </div>
+  </footer>
 
 
   <!-- Optional JavaScript -->
@@ -177,7 +166,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-
+  <script src="/js/checkuser.js"></script>
 </body>
 
 </html>
