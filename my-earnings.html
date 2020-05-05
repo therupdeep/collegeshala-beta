@@ -96,14 +96,14 @@
       </div>
       <div class="row mt-3">
         <div class="col-md-4">
-          <p class="lead purple-color">Credits: <span class="red-color">56</span></p>
+          <p class="lead purple-color">Credits: <span id="credits" class="red-color">0</span></p>
         </div>
         <div class="col-md-4">
-          <p class="lead purple-color">Equivalent Amount: <span class="red-color">560</span></p>
+          <p class="lead purple-color">Equivalent Amount: <span id="amount" class="red-color">0</span></p>
         </div>
         <div class="col-md-4">
           <a href="#" data-toggle="modal" data-target="#redeem-btn" class="btn custom-earning-button"><span>Redeem Now
-            <i class="fas fa-arrow-right"></i></span></a>
+              <i class="fas fa-arrow-right"></i></span></a>
         </div>
       </div>
     </div>
@@ -138,130 +138,8 @@
           <h2 class="display-5">DETAILS OF NOTES SOLD:</h2>
         </div>
       </div>
-      <div class="row mt-3">
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <div class="card-body pb-3">
-              <div class="row">
-                <div class="col-lg-3">
-                  <img src="assets/images/pdf_logo.svg" alt="" class="img-fluid">
-                </div>
-                <div class="col-lg-9">
-                  <a href="">
-                    <h4 class="purple-color">
-                      LEARN C PROGRAMMING BEGINNERS
-                    </h4>
-                  </a>
-                  <div class="row">
-                    <div class="col">
-                      <p class="bold"><i class="fas fa-user-circle"></i> <b><span id="prof-name"><a href="">By Prof.
-                              Amit Das</a></span></b></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div>
-                    <p class="text-muted">Selling Price: <b><span class="text-dark">10 credits</span></b></p>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div>
-                    <p class="text-muted">Quantity Sold: <b><span class="text-dark">2</span></b></p>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div>
-                    <p class="lead purple-color">Total Credits: <span class="red-color">20</span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <div class="card-body pb-3">
-              <div class="row">
-                <div class="col-lg-3">
-                  <img src="assets/images/pdf_logo.svg" alt="" class="img-fluid">
-                </div>
-                <div class="col-lg-9">
-                  <a href="">
-                    <h4 class="purple-color">
-                      LEARN C PROGRAMMING BEGINNERS
-                    </h4>
-                  </a>
-                  <div class="row">
-                    <div class="col">
-                      <p class="bold"><i class="fas fa-user-circle"></i> <b><span id="prof-name"><a href="">By Prof.
-                              Amit Das</a></span></b></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div>
-                    <p class="text-muted">Selling Price: <b><span class="text-dark">10 credits</span></b></p>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div>
-                    <p class="text-muted">Quantity Sold: <b><span class="text-dark">2</span></b></p>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div>
-                    <p class="lead purple-color">Total Credits: <span class="red-color">20</span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <div class="card-body pb-3">
-              <div class="row">
-                <div class="col-lg-3">
-                  <img src="assets/images/pdf_logo.svg" alt="" class="img-fluid">
-                </div>
-                <div class="col-lg-9">
-                  <a href="">
-                    <h4 class="purple-color">
-                      LEARN C PROGRAMMING BEGINNERS
-                    </h4>
-                  </a>
-                  <div class="row">
-                    <div class="col">
-                      <p class="bold"><i class="fas fa-user-circle"></i> <b><span id="prof-name"><a href="">By Prof.
-                              Amit Das</a></span></b></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div>
-                    <p class="text-muted">Selling Price: <b><span class="text-dark">10 credits</span></b></p>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div>
-                    <p class="text-muted">Quantity Sold: <b><span class="text-dark">2</span></b></p>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div>
-                    <p class="lead purple-color">Total Credits: <span class="red-color">20</span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="transactions" class="row mt-3">
+        <!-- transaction details go here -->
       </div>
     </div>
   </section>
@@ -342,7 +220,7 @@
       </p>
     </div>
   </footer>
-<!-- Optional JavaScript -->
+  <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -355,8 +233,102 @@
   <script src="./js/scroll.js"></script>
   <script src="js/config.js"></script>
   <script src="js/auth.js"></script>
-  
+
   <script src="./js/checkuser.js"></script>
+  <script>
+
+    let state = {
+      transactions: [],
+      prof_name: "",
+      credits: 0
+    }
+
+    let token = localStorage.getItem("idToken");
+
+    async function getEarnings() {
+      function fetchEarnings() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/professordetails",
+            headers: {
+              authorization: token,
+            },
+            // data: JSON.stringify({}),
+            contentType: 'application/json',
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err)
+            }
+          });
+        })
+      }
+
+      const prof = (await fetchEarnings()).Item;
+      state.transactions = prof.amountEarnedRecord;
+      state.credits = prof.credits;
+      state.prof_name = prof.fullName;
+
+      setData();
+    }
+
+    function setData() {
+
+      $("#credits").text(`${state.credits}`);
+      $("#amount").text(`${state.credits * 10}`);
+
+      state.transactions.forEach(function (earning) {
+        $("#transactions").append(
+          `<div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body pb-3">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img src="assets/images/pdf_logo.svg" alt="" class="img-fluid">
+                  </div>
+                  <div class="col-lg-9">
+                    <a href="">
+                      <h4 class="purple-color">
+                        Note ID: ${earning.notesPurchased[0].noteId}
+                      </h4>
+                    </a>
+                    <div class="row">
+                      <div class="col">
+                        <p class="bold"><i class="fas fa-user-circle"></i> <b><span id="prof-name"><a href="#">By Prof.
+                                ${state.prof_name}</a></span></b></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div>
+                      <p class="text-muted">Selling Price: <b><span class="text-dark">
+                        ${earning.notesPurchased[0].amountEarned * 10 / 6} credits</span></b></p>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div>
+                      <p class="text-muted">Quantity Sold: <b><span class="text-dark">${1}</span></b></p>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div>
+                      <p class="lead purple-color">Total Credits: <span class="red-color">
+                        ${earning.notesPurchased[0].amountEarned}</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`
+        )
+      })
+    }
+
+  </script>
 </body>
 
 </html>

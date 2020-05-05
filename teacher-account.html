@@ -4,14 +4,14 @@
 <head>
   <script src="/js/auth.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-163674715-1');
-</script>
+    gtag('config', 'UA-163674715-1');
+  </script>
 
   <!-- Required meta tags -->
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
@@ -31,7 +31,7 @@
   <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
 </head>
 
-<body>
+<body onload="fetchdata()">
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
     <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
@@ -105,17 +105,17 @@
         <form action="#" method="post">
           <div class="form-row mb-1">
             <div class="col">
-              <label for="exampleInputEmail1">First Name</label>
-              <input type="text" class="form-control" placeholder="First Name">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" class="form-control" placeholder="First Name">
             </div>
             <div class="col">
-              <label for="exampleInputEmail1">Last Name</label>
-              <input type="text" class="form-control" placeholder="Last Name">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" class="form-control" placeholder="Last Name">
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
               placeholder="Enter email" />
           </div>
           <div class="form-group">
@@ -123,18 +123,21 @@
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">College Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="college">College Name</label>
+            <input type="text" class="form-control" id="college" aria-describedby="emailHelp"
               placeholder="College Name" />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Degree Pursuing</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Degree Pursuing" />
+            <label for="dept">Department</label>
+            <input type="text" class="form-control" id="dept" aria-describedby="emailHelp" placeholder="Department" />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Phone Number</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="subjects">Subjects</label>
+            <input type="text" class="form-control" id="subjects" aria-describedby="emailHelp" placeholder="Subjects" />
+          </div>
+          <div class="form-group">
+            <label for="phoneNo">Phone Number</label>
+            <input type="number" class="form-control" id="phoneNo" aria-describedby="emailHelp"
               placeholder="Phone Number" />
           </div>
           <button type="submit" class="btn btn-primary update-btn">Update</button>
@@ -158,8 +161,7 @@
           <div class="row">
             <div class="col-12 col-md-4">
               <a target="_blank" href="./copyright.html">Copyright</a><br />
-              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a
-              ><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
               <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
             </div>
             <div class="col-12 col-md-4">
@@ -192,40 +194,20 @@
           <h6>Connect With Us</h6>
           <ul class="footer-links">
             <li>
-              <a target="_blank" href=""
-                ><img
-                  src="./assets/images/footer/twitter-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  srcset=""
-              /></a>
-              <a target="_blank" href="mailto:collegeshala2020@gmail.com"
-                ><img
-                  src="./assets/images/footer/gmailicon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  srcset=""
-              /></a>
-              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"
-                ><img
-                  src="./assets/images/footer/facebook-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  rcset=""
-              /></a>
-              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"
-                ><img
-                  src="./assets/images/footer/linkedin-icon.png"
-                  id="footer-social-icons"
-                  alt=""
-                  rcset=""
-              /></a>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
             </li>
             <li>
-              <a target="_blank" href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg"
-                >Office: 405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
-                West Bengal 700039</a
-              >
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
             </li>
             <li>
               <a href="#">Call US: 9874563210</a>
@@ -290,6 +272,117 @@
     })
   </script>
   <script src="./js/logout.js"></script>
+  <script>
+    function fetchdata() {
+      let token = window.localStorage.getItem("idToken");
+      if (!token) {
+        console.log("User not signed in!");
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/professordetails",
+          headers: {
+            authorization: token
+          },
+          body: {},
+          contentType: 'application/json',
+          success: function complete(result) {
+            //let phno;
+            console.log(result.Item);
+            //document.getElementById('email').value = result.Item.email;
+
+            var keys = Object.keys(result.Item);
+            for (var i = 0; i < keys.length; i++) {
+              var key = keys[i];
+              if ("phoneNo" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("phoneNo" == k) {
+                    let phno = `${value}`;
+                    phno = phno.substring(3, 13);
+                    //console.log(phno)
+                    document.getElementById('phoneNo').value = Number(phno);
+                    break;
+                  }
+                }
+
+              } else if ("dept" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("dept" == k) {
+                    let dep = `${value}`;
+
+                    //console.log(dep)
+                    document.getElementById('dept').value = dep;
+                    break;
+                  }
+                }
+              } else if ("college" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("college" == k) {
+                    let col = `${value}`;
+
+                    //console.log(col)
+                    document.getElementById('college').value = col;
+                    break;
+                  }
+                }
+              } else if ("email" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("email" == k) {
+                    let em = `${value}`;
+                    //console.log(em)
+                    document.getElementById('email').value = em;
+                    break;
+                  }
+                }
+              } else if ("email" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("email" == k) {
+                    let em = `${value}`;
+                    //console.log(em)
+                    document.getElementById('email').value = em;
+                    break;
+                  }
+                }
+              } else if ("subjects" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("subjects" == k) {
+                    let sub = `${value}`;
+                    //console.log(em)
+                    document.getElementById('subjects').value = sub;
+                    break;
+                  }
+                }
+              } else if ("fullName" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("fullName" == k) {
+                    let full = `${value}`;
+                    //console.log(full)
+                    var n = full.indexOf(" ");
+                    //console.log(n);
+                    var first = full.substring(0, n);
+                    var last = full.substring(n, full.length);
+                    document.getElementById('fname').value = first;
+                    document.getElementById('lname').value = last;
+                    break;
+                  }
+                }
+              }
+            }
+          },
+          error: function error(err) {
+            console.error(err);
+          }
+        });
+      }
+    }
+  </script>
 </body>
 
 </html>

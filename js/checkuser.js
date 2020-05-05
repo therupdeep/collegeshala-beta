@@ -4,10 +4,11 @@ var url = '/about.html'
 window.onload = async function checklogin() {
 
     if(window.location.href.endsWith("all-product.html")) {
-        console.log("true");
+        console.log("in my all-product.html");
         getSearchResult();
-    } else {
-        console.log("not");
+    } else if(window.location.href.endsWith("my-earnings.html")) {
+        console.log("in my-earnings.html");
+        getEarnings();
     }
 
     document.getElementById("nav-user-icon").style.display = "none";
