@@ -581,6 +581,10 @@
   background-color: #fff;
 }
 
+.notes-info-tab a{
+  color: black;
+}
+
 .nav-seach-box input[type="text"] {
   padding: 20px;
 }
@@ -599,7 +603,7 @@
 
 .notes-info-tab {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 30px;
+  padding: 20px 85px;
   margin: 10px 0px 10px 0;
 }
 

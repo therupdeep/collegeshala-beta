@@ -234,7 +234,7 @@
               </h4>
             </a>
             <!--Insert Department Name here-->
-            <p>Department of ..</p>
+            <!-- <p>Department of ..</p> -->
           </div>
         </div>
       </div>
@@ -362,78 +362,41 @@
       window.location.href = "/coming-soon.html";
     })
 
-    function buyNow() {
-      return new Promise(function (resolve, reject) {
-        $.ajax({
-          method: 'POST',
-          url: "https://api.collegeshala.com/checkout",
-          headers: {
-            authorization: token,
-          },
-          data: JSON.stringify({}),
-          contentType: 'application/json',
-          success: function complete(result) {
-            console.log(result);
-            resolve(result);
-          },
-          error: function error(err) {
-            console.error(err);
-            checkout(1 * 100, 2, token).then(addCredits());
-            reject();
-          }
-        });
-      })
-    }
+    async function getNote() {
 
-    async function setData() {
-      let resp = await getNote();
+      function fetchNote() {
+
+        state.noteid = window.location.search.substring(8)
+        console.log("noteId", state.noteid)
+
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/getnotebyid",
+            headers: {
+              authorization: token,
+            },
+            data: JSON.stringify({
+              "noteId": state.noteid
+            }),
+            contentType: 'application/json',
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err)
+            }
+          });
+        })
+      }
+
+      let resp = await fetchNote();
+      console.log(resp);
       state.note = resp.Item;
       $(".heading-title").text(`${state.note.chaptername}`);
       $(".price-of-book").text(`${state.note.requiredCredits * 10}`);
       $(".suggested-page-prof-details-heading").text(`${state.note.professorname}`);
-    }
-
-    function getNote() {
-      return new Promise(function (resolve, reject) {
-        $.ajax({
-          method: 'POST',
-          url: "https://api.collegeshala.com/getnotebyid",
-          headers: {
-            authorization: token,
-          },
-          data: JSON.stringify({
-            "noteId": state.noteid
-          }),
-          contentType: 'application/json',
-          success: function complete(result) {
-            resolve(result);
-          },
-          error: function error(err) {
-            reject(err)
-          }
-        });
-      })
-    }
-
-    function addCredits() {
-      $.ajax({
-        method: 'POST',
-        url: "https://api.collegeshala.com/addcredits",
-        headers: {
-          authorization: token,
-        },
-        data: JSON.stringify({
-          "credits": 2
-        }),
-        contentType: 'application/json',
-        success: function complete(result) {
-          console.log(result);
-          alert("2 credits added!")
-        },
-        error: function error(err) {
-          console.error(err);
-        }
-      });
+      $(".suggested-page-university-name").text(`${state.note.universityname}`);
     }
 
     $(".preview-btn").click(function () {

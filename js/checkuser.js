@@ -12,6 +12,9 @@ window.onload = async function checklogin() {
     } else if(window.location.href.endsWith("my-uploads.html")) {
         console.log("in my-uploads.html");
         getUploads();
+    } else if(window.location.pathname.endsWith("single-product.html")) {
+        console.log("in single-product.html");
+        getNote();
     }
 
     document.getElementById("nav-user-icon").style.display = "none";
