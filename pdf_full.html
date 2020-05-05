@@ -50,7 +50,7 @@
         }
 
         function onload() {
-            myState.noteurl = "https://collegeshala-notes.s3.ap-south-1.amazonaws.com/" + localStorage.getItem("noteId") + ".pdf";
+            localStorage.removeItem("noteId");
             render();
         }
         // https://collegeshala-notes.s3.ap-south-1.amazonaws.com/c59b7dbd-fd6b-400e-a173-156ace07a56f.pdf

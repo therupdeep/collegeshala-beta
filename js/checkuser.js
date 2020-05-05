@@ -9,6 +9,9 @@ window.onload = async function checklogin() {
     } else if(window.location.href.endsWith("my-earnings.html")) {
         console.log("in my-earnings.html");
         getEarnings();
+    } else if(window.location.href.endsWith("my-uploads.html")) {
+        console.log("in my-uploads.html");
+        getUploads();
     }
 
     document.getElementById("nav-user-icon").style.display = "none";

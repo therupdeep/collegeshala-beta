@@ -37,7 +37,7 @@
   <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
 </head>
 
-<body>
+<body onload="getUploads()">
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
     <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
@@ -354,6 +354,10 @@
   <script src="/js/aws/config.js"></script>
   <script>
 
+    let state = {
+      counter: 0
+    }
+
     let token = localStorage.getItem("idToken");
 
     async function handleUpload() {
@@ -404,7 +408,7 @@
     userAuth.authToken.then(function setAuthToken(token) {
       if (token) {
         authToken = token;
-        console.log(authToken, "here")
+        // console.log(authToken, "here")
 
         if (!authToken) {
           console.log("User not signed in!");
@@ -419,7 +423,7 @@
             contentType: 'application/json',
             success: function complete(result) {
               console.log(result);
-              setData(result);
+              // setData(result);
             },
             error: function error(err) {
               console.error(err);
@@ -434,54 +438,48 @@
       window.location.href = '/login.html';
     });
 
-
-    function setData(result) {
-      result.Item.myUploads.map(note => {
-        $('#myuploadsrow').append(
-          `<div class="col-12 col-md-4">
-            <div class="card">
-              <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">${note.subjectname}</h5>
-                <p class="card-text">
-                  ${note.chaptername}
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>`
-        );
+    function viewNote() {
+      $(".btn-primary").click(function () {
+        event.preventDefault();
+        // console.log(state.counter);
+        //console.log(event.target.value)
+        localStorage.setItem("noteId", event.target.value);
+        // state.counter++;
+        window.open(window.location.origin + "/pdf_full.html", "_blank");
       })
     }
 
-    function fetchDetails() {
-      let token = window.localStorage.getItem("idToken");
-      if (!token) {
-        console.log("User not signed in!");
-      } else {
-        $.ajax({
-          method: 'POST',
-          // url: "http://api.collegeshala.com/professordetails",
-          headers: {
-            authorization: token
-          },
-          body: {},
-          contentType: 'application/json',
-          success: function complete(result) {
-            console.log(result);
-            setData(result);
-          },
-          error: function error(err) {
-            console.error(err);
-          }
-        });
+    async function getUploads() {
+      function fetchUploads() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/professordetails",
+            headers: {
+              authorization: token,
+            },
+            // data: JSON.stringify({}),
+            contentType: 'application/json',
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err)
+            }
+          });
+        })
       }
+
+      const prof = (await fetchUploads()).Item;
+      const uploads = prof.myUploads;
+
+      setData(uploads);
     }
 
-    function setData(result) {
-      result.myUploads.map(note => {
+    function setData(uploads = []) {
+      $.each(uploads, function(index, note) {
         $('#myuploadsrow').append(
-          `<div class="col-12 col-md-4">
+          `<div class="col-12 col-md-4" key="${note.noteId}">
               <div class="card">
                 <img class="card-img-top img-fluid" src="https://via.placeholder.com/260x180" alt="Card image cap" />
                 <div class="card-body">
@@ -489,7 +487,7 @@
                   <p class="card-text">
                     ${note.chaptername}
                   </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <button onclick="viewNote()" class="btn btn-primary" value="${note.noteId}">Go somewhere</button>
                 </div>
               </div>
             </div>`
