@@ -15,6 +15,9 @@ window.onload = async function checklogin() {
     } else if(window.location.pathname.endsWith("single-product.html")) {
         console.log("in single-product.html");
         getNote();
+    } else if(window.location.href.endsWith("my-transaction.html")) {
+        console.log("in my-transaction.html");
+        getTransactions();
     }
 
     document.getElementById("nav-user-icon").style.display = "none";

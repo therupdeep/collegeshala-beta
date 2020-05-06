@@ -31,7 +31,7 @@
   <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
 </head>
 
-<body>
+<body onload="fetchstudentdata()">
   <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
     <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" id="logo" alt="" />
@@ -103,49 +103,40 @@
           <a href="javascript:void(0)" onclick="goToURL(); return false;">Log Out</a>
         </div>
         <form action="#" method="post">
-          <div class="form-row mb-1">
-            <div class="col">
-              <label for="exampleInputEmail1">First Name</label>
-              <input type="text" class="form-control" placeholder="First Name">
-            </div>
-            <div class="col">
-              <label for="exampleInputEmail1">Last Name</label>
-              <input type="text" class="form-control" placeholder="Last Name">
-            </div>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
+              placeholder="Enter Full Name" />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
               placeholder="Enter email" />
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">College Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="college">College Name</label>
+            <input type="text" class="form-control" id="college" aria-describedby="emailHelp"
               placeholder="College Name" />
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Degree Pursuing</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="university">University</label>
+            <input type="text" class="form-control" id="university" aria-describedby="emailHelp"
               placeholder="Degree Pursuing" />
           </div>
           <div class="form-group">
-            <label for="inputState">Semester</label>
-            <select id="inputState" class="form-control">
-              <option>first</option>
-              <option>Second</option>
-              <option>Third</option>
-              <option>Fourth</option>
-              <option>Fifth</option>
-              <option>Sixth</option>
+            <label for="semester">Semester</label>
+            <select id="semester" class="form-control">
+              <option value="1">first</option>
+              <option value="2">Second</option>
+              <option value="3">Third</option>
+              <option value="4">Fourth</option>
+              <option value="5">Fifth</option>
+              <option value="6">Sixth</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Phone Number</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="phoneNo">Phone Number</label>
+            <input type="number" class="form-control" id="phoneNo" aria-describedby="emailHelp"
               placeholder="Phone Number" />
           </div>
           <div class="container pt-3">
@@ -247,10 +238,24 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="./js/scroll.js"></script>
-  <!-- <script>
+  <script>
     $(".update-btn").click(function () {
       event.preventDefault();
       let token = window.localStorage.getItem("idToken");
+      let full = document.getElementById("fullname").value;
+      let email = document.getElementById("email").value;
+      let college = document.getElementById("college").value;
+      let university = document.getElementById("university").value;
+      let semester = document.getElementById("semester").value;
+      let phoneNo = document.getElementById("phoneNo").value;
+      if ("+91" == phoneNo.substring(0, 3)) {
+        phoneNo = phoneNo.substring(3, 13);
+      }
+      phoneNo = Number(phoneNo)
+      semester = Number(semester)
+      
+
+
       if (!token) {
         console.log("User not signed in!");
       } else {
@@ -261,19 +266,27 @@
           headers: {
             authorization: token
           },
-          data: {
+
+          data: JSON.stringify({
             AccessToken: token,
             params: {
               // 'password': {
               //   oldPassword: 'asdfgh',
               //   newPassword: 'qwerty'
               // },
-              'college': 'HIT-K',
+              "university": university,
+              "college": college,
+              "phoneNo": phoneNo,
+              "sem": semester,
+              "fullName": full
             }
-          },
+          }),
           contentType: 'application/json',
           success: function complete(result) {
-            console.log(result);
+            //console.log(result);
+            alert("Update successful");
+            fetchstudentdata();
+            window.location.reload();
           },
           error: function error(err) {
             console.error(err);
@@ -281,7 +294,7 @@
         });
       }
     })
-  </script> -->
+  </script>
   <script>
     $("#search-input").change(function () {
       localStorage.setItem("value", event.target.value);
@@ -289,39 +302,111 @@
     });
   </script>
   <script>
+    function fetchstudentdata() {
+      let token = window.localStorage.getItem("idToken");
+      if (!token) {
+        console.log("User not signed in!");
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/studentdetails",
+          headers: {
+            authorization: token
+          },
+          body: {},
+          contentType: 'application/json',
+          success: function complete(result) {
+            //let phno;
+            //console.log(result.Item);
+            var keys = Object.keys(result.Item);
+            for (var i = 0; i < keys.length; i++) {
+              var key = keys[i];
+              if ("phoneNo" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("phoneNo" == k) {
+                    let phno = `${value}`;
+                    //phno = phno.substring(3, 13);
+                    if ("+91" == phno.substring(0, 3)) {
+                      phno = phno.substring(3, 13);
+                    }
+                    //console.log(phno)
+                    document.getElementById('phoneNo').value = Number(phno);
+                    break;
+                  }
+                }
 
-    let token = localStorage.getItem("idToken");
+              } else if ("university" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("university" == k) {
+                    let dep = `${value}`;
+                    //console.log(dep)
+                    document.getElementById('university').value = dep;
+                    break;
+                  }
+                }
+              } else if ("college" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("college" == k) {
+                    let col = `${value}`;
 
-    $(".update-btn").click(function () {
-      event.preventDefault();
-      console.log(event.defaultPrevented)
-      getStudent();
-    })
+                    //console.log(col)
+                    document.getElementById('college').value = col;
+                    break;
+                  }
+                }
+              } else if ("email" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("email" == k) {
+                    let em = `${value}`;
+                    //console.log(em)
+                    document.getElementById('email').value = em;
+                    break;
+                  }
+                }
+              } else if ("subjects" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("subjects" == k) {
+                    let sub = `${value}`;
+                    //console.log(em)
+                    document.getElementById('subjects').value = sub;
+                    break;
+                  }
+                }
+              } else if ("fullName" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("fullName" == k) {
+                    let full = `${value}`;
+                    //console.log(full)
 
-    async function getStudent() {
-      function fetchStudent() {
-        return new Promise(function (resolve, reject) {
-          $.ajax({
-            method: 'POST',
-            url: "https://api.collegeshala.com/studentdetails",
-            headers: {
-              authorization: token,
-            },
-            data: JSON.stringify({}),
-            contentType: 'application/json',
-            success: function complete(result) {
-              resolve(result);
-            },
-            error: function error(err) {
-              console.error(err)
-              reject(err);
+                    document.getElementById('fullname').value = full;
+                    break;
+                  }
+                }
+              } else if ("sem" == key) {
+                for (let [k, value] of Object.entries(result.Item)) {
+                  //console.log(`${key}: ${value}`);
+                  if ("sem" == k) {
+                    let sem = `${value}`;
+                    //console.log(sem)
+                    document.getElementById("semester").value = sem;
+                    //document.getElementById('fullname').value = full;
+                    break;
+                  }
+                }
+              }
             }
-          });
+          },
+          error: function error(err) {
+            console.error(err);
+          }
         });
       }
-
-      let student = await fetchStudent();
-      console.log("student", student);
     }
   </script>
   <script src="./js/logout.js"></script>
