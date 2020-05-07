@@ -408,6 +408,10 @@
     $(".add-to-cart-btn").click(function () {
       if (!token) {
         console.log("User not signed in!");
+        const conf = confirm("Please Sign Up first to add item to cart! Redirect to Login Page?");
+        if(conf) {
+          window.location.href = "/login.html"
+        }
       } else {
         $.ajax({
           method: 'POST',
