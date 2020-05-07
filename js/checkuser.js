@@ -22,10 +22,10 @@ window.onload = async function checklogin() {
 
     document.getElementById("nav-user-icon").style.display = "none";
     let token = localStorage.getItem("idToken")
-    if(token){
+    if (token) {
         document.getElementById("nav-sign-up").style.display = "none";
         document.getElementById("nav-user-icon").style.display = "block";
-        if(localStorage.getItem("acc_type") == 'professor' ) {
+        if (localStorage.getItem("acc_type") == 'professor') {
             url = '/teacher-account.html'
         } else {
             url = '/my-account.html'
@@ -39,4 +39,21 @@ window.onload = async function checklogin() {
 
 function goToURL() {
     location.href = url;
+
+}
+
+
+
+function userindexredirect() {
+    let urlIndex = '/register.html';
+    let token = localStorage.getItem("idToken")
+    console.log(token)
+    if (token) {
+        if (localStorage.getItem("acc_type") == 'professor') {
+            urlIndex = '/teacher-account.html'
+        } else {
+            urlIndex = '/my-account.html'
+        }
+    }
+    location.href = urlIndex;
 }

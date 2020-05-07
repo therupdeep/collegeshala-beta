@@ -65,8 +65,8 @@
               data-target=".navbar-collapse.show"><span id="nav-font">Sign Up</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link index-nav-link"  onclick="goToURL(); return false;" target="_blank" id="nav-user-icon" href="javascript:void(0)" data-toggle="collapse"
-              data-target=".navbar-collapse.show">
+            <a class="nav-link index-nav-link" onclick="goToURL(); return false;" target="_blank" id="nav-user-icon"
+              href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse.show">
               <span id="nav-font"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
             </a>
           </li>
@@ -99,30 +99,49 @@
     </h1>
     <div class="card-deck m-5">
       <div class="card">
-        <img class="card-img-top services-image" src="./assets/images/study-materials-png.png" alt="Card image cap" />
+        <a onclick="userindexredirect(); return false;" href="javascript:void(0)">
+          <p class="text-center">
+            <img class="card-img-top services-image" src="./assets/images/study-materials-png.png"
+              alt="Card image cap" />
+          </p>
+        </a>
         <div class="card-body">
-          <h5 class="card-title text-center" id="custom-purple">
-            Study Materials
-          </h5>
+          <a onclick="userindexredirect(); return false;" href="javascript:void(0)">
+            <h5 class="card-title text-center" id="custom-purple">
+              Study Materials
+            </h5>
+          </a>
           <p class="card-text text-center"></p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top services-image" src="./assets/images/question-answers-png.png" alt="Card image cap"
-          width="80" />
+        <a href="/coming-soon.html">
+          <p class="text-center">
+            <img class="card-img-top services-image" src="./assets/images/question-answers-png.png" alt="Card image cap"
+              width="80" />
+          </p>
+        </a>
         <div class="card-body">
-          <h5 class="card-title text-center" id="custom-purple">
-            Question/Answers
-          </h5>
+          <a href="/coming-soon.html">
+            <h5 class="card-title text-center" id="custom-purple">
+              Question/Answers
+            </h5>
+          </a>
           <p class="card-text text-center"></p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top services-image" src="./assets/images/sell-books-png.png" alt="Card image cap" />
+        <a href="/coming-soon.html">
+          <p class="text-center">
+            <img class="card-img-top services-image" src="./assets/images/sell-books-png.png" alt="Card image cap" />
+          </p>
+        </a>
         <div class="card-body">
-          <h5 class="card-title text-center" id="custom-purple">
-            Sell/Buy Books
-          </h5>
+          <a href="/coming-soon.html">
+            <h5 class="card-title text-center" id="custom-purple">
+              Sell/Buy Books
+            </h5>
+          </a>
           <p class="card-text text-center"></p>
         </div>
       </div>
@@ -307,7 +326,7 @@
       window.location.pathname = "/all-product.html";
       // console.log(window.location);
     });
-    
+
   </script>
   <script src="js/newsletter.js"></script>
   <script src="js/checkuser.js"></script>
