@@ -213,7 +213,6 @@
             },
             error: function error(err) {
               console.error(err);
-              // checkout(1 * 100, 2, token).then(addCredits());
               reject(err);
             }
           });
@@ -222,13 +221,15 @@
 
       let resp = await checkoutRes();
       console.log(resp);
-      if(resp.msg && resp.msg == "Insufficient credits") {
-        let amt = (state.total -  resp.creditsAvailable) * 10 * 100;
-        checkout(amt, 2, token);
-        window.location.reload();
+      if (resp.msg && resp.msg == "Insufficient credits") {
+        console.log("insufficient")
+        let creditsBalance = state.total - resp.creditsAvailable;
+        let amt = creditsBalance * 10 * 100;
+        checkout(amt, creditsBalance, token);
+        // window.location.reload();
       } else {
-        alert("Note purchased");
-        window.location.reload();
+        alert("Notes purchased successfully!");
+        window.location.href = "/student-dashboard.html";
       }
     })
 
@@ -278,7 +279,7 @@
       state.cart.forEach(note => {
         $(".cart").append(
           `<div class="cart-notes-info-tab">
-            <a href=""><img src="./assets/images/single-product/its a book.jpg" alt="its a book"
+            <a href=""><img src="./assets/images/pdf_logo.svg" alt="its a book"
                 class="custom-card-image" /></a>
             <div class="card-text-body" style="float: center;">
               <h1 class="card-heading">

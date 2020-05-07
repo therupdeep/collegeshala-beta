@@ -2025,7 +2025,7 @@
 }
 
 #earning-credits-section h2,p,b,span {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
 #earning-credits-section .lead {
@@ -2034,7 +2034,7 @@
 }
 
 #earning-details-section h2,h4,p,b,span {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
 #earning-details-section img {

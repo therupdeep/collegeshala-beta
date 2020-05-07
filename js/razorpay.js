@@ -41,7 +41,24 @@ function completePurchase(paymentid,amount,credits,authToken) {
 		contentType: 'application/json',
 		success: function complete(result){
 			console.log(result);
-			alert('Credits added successfully to your account')
+			// alert('Credits added successfully to your account');
+			$.ajax({
+				method: 'POST',
+				url: "https://api.collegeshala.com/checkout",
+				headers: {
+				  authorization: authToken,
+				},
+				data: JSON.stringify({}),
+				contentType: 'application/json',
+				success: function complete(result) {
+				  console.log(result);
+				  alert("Notes purchased successfully!")
+				  window.location.href = "/student-dashboard.html";
+				},
+				error: function error(err) {
+				  console.error(err);
+				}
+			  });
 			// if(result.error === 'No notes purchased') {
 			//     $('#card').append('No notes purchased');
 			// }
