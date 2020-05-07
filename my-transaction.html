@@ -114,8 +114,8 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="buyCredits">Enter Credits Amount</label>
-              <input type="text" class="form-control" id="buyCredits" aria-describedby="emailHelp"
+              <label for="buyCredits">Enter Number of Credits</label>
+              <input type="number" class="form-control" id="buyCredits" aria-describedby="emailHelp"
                 placeholder="Enter Credits Amount">
                 <br />
               <p id="buyCredits" class="pl-1">Note: 1 credit equals 10 Rupees</p>
@@ -125,7 +125,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
-          <button type="button" class="btn btn-primary">Buy Now</button>
+          <button id="buy-credits" type="button" class="btn btn-primary">Buy Now</button>
         </div>
       </div>
     </div>
@@ -234,6 +234,8 @@
   <script src="./js/scroll.js"></script>
   <script src="js/config.js"></script>
   <script src="js/auth.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/razorpay.js"></script>
   <script>
     $("#search-input").change(function () {
       localStorage.setItem("value", event.target.value);
@@ -247,6 +249,16 @@
       transactions: [],
       credits: 0
     };
+    
+    $("#buy-credits").click(async () => {
+      const credits = Number($("#buyCredits").val());
+      const amt = credits * 10 * 100;
+      if(credits > 0 && (credits * 10) % 10 == 0) {
+        checkout(amt, credits, token);
+      } else {
+        alert("Please enter a valid number!")
+      }
+    })
 
     async function getTransactions() {
       function fetchTransactions() {
