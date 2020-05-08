@@ -88,10 +88,10 @@
       <h1 class="heading-title" id="custom-purple">Note Name</h1>
       <ul class="heading-title-menu">
         <li>
-          <a class="like-button" href="#"><i class="far fa-heart"></i></a>
+          <!-- <a class="like-button" href="#"><i class="far fa-heart"></i></a> -->
         </li>
         <li>
-          <a class="share-button" href="#"><i class="fas fa-share-alt"></i></a>
+          <!-- <a class="share-button" href="#"><i class="fas fa-share-alt"></i></a> -->
         </li>
       </ul>
     </div>
@@ -428,6 +428,9 @@
             console.log(result);
           },
           error: function error(err) {
+            if(err.responseJSON.message && err.responseJSON.message == "Item already present in cart") {
+              alert("Item already present in cart");
+            }
             console.error(err);
           }
         });

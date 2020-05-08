@@ -278,20 +278,34 @@
     function setData() {
       state.cart.forEach(note => {
         $(".cart").append(
-          `<div class="cart-notes-info-tab">
-            <a href=""><img src="./assets/images/pdf_logo.svg" alt="its a book"
-                class="custom-card-image" /></a>
-            <div class="card-text-body" style="float: center;">
-              <h1 class="card-heading">
-                <a href=""><span id="custom-purple">${note.chaptername}</span></a>
-                <span class="remove-cart"><a href="#"><i class="fas fa-times"></i></a></span>
-              </h1>
-              <h3 class="notes-details">
-                <span id="indian-rupee">&#x20B9 <span class="cart-price">${note.requiredCredits * 10}</span></span>
-                <span id="books-pages"><i class="fas fa-book-open"></i> 175 Pages</span>
-                <span id="prof-name"><a href=""><i class="fa fa-graduation-cap pr-1" aria-hidden="true"></i> Calcutta
-                    University</a></span>
-              </h3>
+          `
+          <div class="row notes-info-tab">
+            <a href="">
+              <div class="col-12 col-md-2"><img width="85" height="85" src="./assets/images/pdf_logo.svg"
+                  class="all-prod-img rounded float-left" alt="..."></div>
+            </a>
+            <div class="col-12 col-md-8">
+              <a href="">
+                <h5>
+                  <span id="custom-purple">${note.chaptername} </span> - ${note.subjectname}
+                </h5>
+              </a>
+              <div class="row">
+                <div class="col-12 col-md-4"><a href="">
+                    <h5><i class="fas fa-user-circle"></i>${note.professorname}</h5>
+                  </a></div>
+                <div class="col-12 col-md-4">
+                  <h5><i class="fas fa-graduation-cap"></i>${note.universityname}</h5>
+                </div>
+                <div class="col-12 col-md-4">
+                  <h4>&#8377; ${note.requiredCredits * 10}</h4>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-2 mt-3">
+
+              <button type="button" class="btn btn-danger">Remove</button>
             </div>
           </div>`
         )
