@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;   user-scalable=0;" name="viewport" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <script src="https://kit.fontawesome.com/a166c5af45.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>College Shala</title>
+  <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
+</head>
+
+<body>
+  <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-custom-blur">
+    <a class="navbar-brand" href="/">
+      <img src="./assets/images/logo.png" id="logo" alt="" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <p class="nav-seach-box">
+            <input type="text" placeholder="Search your subject here " />
+          </p>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link navbar-talkshala" href="./coming-soon.html">
+            TalkShala
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./cart.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./teacher-account.html">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container pt-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Teacher's Name</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          My Earning
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="container student-dash-nav">
+    <div class="row">
+      <div class="col-sm text-center">
+        <a class="active" href="./teacher-account.html">My Account</a>
+      </div>
+      <div class="col-sm text-center">
+        <a href="./my-uploads.html">My Uploads</a>
+      </div>
+      <div class="col-sm text-center">
+        <a href="./my-earnings.html">My Earnings</a>
+      </div>
+      <div class="col-sm text-center">
+        <a href="./coming-soon.html">Q/A Forum</a>
+      </div>
+    </div>
+  </div>
+  <section id="earning-credits-section" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="display-5">TOTAL EARNINGS:</h2>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <p class="lead purple-color">Credits: <span id="credits" class="red-color">0</span></p>
+        </div>
+        <div class="col-md-4">
+          <p class="lead purple-color">Equivalent Amount: <span id="amount" class="red-color">0</span></p>
+        </div>
+        <div class="col-md-4">
+          <a href="#" data-toggle="modal" data-target="#redeem-btn" class="btn custom-earning-button"><span>Redeem Now
+              <i class="fas fa-arrow-right"></i></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redeem Now Modal -->
+  <div class="modal fade" id="redeem-btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Redeem your Credits</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Not available right now
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Redeem Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="earning-details-section" class="mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="display-5">DETAILS OF NOTES SOLD:</h2>
+        </div>
+      </div>
+      <div id="transactions" class="row mt-3">
+        <!-- transaction details go here -->
+      </div>
+    </div>
+  </section>
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <!--<h6>About the company</h6> -->
+          <a href="">
+            <h6 class="text-justify">
+              About Us
+            </h6>
+          </a>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./copyright.html">Copyright</a><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
+              <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./return-policy.html">Return Policy</a><br />
+              <a target="_blank" href="./about.html">Meet the Team</a><br />
+              <a target="_blank" href="./terms-of-use.html">Terms of Use</a>
+            </div>
+          </div>
+        </div>
+        <!--
+          <div class="col-xs-6 col-md-3">
+            <h6>Important Links</h6>
+            <ul class="footer-links">
+              <li>
+                <a href="">lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="">lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="">lorem Ipsum</a>
+              </li>
+              <li>
+                <a href="http://scanfcode.com/category/java-programming-language/">Lorem Ispum</a>
+              </li>
+            </ul>
+          </div>
+          -->
+        <div class="col-xs-6 col-md-4">
+          <h6>Connect With Us</h6>
+          <ul class="footer-links">
+            <li>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
+            </li>
+            <li>
+              <a href="#">Call US: 9874563210</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright-area">
+      <p class="text-center" id="footer-copyright-text">
+        <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
+        Reserved
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+
+  <script src="./js/checkuser.js"></script>
+  <script>
+
+    let state = {
+      transactions: [],
+      prof_name: "",
+      credits: 0
+    }
+
+    let token = localStorage.getItem("idToken");
+
+    async function getEarnings() {
+      function fetchEarnings() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/professordetails",
+            headers: {
+              authorization: token,
+            },
+            // data: JSON.stringify({}),
+            contentType: 'application/json',
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err)
+            }
+          });
+        })
+      }
+
+      const prof = (await fetchEarnings()).Item;
+      state.transactions = prof.amountEarnedRecord;
+      state.credits = prof.credits;
+      state.prof_name = prof.fullName;
+
+      setData();
+    }
+
+    function setData() {
+
+      $("#credits").text(`${state.credits}`);
+      $("#amount").text(`${state.credits * 10}`);
+
+      state.transactions.forEach(function (earning) {
+        $("#transactions").append(
+          `<div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body pb-3">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img src="assets/images/pdf_logo.svg" alt="" class="img-fluid">
+                  </div>
+                  <div class="col-lg-9">
+                    <a href="">
+                      <h4 class="purple-color">
+                        Note ID: ${earning.notesPurchased[0].noteId}
+                      </h4>
+                    </a>
+                    <!--
+                    <div class="row">
+                      <div class="col">
+                        <p class="bold"><i class="fas fa-user-circle"></i> <b><span id="prof-name"><a href="#">By Prof.
+                                ${state.prof_name}</a></span></b></p>
+                      </div>
+                    </div>
+                    -->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div>
+                      <p class="text-muted">Selling Price: <b><span class="text-dark">
+                        ${earning.notesPurchased[0].amountEarned * 10 / 6} credits</span></b></p>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div>
+                      <p class="lead purple-color">Total Credits: <span class="red-color">
+                        ${earning.notesPurchased[0].amountEarned}</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`
+        )
+      })
+    }
+
+  </script>
+</body>
+
+</html>

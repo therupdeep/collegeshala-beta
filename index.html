@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="/js/auth.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163674715-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-163674715-1");
+  </script>
+
+  <!-- Required meta tags -->
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,   user-scalable=0" name="viewport" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>College Shala</title>
+  <link rel="icon" href="./assets/images/collegeshala-logo-svg.svg" />
+</head>
+
+<body>
+  <div id="home">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/index.html">
+        <img src="./assets/images/logo.png" id="logo" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <div class="mr-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link scroll index-nav-link" href="#services" data-toggle="collapse"
+              data-target=".navbar-collapse.show"><span id="nav-font">Services</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scroll index-nav-link" href="#talkshala" data-toggle="collapse"
+              data-target=".navbar-collapse.show"><span id="nav-font">TalkShala</span></a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span id="nav-font">Call Us Now</span>
+            </a>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link index-nav-link" id="nav-sign-up" href="./register.html"
+              data-target=".navbar-collapse.show"><span id="nav-font">Sign Up</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link index-nav-link" onclick="goToURL(); return false;" target="_blank" id="nav-user-icon"
+              href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <span id="nav-font"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="above-search-bar-text">
+        It's a <span id="custom-purple">Student</span><span id="custom-red">'</span><span id="custom-purple">s</span>
+        Thing!
+      </h1>
+      <h2 class="text-center tagline-text">
+        Get your college notes and more from the best educators
+      </h2>
+      <p class="text-center seach-box">
+        <input type="text" id="search-input" placeholder="Search your subject here " />
+      </p>
+    </div>
+  </div>
+
+  <div class="services" id="services">
+    <div class="container pill-container">
+      <div class="text-center">
+        <button class="pill-button"></button>
+      </div>
+    </div>
+    <h1 class="text-center m-5 services-heading">
+      What does <span id="custom-purple">College</span><span id="custom-red">Shala</span> provide you with?
+    </h1>
+    <div class="card-deck m-5">
+      <div class="card">
+        <a onclick="userindexredirect(); return false;" href="javascript:void(0)">
+          <p class="text-center">
+            <img class="card-img-top services-image" src="./assets/images/study-materials-png.png"
+              alt="Card image cap" />
+          </p>
+        </a>
+        <div class="card-body">
+          <a onclick="userindexredirect(); return false;" href="javascript:void(0)">
+            <h5 class="card-title text-center" id="custom-purple">
+              Study Materials
+            </h5>
+          </a>
+          <p class="card-text text-center"></p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="/coming-soon.html">
+          <p class="text-center">
+            <img class="card-img-top services-image" src="./assets/images/question-answers-png.png" alt="Card image cap"
+              width="80" />
+          </p>
+        </a>
+        <div class="card-body">
+          <a href="/coming-soon.html">
+            <h5 class="card-title text-center" id="custom-purple">
+              Question/Answers
+            </h5>
+          </a>
+          <p class="card-text text-center"></p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="/coming-soon.html">
+          <p class="text-center">
+            <img class="card-img-top services-image" src="./assets/images/sell-books-png.png" alt="Card image cap" />
+          </p>
+        </a>
+        <div class="card-body">
+          <a href="/coming-soon.html">
+            <h5 class="card-title text-center" id="custom-purple">
+              Sell/Buy Books
+            </h5>
+          </a>
+          <p class="card-text text-center"></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center m-1">-
+      <a class="btn btn-primary" id="signup" href="/register.html" role="button">Sign Up</a>
+    </p>
+  </div>
+
+  <div class="talkshala" id="talkshala">
+    <div class="pill-container">
+      <p class="text-center">
+        <button class="pill-button"></button>
+      </p>
+    </div>
+    <div class="container mt-5">
+      <h1 class="text-center p-4 talkshala-h1">
+        <span id="custom-purple">Talk</span><span id="custom-red">Shala</span> - A Community
+      </h1>
+      <div class="talkshala-description">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="talkshala-card">
+                <p class="talkshala-p">
+                  <img src="./assets/images/talkshala/connect-with-seniors.png" class="talkshala-icons" alt="" />
+                  <br />
+                  <span id="talkshala-heading">CONNECT WITH SENIORS</span>
+                  <br />
+                  <span id="talkshala-text">Connect With Seniors</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="talkshala-p">
+                <img src="./assets/images/talkshala/connect-with-peers.png" class="talkshala-icons" alt="" />
+                <br />
+                <span id="talkshala-heading">CONNECT WITH PEERS</span><br />
+                <span id="talkshala-text">Connect with peers</span>
+              </p>
+            </div>
+          </div>
+          <div class="row pt-4">
+            <div class="col-12 col-md-6">
+              <p class="talkshala-p">
+                <img src="./assets/images/talkshala/perks-of-community.png" class="talkshala-icons" alt="" />
+                <br />
+                <span id="talkshala-heading">PERKS OF COMMUNITY</span><br />
+                <span id="talkshala-text">Perks of Community</span>
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="talkshala-p">
+                <img src="./assets/images/talkshala/share-resources.png" class="talkshala-icons" alt="" />
+                <br />
+                <span id="talkshala-heading">SHARE RESOURCES</span><br />
+                <span id="talkshala-text">Share Resources</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="join-area">
+        <p class="text-center m-2">
+          <a class="btn" id="join-btn" href="/coming-soon.html" role="button">Join the community</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <div class="newsletter-top-img"></div>
+    <div class="container newsletter-text">
+      <h1 class="text-center">
+        Stay upto-date <br />
+        Subscribe to our <span id="custom-purple">Newsletter</span><span id="custom-red">!</span>
+      </h1>
+      <br />
+      <p class="text-center">
+        <input type="email" id="sub-email" placeholder="Enter your email" />
+        <input type="button" id="newsletter-btn" value="Subscribe" />
+      </p>
+    </div>
+    <div class="newletter-below-img"></div>
+  </div>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <!--<h6>About the company</h6> -->
+          <a href="">
+            <h6 class="text-justify">
+              About Us
+            </h6>
+          </a>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./copyright.html">Copyright</a><br />
+              <a target="_blank" href="./disclaimer-warranties.html">Disclaimer Warranties</a><br />
+              <a target="_blank" href="./privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a target="_blank" href="./return-policy.html">Return Policy</a><br />
+              <a target="_blank" href="./about.html">Meet the Team</a><br />
+              <a target="_blank" href="./terms-of-use.html">Terms of Use</a>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="col-xs-6 col-md-3">
+          <h6>Important Links</h6>
+          <ul class="footer-links">
+            <li>
+              <a href="">lorem Ipsum</a>
+            </li>
+            <li>
+              <a href="">lorem Ipsum</a>
+            </li>
+            <li>
+              <a href="">lorem Ipsum</a>
+            </li>
+            <li>
+              <a href="http://scanfcode.com/category/java-programming-language/">Lorem Ispum</a>
+            </li>
+          </ul>
+        </div>
+        -->
+        <div class="col-xs-6 col-md-4">
+          <h6>Connect With Us</h6>
+          <ul class="footer-links">
+            <li>
+              <a target="_blank" href=""><img src="./assets/images/footer/twitter-icon.png" id="footer-social-icons"
+                  alt="" srcset="" /></a>
+              <a target="_blank" href="mailto:collegeshala2020@gmail.com"><img
+                  src="./assets/images/footer/gmailicon.png" id="footer-social-icons" alt="" srcset="" /></a>
+              <a target="_blank" href="https://www.facebook.com/CollegeShalareal/"><img
+                  src="./assets/images/footer/facebook-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+              <a target="_blank" href="https://www.linkedin.com/company/collegeshala-edutech/"><img
+                  src="./assets/images/footer/linkedin-icon.png" id="footer-social-icons" alt="" rcset="" /></a>
+            </li>
+            <li>
+              <a target="_blank"
+                href="https://www.google.com/maps/dir//offbeats+ccu/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a02772f380eb913:0xbc0dddd2e9b59b53?sa=X&ved=2ahUKEwj14s2a3I_pAhUGwzgGHW2kAe0Q9RcwDXoECB0QDg">Office:
+                405, OFFBEAT CCU, 36/F, Topsia Rd, Topsia, Kolkata,
+                West Bengal 700039</a>
+            </li>
+            <li>
+              <a href="#">Call US: 9874563210</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright-area">
+      <p class="text-center" id="footer-copyright-text">
+        <i class="far fa-copyright"></i> 2020 CollegeShala | All Rights
+        Reserved
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    $("#search-input").change(function () {
+      console.log("here")
+      localStorage.setItem("value", event.target.value);
+      window.location.pathname = "/all-product.html";
+      // console.log(window.location);
+    });
+
+  </script>
+  <script src="js/newsletter.js"></script>
+  <script src="js/checkuser.js"></script>
+</body>
+
+</html>
