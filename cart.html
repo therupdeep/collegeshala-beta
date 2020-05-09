@@ -337,7 +337,6 @@
           contentType: 'application/json',
           success: function complete(result) {
             $(`#${noteid}`).remove();
-            // location.reload();
           },
           error: function error(err) {
             console.error(err);
@@ -346,27 +345,6 @@
       });
     }
   </script>
-  <!-- <script>
-    setTimeout(() => {  
-      removeFromCart();
-    }, 2500);
-
-    function removeFromCart() {
-      let removeBtn = document.getElementsByClassName('btn-danger');
-      //console.log(removeBtn);
-      for(let i=0; i < removeBtn.length; i++) {
-          //let button = removeBtn[i];
-          //console.log(i+ " " + removeBtn.length);
-          removeBtn[i].addEventListener('click',function() {
-            //console.log(removeBtn[i]);
-            removeBtn[i].parentElement.parentElement.remove();
-            //console.log(i)
-            removeFromCart();
-            //location.reload();
-        });
-      }
-    }
-  </script> -->
 </body>
 
 </html>
