@@ -90,7 +90,7 @@
   <div class="container total-cart">
     <div id="box">
       <h5 class="cart-total-heading">Total price of the Cart</h5>
-      <h1 class="cart-total-amount" id="custom-purple">0</h1>
+      <h1 class="cart-total-amount" id="custom-purple"><span>0</span><span>credits</span></h1>
       <button href="#" class="checkout-btn-cart" id="custom-red">Checkout</button>
     </div>
   </div>
@@ -320,6 +320,26 @@
       localStorage.setItem("value", event.target.value);
       window.location.pathname = "/all-product.html";
     });
+  </script>
+  <script>
+    setTimeout(() => {  
+      removeFromCart();
+    }, 4000);
+
+    function removeFromCart() {
+      var removeBtn = document.getElementsByClassName('btn-danger');
+
+      for(var i=0; i < removeBtn.length; i++) {
+          var button = removeBtn[i];
+          button.addEventListener('click',function() {
+            button.parentElement.parentElement.remove();
+            location.reload();
+        })
+      }
+      
+    }
+
+
   </script>
 </body>
 
