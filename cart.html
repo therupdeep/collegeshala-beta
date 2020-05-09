@@ -327,14 +327,18 @@
     }, 2500);
 
     function removeFromCart() {
-      var removeBtn = document.getElementsByClassName('btn-danger');
-
-      for(var i=0; i < removeBtn.length; i++) {
-          var button = removeBtn[i];
-          button.addEventListener('click',function() {
-            button.parentElement.parentElement.remove();
-            location.reload();
-        })
+      let removeBtn = document.getElementsByClassName('btn-danger');
+      //console.log(removeBtn);
+      for(let i=0; i < removeBtn.length; i++) {
+          //let button = removeBtn[i];
+          //console.log(i+ " " + removeBtn.length);
+          removeBtn[i].addEventListener('click',function() {
+            //console.log(removeBtn[i]);
+            removeBtn[i].parentElement.parentElement.remove();
+            //console.log(i)
+            removeFromCart();
+            //location.reload();
+        });
       }
       
     }
