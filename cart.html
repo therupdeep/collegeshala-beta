@@ -336,7 +336,9 @@
           }),
           contentType: 'application/json',
           success: function complete(result) {
+            state.total -= 2;
             $(`#${noteid}`).remove();
+            $(".cart-total-amount").text(`${state.total} credits`);
           },
           error: function error(err) {
             console.error(err);
