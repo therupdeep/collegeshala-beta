@@ -90,7 +90,7 @@
   <div class="container total-cart">
     <div id="box">
       <h5 class="cart-total-heading">Total price of the Cart</h5>
-      <h1 class="cart-total-amount" id="custom-purple"><span>0</span><span>credits</span></h1>
+      <h1 class="cart-total-amount" id="custom-purple"><span>0</span><span> credits</span></h1>
       <button href="#" class="checkout-btn-cart" id="custom-red">Checkout</button>
     </div>
   </div>
@@ -311,7 +311,7 @@
         )
       });
 
-      $(".cart-total-amount").text(`${state.total}`);
+      $(".cart-total-amount").text(`${state.total} credits`);
     }
 
   </script>
@@ -333,7 +333,7 @@
           var button = removeBtn[i];
           button.addEventListener('click',function() {
             button.parentElement.parentElement.remove();
-            location.reload();
+            // location.reload();
         })
       }
       
