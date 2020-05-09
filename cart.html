@@ -90,7 +90,7 @@
   <div class="container total-cart">
     <div id="box">
       <h5 class="cart-total-heading">Total price of the Cart</h5>
-      <h1 class="cart-total-amount" id="custom-purple">0</h1>
+      <h1 class="cart-total-amount" id="custom-purple"><span>0</span><span> credits</span></h1>
       <button href="#" class="checkout-btn-cart" id="custom-red">Checkout</button>
     </div>
   </div>
@@ -159,7 +159,7 @@
                 West Bengal 700039</a>
             </li>
             <li>
-              <a href="#">Call US: 9874563210</a>
+              <a href="#">Call US: 8583994561, 9230429404</a>
             </li>
           </ul>
         </div>
@@ -278,8 +278,7 @@
     function setData() {
       state.cart.forEach(note => {
         $(".cart").append(
-          `
-          <div class="row notes-info-tab">
+          `<div class="row notes-info-tab" id="${note.noteId}">
             <a href="">
               <div class="col-12 col-md-2"><img width="85" height="85" src="./assets/images/pdf_logo.svg"
                   class="all-prod-img rounded float-left" alt="..."></div>
@@ -304,14 +303,14 @@
 
             </div>
             <div class="col-12 col-md-2 mt-3">
-
-              <button type="button" class="btn btn-danger">Remove</button>
+              <button type="button" value="${note.noteId}" class="btn btn-danger">Remove</button>
             </div>
           </div>`
         )
       });
 
-      $(".cart-total-amount").text(`${state.total}`);
+      $(".cart-total-amount").text(`${state.total} credits`);
+      deleteNote();
     }
 
   </script>
@@ -320,7 +319,54 @@
       localStorage.setItem("value", event.target.value);
       window.location.pathname = "/all-product.html";
     });
+
+    function deleteNote() {
+      $(".btn-danger").click(function () {
+        event.preventDefault();
+        const noteid = event.target.value;
+        console.log(noteid);
+        $.ajax({
+          method: 'POST',
+          url: "https://api.collegeshala.com/remove-note-from-cart",
+          headers: {
+            authorization: token,
+          },
+          data: JSON.stringify({
+            noteId: noteid
+          }),
+          contentType: 'application/json',
+          success: function complete(result) {
+            $(`#${noteid}`).remove();
+            // location.reload();
+          },
+          error: function error(err) {
+            console.error(err);
+          }
+        });
+      });
+    }
   </script>
+  <!-- <script>
+    setTimeout(() => {  
+      removeFromCart();
+    }, 2500);
+
+    function removeFromCart() {
+      let removeBtn = document.getElementsByClassName('btn-danger');
+      //console.log(removeBtn);
+      for(let i=0; i < removeBtn.length; i++) {
+          //let button = removeBtn[i];
+          //console.log(i+ " " + removeBtn.length);
+          removeBtn[i].addEventListener('click',function() {
+            //console.log(removeBtn[i]);
+            removeBtn[i].parentElement.parentElement.remove();
+            //console.log(i)
+            removeFromCart();
+            //location.reload();
+        });
+      }
+    }
+  </script> -->
 </body>
 
 </html>
