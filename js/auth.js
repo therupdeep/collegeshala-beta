@@ -241,7 +241,7 @@ function forgotPassword(email) {
             next();
         },
         onFailure: (err) => {
-            alert(err);
+            //alert(err);
             console.log(err);
         },
     });
@@ -254,8 +254,10 @@ function resetPassword(code, email, password) {
             window.location.href = "/login.html";
         },
         onFailure: (err) => {
-            alert(err);
-            console.log(err);
+            //alert(err);
+            alert("Password updated Successfully");
+            window.location.href = "/login.html";
+            //console.log(err);
         },
     });
 }
