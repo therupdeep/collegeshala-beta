@@ -560,7 +560,6 @@
 .nav-seach-box {
   padding-top: 27px;
   outline: none;
-  margin-left: 8em;
 }
 
 .nav-seach-box {
@@ -581,12 +580,12 @@
   background-color: #fff;
 }
 
-.notes-info-tab a{
-  color: black;
-}
-
 .nav-seach-box input[type="text"] {
   padding: 20px;
+}
+
+#small-screen-search-box {
+  display: none;
 }
 
 .bg-custom-blur {
@@ -603,7 +602,7 @@
 
 .notes-info-tab {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 20px 85px;
+  padding: 30px;
   margin: 10px 0px 10px 0;
 }
 
@@ -619,7 +618,7 @@
 }
 
 .card-heading {
-  font-size: 27px;
+  font-size: 55px;
   padding-top: 30px;
   text-decoration: none;
 }
@@ -691,6 +690,18 @@
   .custom-card-image {
     width: 140px;
     height: 170px;
+  }
+
+  #large-screen-search-box {
+    display: none;
+  }
+
+  #small-screen-search-box {
+    display: block;
+  }
+
+  #small-screen-search-box .nav-seach-box input {
+    width: 100%;
   }
 }
 
@@ -1652,7 +1663,7 @@
   margin-top: 10px;
 }
 
-.student-account #semester {
+.student-account #inputState {
   /* height: 45px; */
   /* width: 300px; */
   /* border-width: 1.5px; */
@@ -1931,6 +1942,7 @@
 
 .purple-color {
   color: #6534cc;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #About-Team img {
@@ -1974,6 +1986,7 @@
 
 .red-color {
   color: #ff4133;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media(max-width: 1200px)
@@ -1994,14 +2007,6 @@
 #my-transaction #prof-name a{
   text-decoration: none;
   color: black;
-}
-
-#students-buy-credits .custom-buy-credits-button {
-  border: #ff4133 2px solid;
-  border-radius: 45px;
-  padding: 0.4rem 2.4rem;
-  color: #6534cc;
-  margin-top: -5px;
 }
 
 /*
@@ -2025,7 +2030,7 @@
 }
 
 #earning-credits-section h2,p,b,span {
-  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #earning-credits-section .lead {
@@ -2034,7 +2039,7 @@
 }
 
 #earning-details-section h2,h4,p,b,span {
-  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #earning-details-section img {
@@ -2057,4 +2062,20 @@
   #earning-credits-section .custom-earning-button {
     margin-top: 15px;
   }
+}
+
+/*
+            ************
+        My Earning Page Styles Ends
+            ************
+*/
+
+/*
+            ************
+        Professor-info Page Styles Starts
+            ************
+*/
+
+#custom-carousel .custom-img {
+   height: 720px; 
 }
