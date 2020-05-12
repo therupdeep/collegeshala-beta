@@ -358,10 +358,10 @@
       counter: 0
     }
 
-    let token = localStorage.getItem("idToken");
-
     async function handleUpload() {
       event.preventDefault();
+
+      let token = await userAuth.authToken;
 
       function getCredentials() {
         return new Promise(function (resolve, reject) {
@@ -382,7 +382,6 @@
           });
         })
       }
-
       let config = await getCredentials();
       // console.log(config);
 
@@ -408,7 +407,7 @@
     userAuth.authToken.then(function setAuthToken(token) {
       if (token) {
         authToken = token;
-        console.log(authToken, "herein")
+        // console.log(authToken, "herein")
 
         if (!authToken) {
           console.log("User not signed in!");
@@ -450,6 +449,9 @@
     }
 
     async function getUploads() {
+
+      let token = await userAuth.authToken;
+
       function fetchUploads() {
         return new Promise(function (resolve, reject) {
           $.ajax({
