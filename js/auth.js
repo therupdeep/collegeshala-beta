@@ -1,4 +1,5 @@
-var userAuth = window.userAuth || {};
+//var userAuth = window.userAuth || {};
+window.userAuth = {}
 
 var signinUrl = "login.html";
 
@@ -7,7 +8,7 @@ var poolData = {
     ClientId: _config.cognito.userPoolClientId,
 };
 
-var userPool;
+var  userPool;
 
 if (
     !(
