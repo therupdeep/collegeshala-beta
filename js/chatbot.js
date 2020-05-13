@@ -13,64 +13,108 @@ var Tawk_API = Tawk_API || {},
 })();
 /*End of Tawk.to Script*/
 
-
-Tawk_API = Tawk_API || {};
-Tawk_API.visitor = {
-    name: 'Richard',
-    email: 'richardrozario.rr@gmail.com'
-};
-
-
-
 let token = window.localStorage.getItem("idToken");
-if (!token) {
-    console.log("User not signed in!");
-} else {
-    $.ajax({
-        method: 'POST',
-        url: "https://api.collegeshala.com/studentdetails",
-        headers: {
-            authorization: token
-        },
-        body: {},
-        contentType: 'application/json',
-        success: function complete(result) {
-            let fullname, emailadd;
-            //let phno;
-            //console.log(result.Item);
-            var keys = Object.keys(result.Item);
-            for (var i = 0; i < keys.length; i++) {
-                var key = keys[i];
-                if ("fullName" == key) {
-                    for (let [k, value] of Object.entries(result.Item)) {
-                        //console.log(`${key}: ${value}`);
-                        if ("fullName" == k) {
-                            let fullname = `${value}`;
-                            console.log(fullname)
-                            //document.getElementById('fullname').value = full;
-                            break;
+
+if (token) {
+    if (localStorage.getItem("acc_type") == 'professor') {
+        $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/professordetails",
+            headers: {
+                authorization: token
+            },
+            body: {},
+            contentType: 'application/json',
+            success: function complete(result) {
+                //let phno;
+                let fullname, emailadd;
+                console.log(result.Item);
+                //document.getElementById('email').value = result.Item.email;
+
+                var keys = Object.keys(result.Item);
+                for (var i = 0; i < keys.length; i++) {
+                    var key = keys[i];
+                    if ("fullName" == key) {
+                        for (let [k, value] of Object.entries(result.Item)) {
+                            //console.log(`${key}: ${value}`);
+                            if ("fullName" == k) {
+                                let fullname = `${value}`;
+                                break;
+                            }
                         }
-                    }
-                } else if ("email" == key) {
-                    for (let [k, value] of Object.entries(result.Item)) {
-                        //console.log(`${key}: ${value}`);
-                        if ("email" == k) {
-                            let emailadd = `${value}`;
-                            console.log(emailadd)
-                            //document.getElementById('email').value = em;
-                            break;
+                    }else if ("email" == key) {
+                        for (let [k, value] of Object.entries(result.Item)) {
+                            //console.log(`${key}: ${value}`);
+                            if ("email" == k) {
+                                let emailadd = `${value}`;
+                                //console.log(em)
+                                document.getElementById('email').value = em;
+                                break;
+                            }
                         }
                     }
                 }
+                console.log(fullname);
+                console.log(emailadd);
+                Tawk_API = Tawk_API || {};
+                Tawk_API.visitor = {
+                    name: fullname,
+                    email: emailadd
+                };
+            },
+            error: function error(err) {
+                console.error(err);
             }
-            Tawk_API = Tawk_API || {};
-            Tawk_API.visitor = {
-                name: fullname,
-                email: emailadd
-            };
-        },
-        error: function error(err) {
-            console.error(err);
-        }
-    });
+        });
+    } else {
+        $.ajax({
+            method: 'POST',
+            url: "https://api.collegeshala.com/studentdetails",
+            headers: {
+                authorization: token
+            },
+            body: {},
+            contentType: 'application/json',
+            success: function complete(result) {
+                let fullname, emailadd;
+                //let phno;
+                //console.log(result.Item);
+                var keys = Object.keys(result.Item);
+                for (var i = 0; i < keys.length; i++) {
+                    var key = keys[i];
+                    if ("fullName" == key) {
+                        for (let [k, value] of Object.entries(result.Item)) {
+                            //console.log(`${key}: ${value}`);
+                            if ("fullName" == k) {
+                                fullname = `${value}`;
+                                //console.log(fullname);
+                                //document.getElementById('fullname').value = full;
+                                break;
+                            }
+                        }
+                    } else if ("email" == key) {
+                        for (let [k, value] of Object.entries(result.Item)) {
+                            //console.log(`${key}: ${value}`);
+                            if ("email" == k) {
+                                emailadd = `${value}`;
+                                //console.log(emailadd);
+                                //document.getElementById('email').value = em;
+                                break;
+                            }
+                        }
+                    }
+                }
+                console.log(fullname);
+                console.log(emailadd);
+                Tawk_API = Tawk_API || {};
+                Tawk_API.visitor = {
+                    name: fullname,
+                    email: emailadd
+                };
+            },
+            error: function error(err) {
+                console.error(err);
+            }
+        });
+    }
 }
