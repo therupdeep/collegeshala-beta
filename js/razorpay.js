@@ -11,7 +11,7 @@ function checkout(amount, credits, authToken) {
         payment_capture: "1",
         image: "https://example.com/your_logo",
         handler: function (response) {
-            alert("Payment Successful. Adding Credits to your account ... ");
+            // alert("Payment Successful. Adding Credits to your account ... ");
             //call purchaseCredits api here
 
             console.log(response);
@@ -44,9 +44,8 @@ function completePurchase(paymentid, amount, credits, authToken) {
         }),
         contentType: "application/json",
         success: function complete(result) {
-            console.log(result);
             // alert('Credits added successfully to your account');
-            if (window.location.href == "/cart.html") {
+            if (window.location.href.endsWith("/cart.html")) {
                 $.ajax({
                     method: "POST",
                     url: "https://api.collegeshala.com/checkout",
@@ -64,10 +63,12 @@ function completePurchase(paymentid, amount, credits, authToken) {
                         console.error(err);
                     },
                 });
-            } else if(window.location.href == "/my-transaction.html") {
-				$("#balance-credits").text(`Balance Credits - ${state.credits + credits}`);
-				window.location.reload();
-			}
+            } else if (window.location.href.endsWith("/my-transaction.html")) {
+                $("#balance-credits").text(
+                    `Balance Credits - ${state.credits + credits}`
+                );
+                window.location.reload();
+            }
             // if(result.error === 'No notes purchased') {
             //     $('#card').append('No notes purchased');
             // }

@@ -28,8 +28,8 @@ function uploadNotes(
         };
         s3.upload(params, function (err, data) {
             if (err) {
-                console.log(err, err.stack);
-                alert(err);
+                console.error(err, err.stack);
+                // alert(err);
             } else {
                 // console.log(data.Location);
                 const noteurl = data.Location;
