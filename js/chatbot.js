@@ -1,18 +1,3 @@
-/*Start of Tawk.to Script*/
-
-var Tawk_API = Tawk_API || {},
-    Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/5ebc19b6967ae56c52197873/default';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-/*End of Tawk.to Script*/
-
 let token = window.localStorage.getItem("idToken");
 
 if (token) {
@@ -38,17 +23,17 @@ if (token) {
                         for (let [k, value] of Object.entries(result.Item)) {
                             //console.log(`${key}: ${value}`);
                             if ("fullName" == k) {
-                                let fullname = `${value}`;
+                                fullname = `${value}`;
                                 break;
                             }
                         }
-                    }else if ("email" == key) {
+                    } else if ("email" == key) {
                         for (let [k, value] of Object.entries(result.Item)) {
                             //console.log(`${key}: ${value}`);
                             if ("email" == k) {
-                                let emailadd = `${value}`;
+                                emailadd = `${value}`;
                                 //console.log(em)
-                                document.getElementById('email').value = em;
+                                //document.getElementById('email').value = em;
                                 break;
                             }
                         }
@@ -56,11 +41,13 @@ if (token) {
                 }
                 console.log(fullname);
                 console.log(emailadd);
-                Tawk_API = Tawk_API || {};
-                Tawk_API.visitor = {
-                    name: fullname,
-                    email: emailadd
-                };
+                Tawk_API.onLoad = function () {
+                    Tawk_API.setAttributes({
+                        'name': fullname,
+                        'email': emailadd,
+                        'hash': 'hash value'
+                    }, function (error) {});
+                }
             },
             error: function error(err) {
                 console.error(err);
@@ -118,3 +105,20 @@ if (token) {
         });
     }
 }
+
+
+
+
+/*Start of Tawk.to Script*/
+var Tawk_API = Tawk_API || {},
+    Tawk_LoadStart = new Date();
+(function () {
+    var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/5ebc19b6967ae56c52197873/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+})();
+/*End of Tawk.to Script*/
