@@ -129,14 +129,14 @@
           <form>
             <div class="form-group">
               <label for="exampleFormControlInput1">Enter Credits</label>
-              <input type="number" class="form-control" id="" placeholder="Enter the amount of Credits">
+              <input type="number" id="credits-redeem" class="form-control" id="" placeholder="Enter the amount of Credits">
             </div>
             <p>1 credits = Rs 10</p>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Redeem Now</button>
+          <button type="button" id="redeem-now" class="btn btn-primary">Redeem Now</button>
         </div>
       </div>
     </div>
@@ -337,7 +337,7 @@
 
   </script>
   <script>
-    $("#redeem-btn").click(async () => {
+    $("#redeem-now").click(async () => {
 
       const token = await userAuth.authToken;
 
@@ -381,12 +381,21 @@
         });
       }
 
+      const toRedeem = Number($("#credits-redeem").val());
       const config = await getSesKeys();
       const prof = (await getProfDetails()).Item;
       const { credits, fullName, email } = prof;
-      const amount = 200;
 
-      console.log(credits, fullName, email)
+      if(toRedeem < 0 || (toRedeem * 10) % 10 != 0) {
+        alert("Please enter a valid number!");
+        return;
+      } else if(toRedeem > credits) {
+        alert("Credits to redeem cannot be greater than current credits!");
+        return;
+      }
+      const amount = toRedeem * 10;
+
+      console.log(toRedeem, credits, fullName, email)
 
       AWS.config.update({
         accessKeyId: config.accessKeyId,
