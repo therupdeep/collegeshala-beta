@@ -28,8 +28,8 @@
   text-decoration: underline #ff4133;
 }
 
-.nav-item .dropdown-menu {
-  position: absolute;
+.nav-item .dropdown-item {
+  padding: 0.4rem 0.4rem;
 }
 
 #home {
