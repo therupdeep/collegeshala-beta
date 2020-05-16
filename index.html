@@ -324,11 +324,16 @@
   <script src="js/config.js"></script>
   <script src="js/auth.js"></script>
   <script>
-    $("#search-input").change(function () {
-      console.log("here")
-      localStorage.setItem("value", event.target.value);
-      window.location.pathname = "/all-product.html";
-      // console.log(window.location);
+
+    $("#search-input").on("change keypress", function (event) {
+      // console.log(event.type)
+      if(event.keyCode && event.keyCode == '13') {
+        localStorage.setItem("value", event.target.value);
+        window.location.pathname = "/all-product.html";
+      } else if(event.type == "change") {
+        localStorage.setItem("value", event.target.value);
+        window.location.pathname = "/all-product.html";
+      }
     });
 
   </script>
