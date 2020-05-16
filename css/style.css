@@ -28,6 +28,10 @@
   text-decoration: underline #ff4133;
 }
 
+.nav-item .dropdown-menu {
+  position: absolute;
+}
+
 #home {
   background-image: url(../assets/images/home-bg.jpg);
   height: 120vh;
