@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <script src="js/aws/aws-cognito-sdk.min.js"></script>
+  <script src="js/aws/amazon-cognito-identity.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+
   <!-- Required meta tags -->
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
   <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;   user-scalable=0;" name="viewport" />
@@ -169,11 +174,17 @@
           </button>
         </div>
         <div class="modal-body">
-          Not available right now
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Enter Credits</label>
+              <input type="number" id="credits-redeem" class="form-control" id="" placeholder="Enter the amount of Credits">
+            </div>
+            <p>1 credits = Rs 10</p>
+          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Redeem Now</button>
+          <button type="button" id="redeem-now" class="btn btn-primary">Redeem Now</button>
         </div>
       </div>
     </div>
@@ -278,10 +289,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.677.0.min.js"></script>
   <script src="./js/scroll.js"></script>
-  <script src="js/config.js"></script>
-  <script src="js/auth.js"></script>
-
+  <script src="js/email.js"></script>
   <script src="./js/checkuser.js"></script>
   <script>
 
@@ -373,6 +383,78 @@
       })
     }
 
+  </script>
+  <script>
+    $("#redeem-now").click(async () => {
+
+      const token = await userAuth.authToken;
+
+      function getSesKeys() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: "POST",
+            url: "https://api.collegeshala.com/ses-key",
+            headers: {
+              authorization: token,
+            },
+            // data: JSON.stringify({}),
+            contentType: "application/json",
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err);
+            },
+          });
+        });
+      }
+
+      function getProfDetails() {
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            method: "POST",
+            url: "https://api.collegeshala.com/professordetails",
+            headers: {
+              authorization: token,
+            },
+            // data: JSON.stringify({}),
+            contentType: "application/json",
+            success: function complete(result) {
+              resolve(result);
+            },
+            error: function error(err) {
+              reject(err);
+            },
+          });
+        });
+      }
+
+      const toRedeem = Number($("#credits-redeem").val());
+      const config = await getSesKeys();
+      const prof = (await getProfDetails()).Item;
+      const { credits, fullName, email } = prof;
+
+      if(toRedeem < 0 || (toRedeem * 10) % 10 != 0) {
+        alert("Please enter a valid number!");
+        return;
+      } else if(toRedeem > credits) {
+        alert("Credits to redeem cannot be greater than current credits!");
+        return;
+      }
+      const amount = toRedeem * 10;
+
+      console.log(toRedeem, credits, fullName, email)
+
+      AWS.config.update({
+        accessKeyId: config.accessKeyId,
+        secretAccessKey: config.secretAccessKey,
+        region: "ap-south-1",
+      });
+
+      const ses = new AWS.SES();
+
+      sendMailAlert({ name: fullName, email, amount }, ses);
+    });
   </script>
 </body>
 
