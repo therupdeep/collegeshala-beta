@@ -1936,13 +1936,13 @@
   color: #6534cc;
 }
 
-#About-Us .about-font {
+/*#About-Us .about-font {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+}*/
 
 .purple-color {
   color: #6534cc;
-  font-family: Arial, Helvetica, sans-serif;
+  /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 #About-Team img {
@@ -2029,18 +2029,18 @@
   margin-top: -5px;
 }
 
-#earning-credits-section h2,p,b,span {
+/*#earning-credits-section h2,p,b,span {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+}*/
 
 #earning-credits-section .lead {
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-#earning-details-section h2,h4,p,b,span {
+/*#earning-details-section h2,h4,p,b,span {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+}*/
 
 #earning-details-section img {
   border-radius: 5px;
