@@ -194,6 +194,11 @@
   background-size: cover;
 }
 
+.collegeshala-serving-logo .college-logo {
+  width: 65px;
+  margin-right: 2rem;
+}
+
 .newsletter .newsletter-text h1 {
   font-size: 50px;
 }
@@ -503,6 +508,13 @@
     margin-top: 20px;
     font-size: 18px;
     border-width: 2px;
+  }
+}
+
+@media (max-width: 605px) {
+  .collegeshala-serving-logo .college-logo {
+    width: 45px;
+    margin-right: 0.3em;
   }
 }
 
